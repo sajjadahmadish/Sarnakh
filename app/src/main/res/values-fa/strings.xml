@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!-- Test Comment -->
     <string name="loading">لطفا صبر کنید …</string>
     <string name="title">خوش آمدید</string>
     <string name="user_name">نام کاربری</string>
