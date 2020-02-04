@@ -36,36 +36,24 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
 
     @Inject
     override lateinit var viewModel: MissionListViewModel
-
-//    private val dotCoors = Array(5) { IntArray(2) }
-    private val pics =
-        intArrayOf(R.drawable.p1, R.drawable.p2, R.drawable.p3, R.drawable.p4, R.drawable.p5)
-    private val maps = intArrayOf(
-        R.drawable.map_paris,
-        R.drawable.map_seoul,
-        R.drawable.map_london,
-        R.drawable.map_beijing,
-        R.drawable.map_greece
-    )
-    private val descriptions =
-        intArrayOf(R.string.text1, R.string.text2, R.string.text3, R.string.text4, R.string.text5)
-    //    private final String[] countries = {"PARIS", "SEOUL", "LONDON", "BEIJING", "THIRA"};
-    private val countries =
-        arrayOf("پاریس", "سوول", "لندن", "بیژینگ", "ثیرا")
+//    private final String[] countries = {"PARIS", "SEOUL", "LONDON", "BEIJING", "THIRA"};
+    private lateinit var countries: Array<String>
+//        = arrayOf("پاریس", "سوول", "لندن", "بیژینگ", "ثیرا")
     //    private final String[] places = {"The Louvre", "Gwanghwamun", "Tower Bridge", "Temple of Heaven", "Aegeana Sea"};
-    private val places =
-        arrayOf("لوور", "گوانگوامون", "برج پل", "معبد بهشت", "دریای آجینا")
-    private val temperatures =
-        arrayOf("21°C", "19°C", "17°C", "23°C", "20°C")
+    private lateinit var places: Array<String>
+//            =        arrayOf("لوور", "گوانگوامون", "برج پل", "معبد بهشت", "دریای آجینا")
+//    private val temperatures =
+//        arrayOf("21°C", "19°C", "17°C", "23°C", "20°C")
     //private final String[] times = {"Aug 1 - Dec 15    7:00-18:00", "Sep 5 - Nov 10    8:00-16:00", "Mar 8 - May 21    7:00-18:00"};
-    private val times = arrayOf(
-        "۱ اردیبهشت - ۱۵ خرداد  ۷:۰۰-۱۸:۰۰",
-        "۵ تیر - ۱۰ مرداد  ۸:۰۰-۱۶:۰۰",
-        "۸بهمن - ۲۱ اسفند  ۷:۰۰-۱۸:۰۰"
-    )
+    private lateinit var times: Array<String>
+//        = arrayOf(
+//        "۱ اردیبهشت - ۱۵ خرداد  ۷:۰۰-۱۸:۰۰",
+//        "۵ تیر - ۱۰ مرداد  ۸:۰۰-۱۶:۰۰",
+//        "۸بهمن - ۲۱ اسفند  ۷:۰۰-۱۸:۰۰"
+//    )
 
     private val sliderAdapter: SliderAdapter = SliderAdapter(
-        pics,
+        viewModel.pics,
         20,
         OnCardClickListener()
     )
@@ -94,10 +82,17 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
         super.onCreate(savedInstanceState)
         viewModel.navigator = this
 
+        initArrays()
         initRecyclerView()
         initCountryText()
         initSwitchers()
         initGreenDot()
+    }
+
+    private fun initArrays(){
+        times = resources.getStringArray(R.array.mission_list_date)
+        places = resources.getStringArray(R.array.mission_list_places)
+        countries = resources.getStringArray(R.array.mission_list_countries)
     }
 
     private fun initRecyclerView() {
@@ -131,7 +126,7 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
                 true
             )
         )
-        temperatureSwitcher!!.setCurrentText(temperatures[0])
+        temperatureSwitcher!!.setCurrentText(viewModel.temperatures[0])
 
         placeSwitcher = findViewById<View>(R.id.ts_place) as TextSwitcher
         placeSwitcher!!.setFactory(
@@ -160,12 +155,12 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
                 false
             )
         )
-        descriptionsSwitcher!!.setCurrentText(getString(descriptions[0]))
+        descriptionsSwitcher!!.setCurrentText(getString(viewModel.descriptions[0]))
         mapSwitcher = findViewById<View>(R.id.ts_map) as ImageSwitcher
         mapSwitcher!!.setInAnimation(this, R.anim.fade_in)
         mapSwitcher!!.setOutAnimation(this, R.anim.fade_out)
         mapSwitcher!!.setFactory(ImageViewFactory())
-        mapSwitcher!!.setImageResource(maps[0])
+        mapSwitcher!!.setImageResource(viewModel.maps[0])
 
         mapLoadListener = object: DecodeBitmapTask.Listener{
             override fun onPostExecuted(bitmap: Bitmap?) {
@@ -283,7 +278,7 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
 
         temperatureSwitcher!!.setInAnimation(this, animH[0])
         temperatureSwitcher!!.setOutAnimation(this, animH[1])
-        temperatureSwitcher!!.setText(temperatures[pos % temperatures.size])
+        temperatureSwitcher!!.setText(viewModel.temperatures[pos % viewModel.temperatures.size])
 
         placeSwitcher!!.setInAnimation(this, animV[0])
         placeSwitcher!!.setOutAnimation(this, animV[1])
@@ -293,9 +288,9 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
         clockSwitcher!!.setOutAnimation(this, animV[1])
         clockSwitcher!!.setText(times[pos % times.size])
 
-        descriptionsSwitcher!!.setText(getString(descriptions[pos % descriptions.size]))
+        descriptionsSwitcher!!.setText(getString(viewModel.descriptions[pos % viewModel.descriptions.size]))
 
-        showMap(maps[pos % maps.size])
+        showMap(viewModel.maps[pos % viewModel.maps.size])
 
         ViewCompat.animate(greenDot!!)
                 .translationX(viewModel.dotCoors[pos % viewModel.dotCoors.size][0].toFloat())

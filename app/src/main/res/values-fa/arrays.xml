@@ -15,4 +15,25 @@
         <item>عنوان ۴</item>
     </string-array>
 
+    <string-array name="mission_list_countries">
+        <item>پاریس</item>
+        <item>سوول</item>
+        <item>لندن</item>
+        <item>بیژینگ</item>
+        <item>ثیرا</item>
+    </string-array>
+
+    <string-array name="mission_list_places">
+        <item>لوور</item>
+        <item>گوانگوامون</item>
+        <item>برج پل</item>
+        <item>معبد بهشت</item>
+        <item>دریای آجینا</item>
+    </string-array>
+
+    <string-array name="mission_list_date">
+        <item>۱ اردیبهشت - ۱۵ خرداد  ۷:۰۰-۱۸:۰۰</item>
+        <item>۵ تیر - ۱۰ مرداد  ۸:۰۰-۱۶:۰۰</item>
+        <item>۸بهمن - ۲۱ اسفند  ۷:۰۰-۱۸:۰۰</item>
+    </string-array>
 </resources>
