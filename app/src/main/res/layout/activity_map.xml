@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="project.ui.map.MapViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_5"
+            android:orientation="vertical">
+
+        <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="-40dp"
+                android:layout_height="match_parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            visible="@{viewModel.selected != null}"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/spacing_large"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="3dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animation_view"
+                        android:layout_width="50dp"
+                        android:layout_height="55dp"
+                        android:scaleType="centerCrop"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="location_pin.json"
+                        app:lottie_loop="false" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:maxLines="1"
+                        android:text='@{(viewModel.selected != null) ? viewModel.selected.name : "" }'
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:text="لاستیک فروشی اصغرآقا" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:orientation="horizontal">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animation_view2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="-5dp"
+                        android:scaleType="centerCrop"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="location_rev.json"
+                        app:lottie_loop="true" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:layout_marginStart="@dimen/spacing_medium"
+                        android:scrollbars="horizontal"
+                        android:text='@{(viewModel.selected != null) ? viewModel.selected.adder : "" }'
+                        tools:text="بیرجند - مفتح 51 پلاک 14" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/nav"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/btn_rounded_blue_map"
+                        android:drawableEnd="@drawable/ic_call_split_black_24dp"
+                        android:drawablePadding="@dimen/spacing_small"
+                        android:drawableTint="@color/white"
+                        android:padding="@dimen/spacing_large"
+                        android:text="مسیریابی"
+                        android:textColor="@color/md_white_1000" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/more_detail"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/btn_rounded_red"
+                        android:drawableEnd="@drawable/ic_target"
+                        android:drawablePadding="@dimen/spacing_small"
+                        android:padding="@dimen/spacing_large"
+                        android:drawableTint="@color/white"
+                        android:text="ماموریت"
+                        android:textColor="@color/md_white_1000" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loading">لطفا صبر کنید …</string>
+    <string name="title">خوش آمدید</string>
+    <string name="user_name">نام کاربری</string>
+    <string name="password">رمز عبور</string>
+    <string name="password_hint">" "</string>
+    <string name="username_hint">نام کاربری، ایمیل و یا شماره دانشجویی</string>
+    <string name="login">ورود</string>
+    <string name="en">English</string>
+    <string name="fa">فارسی</string>
+    <string name="forgot_password">رمز عبور را فراموش کرده اید؟</string>
+    <string name="keep_sign_in">مرا بخاطر بسپار</string>
+    <string name="username_cannot_empty">نام کاربری نمی تواند خالی باشد</string>
+    <string name="password_cannot_empty">رمز عبور نمی تواند خالی باشد</string>
+    <string name="server_error">خطای سرور</string>
+    <string name="net_error">خطای شبکه</string>
+    <string name="check_your_connection">لطفا اتصال دستگاه به شبکه را بررسی کنید</string>
+    <string name="error">خطا</string>
+    <string name="user_or_pass_wrong">نام کاربری و یا رمزعبور نادرست است</string>
+    <string name="_er_unknown">متاسفانه خطایی در ارسال اطلاعات رخ داده است، لطفا مجددا امتحان کنید</string>
+    <string name="calender">تقویم</string>
+    <string name="clazz">کلاس</string>
+    <string name="create_class">ساخت کلاس</string>
+    <string name="join_class">عضویت در کلاس</string>
+    <string name="event">رویداد</string>
+    <string name="reminder">یادآوری</string>
+    <string name="unenroll">لغو ثبت نام</string>
+    <string name="report">گذارش</string>
+    <string name="hide">پنهان</string>
+    <string name="class_info">درباره</string>
+    <string name="class_setting">تنظیمات</string>
+    <string name="archive">آرشیو</string>
+    <string name="notifications">پیام ها</string>
+    <string name="settings">تنظیمات</string>
+    <string name="help">راهنما</string>
+    <string name="archived_class">کلاس‌های آرشیو شده</string>
+    <string name="hided_class">کلاس‌های مخفی شده</string>
+    <string name="count_student">%s دانشجو</string>
+    <string name="class_code">کد کلاس</string>
+    <string name="join">عضویت</string>
+    <string name="ask_code">کد کلاس را از استاد خود بپرسید و اینجا وارد کنید</string>
+    <string name="class_name">نام کلاس</string>
+    <string name="description">توضیحات</string>
+    <string name="create">ساخت</string>
+    <string name="app_name" translatable="false">سرنخ</string>
+    <string name="classes">کلاس ها</string>
+    <string name="connected">متصل</string>
+    <string name="disconnected">در انتظار شبکه …</string>
+    <string name="connecting">در حال اتصال …</string>
+    <string name="base_text" />
+    <string name="people">افراد</string>
+    <string name="classwork">کار کلاسی</string>
+    <string name="stream">جریان</string>
+    <string name="students">دانشجویان</string>
+    <string name="classmates">همکلاسی ها</string>
+    <string name="teachers">اساتید</string>
+    <string name="teacherAssistants">دستیار استاد</string>
+    <string name="message">پیام جدید</string>
+    <string name="remove">حذف</string>
+    <string name="mute">غیرفعال</string>
+    <string name="unmute">فعال</string>
+    <string name="GOT_IT">شروع</string>
+    <string name="SKIP">رد کردن</string>
+    <string name="account">ورود / عضویت</string>
+    <string name="home">خانه</string>
+    <string name="best">جویندگان برتر</string>
+    <string name="play">شروع</string>
+    <string name="invite">دعوت دوستان</string>
+    <string name="Answer">جواب</string>
+
+
+</resources>

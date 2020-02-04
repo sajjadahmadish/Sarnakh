@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="project.ui.splash.SplashViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="project.ui.splash.SplashActivity">
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_splash" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/original_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/my_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/ic_icon_javad"
+                tools:srcCompat="@drawable/ic_icon_javad" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                tools:text="@string/sarnakh"
+                asyncText="@{@string/sarnakh}"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

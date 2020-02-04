@@ -1,0 +1,121 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.firebase-perf'
+
+
+android {
+    def ext = rootProject.extensions.ext
+    compileSdkVersion ext.android.compileSdk
+
+    defaultConfig {
+        minSdkVersion ext.android.minSdk
+        targetSdkVersion ext.android.targetSdk
+        versionCode ext.application.versionCode
+        versionName ext.application.versionName
+        applicationId ext.application.id
+        testInstrumentationRunner ext.application.testInstrumentationRunner
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled = true
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    dataBinding {
+        enabled true
+    }
+
+    compileOptions {
+        targetCompatibility = ext.compiler.java
+        sourceCompatibility = ext.compiler.java
+    }
+
+}
+
+kapt {
+    generateStubs = true
+}
+
+
+def API_URL = System.getenv("API_URL") ?: apiUrl
+def API_KEY = System.getenv("API_KEY") ?: apiKey
+
+android.buildTypes.each { type ->
+    type.buildConfigField "String", "API_URL", "\"$API_URL\""
+    type.buildConfigField "String", "API_KEY", "\"$API_KEY\""
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':data')
+
+    implementation Kotlin
+
+    implementation AndroidX.Core
+    implementation AndroidX.Constraintlayout
+    implementation AndroidX.Multidex
+    implementation AndroidX.Activity
+    implementation AndroidX.Fragment
+    implementation AndroidX.Paging
+    implementation AndroidX.RoomKapt
+    implementation AndroidX.Lifecycle
+    implementation AndroidX.Navigation
+    implementation AndroidX.Room
+    kapt AndroidX.RoomKapt
+
+    implementation Google
+    implementation PreferenceHolder
+    implementation RxBinding
+    implementation ExentBus
+    implementation PermissionsDispatcher
+    kapt PermissionsDispatcherKapt
+    implementation Retrofit
+    implementation OkHttp
+    implementation Stetho
+    implementation ReactiveX
+    implementation Fresco
+    implementation Merlin
+
+    implementation OSM
+
+    implementation Dagger
+    kapt DaggerKapt
+    compileOnly AssistedInjectCompile
+    kapt AssistedInjectKapt
+
+    implementation Glide
+    kapt GlideKapt
+
+    implementation thirdPartyDependencies
+
+}
+
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.google.com' }
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="project.ui.lucky.LuckyViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/grey_round"
+            style="@style/content_toolbar"
+            android:layout_height="@dimen/toolbar_height">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="17sp"
+                android:textColor="@color/primary"
+                android:gravity="center"
+                asyncText='@{"گردونه شانس"}'/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="@dimen/round_toolbar"
+            android:layout_height="@dimen/round_toolbar"
+            android:layout_alignTop="@+id/toolbar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="@dimen/toolbar_height"
+            android:background="@drawable/ic_round"
+            tools:ignore="RtlHardcoded" />
+
+        <View
+            android:layout_width="@dimen/round_toolbar"
+            android:layout_height="@dimen/round_toolbar"
+            android:layout_alignTop="@+id/toolbar"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/toolbar_height"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/ic_round"
+            android:rotation="90"
+            tools:ignore="RtlHardcoded" />
+
+
+
+        <project.utils.lucky.LuckyWheelView
+            android:layout_centerInParent="true"
+            app:lkwBackgroundColor="#FF9800"
+            app:lkwTopTextColor="#263238"
+            app:lkwCenterImage="@drawable/wheel2"
+            app:lkwCursor="@drawable/ic_cursor"
+            android:id="@+id/lucky_wheel"
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
+
+        <Button
+            android:id="@+id/play"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:text="@string/play"
+            android:background="@drawable/btn_rounded_red"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="200dp"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+
+</layout>

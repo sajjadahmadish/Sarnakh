@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="title_intro">
+        <item>عنوان ۱</item>
+        <item>عنوان ۲</item>
+        <item>عنوان ۳</item>
+        <item>عنوان ۴</item>
+    </string-array>
+
+    <string-array name="description_intro">
+        <item>عنوان ۱</item>
+        <item>عنوان ۲</item>
+        <item>عنوان ۳</item>
+        <item>عنوان ۴</item>
+    </string-array>
+
+</resources>

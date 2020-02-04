@@ -1,0 +1,52 @@
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+android {
+
+    def ext = rootProject.extensions.ext
+    compileSdkVersion ext.android.compileSdk
+
+    defaultConfig {
+        minSdkVersion ext.android.minSdk
+        targetSdkVersion ext.android.targetSdk
+        versionCode ext.application.versionCode
+        versionName ext.application.versionName
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        each {
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation Kotlin
+    implementation ReactiveX
+    implementation AndroidX.Paging
+    implementation AndroidX.Room
+    implementation Retrofit
+    implementation OkHttp
+    implementation PreferenceHolder
+
+    implementation dataDependencies
+
+    kapt AndroidX.RoomKapt
+
+
+
+}
+repositories {
+    mavenCentral()
+}

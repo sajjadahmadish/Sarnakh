@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="project.ui.intro.IntroViewModel" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_40"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
+
+        <project.utils.widget.RtlViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
+
+            <Button
+                android:id="@+id/btn_got_it"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_rounded_white"
+                android:text="@string/GOT_IT"
+                visible="@{viewModel.tab == viewModel.maxStep - 1}"
+                android:textColor="@color/grey_80"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/account"
+                style="@style/Button.Accent.Borderless.WhiteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                visible="@{viewModel.tab == viewModel.maxStep - 1}"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/account" />
+
+
+
+            <LinearLayout
+                android:id="@+id/layoutDots"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_skip"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/SKIP"
+                visible="@{viewModel.tab != viewModel.maxStep - 1}"
+                android:textColor="@color/grey_5" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

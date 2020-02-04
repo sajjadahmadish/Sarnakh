@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="ar"
+        android:enabled="true"
+        android:icon="@drawable/qr_code"
+        android:shortcutShortLabel="@string/str_short_label"
+        android:shortcutLongLabel="@string/str_long_label"
+        tools:targetApi="n_mr1">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="ir.sinapp.sarnakh"
+            android:targetClass="project.ui.ar.ARActivity" />
+        <!-- If your shortcut is associated with multiple intents, include them
+             here. The last intent in the list is what the user sees when they
+             launch this shortcut. -->
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+    <!-- Add more shortcuts here. -->
+</shortcuts>

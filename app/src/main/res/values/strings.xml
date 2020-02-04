@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">سرنخ</string>
+    <string name="title">Welcome to SinApp Sarnakh</string>
+    <string name="loading">Loading ...</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="username_hint">username, email or student number</string>
+    <string name="password_hint">" "</string>
+    <string name="login">SIGN IN</string>
+    <string name="en">English</string>
+    <string name="fa">فارسی</string>
+    <string name="keep_sign_in">Keep me Signed in</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="sarnakh" translatable="false">ســــــــــــــــــرنخ</string>
+    <string name="username_cannot_empty">username cannot be empty</string>
+    <string name="password_cannot_empty">password cannot be empty</string>
+    <string name="server_error">Server Error</string>
+    <string name="net_error">Network Error</string>
+    <string name="check_your_connection">check internet connection, please</string>
+    <string name="error">Error</string>
+    <string name="user_or_pass_wrong">Username or password is wrong</string>
+    <string name="_er_unknown">unknown error occurred, please try again later</string>
+    <string name="calender">Calender</string>
+    <string name="clazz">Class</string>
+    <string name="create_class">Create class</string>
+    <string name="join_class">Join class</string>
+    <string name="event">Event</string>
+    <string name="reminder">Reminder</string>
+    <string name="appKey" translatable="false">2f7b4f95-ea95-4cd4-94ee-4e3902dc5a2c</string>
+    <string name="baseUrl" translatable="false">http://c1ed4630.ngrok.io/api/v1/client</string>
+    <string name="class_setting">Setting</string>
+    <string name="class_info">Info</string>
+    <string name="hide">Hide</string>
+    <string name="unenroll">Unenroll</string>
+    <string name="archive">Archive</string>
+    <string name="report">report abuse</string>
+    <string name="notifications">Notifications</string>
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
+    <string name="archived_class">Archived Classes</string>
+    <string name="hided_class">Hidden Classes</string>
+    <string name="count_student">%s students</string>
+    <string name="class_code">Class code</string>
+    <string name="join">Join</string>
+    <string name="ask_code">Ask your teacher for the class code, then enter it here</string>
+    <string name="class_name">Class name</string>
+    <string name="description">Description</string>
+    <string name="create">Create</string>
+    <string name="classes">Classes</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Waiting for network …</string>
+    <string name="connecting">Connecting …</string>
+    <string name="base_text" />
+    <string name="people">People</string>
+    <string name="classwork">Classwork</string>
+    <string name="stream">Stream</string>
+    <string name="students">Students</string>
+    <string name="classmates">Classmates</string>
+    <string name="teachers">Teachers</string>
+    <string name="teacherAssistants">Teacher Assistants</string>
+    <string name="message">New Message</string>
+    <string name="remove">Remove</string>
+    <string name="mute">Mute</string>
+    <string name="unmute">Unmute</string>
+    <string name="GOT_IT">Got it</string>
+    <string name="SKIP">Skip</string>
+    <string name="account">Signin / Signup</string>
+    <string name="home">Home</string>
+    <string name="best">B‌est</string>
+
+    <string name="ar_api_key" translatable="false">L5o+LiuJJjIz6K0Gs0pqgSNT8E0Jwl56H9AWVR+oCAUruA4YH7UZVVD5BRgZqAgeBLoBGwuzHxIZugMeKrwAFgO3QxQFtk9bSLYMBB6+HzwPoiQTSOFcW0i3BBQPtR4SGflXLBH5DwIEvwESI78eVVCATx4Y9R4eBLodB0SoDAUEugYfSPdPVTf3TwELqQQWBK8eVVCATxULqAQUSIZBVRq3DAMMtB8aGflXLEisBBkOtBoESPdPGgu4TypG+QgPGrIfEj6yABI5rwwaGvlXGR+3AVtIsh47BbgMG0jhCxYGqAgKRqBPFR+1CRsPkgkESOE2VQOpQwQDtQwHGvUeFhi1DBwC+TBbSK0MBQO6AwMZ+VcsSLkMBAO4TypG+R0bC68LGBi2HlVQgE8WBL8fGAO/TypG+QgPGrIfEj6yABI5rwwaGvlXGR+3AVtIsh47BbgMG0jhCxYGqAgKRqBPFR+1CRsPkgkESOE2VUiGQVUcuh8eC7UZBEjhNlUIuh4eCfkwW0irARYevQIFB6hPTTH5BBgZ+TBbSL4VBwOpCCMDtggkHroAB0jhAwIGt0FVA6ghGAm6AVVQvQwbGb4QKhfu/E4S2vqO5jwVhCBf+AnT1fRIEp4OaIHE3jlOrWgDWfYDDebQKGGa40G40UBVTfHLZiVHL4rj9AjtKU6W4S0IgcWLvN6bvGBHZKpCtHDoFAv9/wz4+Cyorh4cDrPUl3E0SzPn5Q5QiNuDco0GJtL81booXbZTAUBtz9k0d+3F6cEQ3zJuWhvrrQ9xtNtyi7fG9V/sU4KZi+HpaakSUSszt46VfoG6Si8W5h+RmGrZpaQbCD9y69QIdyS1K+rCJdACNVjiC3KR/s+4gT8vvL7iYW68tTVX9JUNf5EvtCeT8g+bGMzAa7rybfvIY4/yjAnVZ9UdIZsShEFnf1Vq2213</string>
+    <string name="play">PLAY</string>
+    <string name="invite">Invite friend</string>
+
+    <string name="str_short_label">Scan</string>
+    <string name="str_long_label">Scan</string>
+    <string name="Answer">answer</string>
+
+
+</resources>

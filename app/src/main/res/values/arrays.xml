@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="title_intro">
+        <item>Night Street</item>
+        <item>Architect Desk</item>
+        <item>City Building</item>
+        <item>Computer Keyboard</item>
+    </string-array>
+
+    <string-array name="description_intro">
+        <item>Night Street</item>
+        <item>Architect Desk</item>
+        <item>City Building</item>
+        <item>Computer Keyboard</item>
+    </string-array>
+
+
+</resources>

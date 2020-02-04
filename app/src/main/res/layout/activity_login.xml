@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.databinding.ObservableInt" />
+
+        <import type="androidx.databinding.ObservableBoolean" />
+
+        <variable
+                name="viewModel"
+                type="project.ui.login.LoginViewModel" />
+
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                        android:id="@+id/text_field_boxes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="30dp"
+                        app:iconSignifier="@drawable/ic_user_male_black_shape"
+                        app:labelText="@string/user_name"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.128">
+
+                    <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                            android:id="@+id/user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@={viewModel.userName}"
+                            tools:text="sasd" />
+
+                </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+                <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                        android:id="@+id/text_field_boxes2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="30dp"
+                        app:iconSignifier="@drawable/ic_padlock"
+                        app:labelText="@string/password"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_field_boxes"
+                        app:layout_constraintVertical_bias="0.059">
+
+                    <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                            android:id="@+id/password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:text="@={viewModel.password}" />
+
+                </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:gravity="center"
+                        android:layoutDirection="ltr"
+                        android:orientation="horizontal">
+
+                    <Button
+                            android:id="@+id/button_en"
+                            style="@style/Button.Primary.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:enabled="@{viewModel.language==0 ? true : false}"
+                            android:gravity="center"
+                            android:text="@string/en"
+                            android:textColor="@{viewModel.language==0 ? @color/primary : @color/grey_40}" />
+
+                    <View
+                            android:layout_width="1.5dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/primary" />
+
+                    <Button
+                            android:id="@+id/button_fa"
+                            style="@style/Button.Primary.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:enabled="@{viewModel.language==1 ? true : false}"
+                            android:gravity="center"
+                            android:text="@string/fa"
+                            android:textColor="@{viewModel.language==1 ? @color/primary : @color/grey_40}"
+                            tools:textColor="@color/grey_40" />
+
+                </LinearLayout>
+
+                <Button
+                        android:id="@+id/forgot_password"
+                        style="@style/Button.Primary.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/spacing_large"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:text="@string/forgot_password" />
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/lyt_next"
+                style="@style/RippleStyleWhite"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_xxlarge"
+                android:layout_margin="@{viewModel.margin}"
+                android:background="@drawable/gradient"
+                tools:layout_margin="15dp">
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="@dimen/spacing_smlarge"
+                        android:layout_height="@dimen/spacing_smlarge"
+                        android:layout_marginStart="@dimen/spacing_medium"
+                        android:layout_marginEnd="@dimen/spacing_medium"
+                        android:tint="@android:color/white"
+                        app:srcCompat="@drawable/ic_sign_in" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        asyncText="@{@string/login}"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white" />
+
+
+            </LinearLayout>
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+    </LinearLayout>
+
+</layout>

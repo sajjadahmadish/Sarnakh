@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View android:layout_width="@dimen/round_toolbar"
+        android:layout_height="@dimen/round_toolbar"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_alignTop="@+id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="@dimen/toolbar_height"
+        android:background="@drawable/ic_round"
+        tools:ignore="RtlHardcoded"
+        xmlns:android="http://schemas.android.com/apk/res/android" />

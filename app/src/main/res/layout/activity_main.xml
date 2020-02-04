@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="project.ui.base.BaseViewModel.NetStatus" />
+
+        <variable
+            name="viewModel"
+            type="project.ui.main.MainViewModel" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_round"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height">
+
+
+            <TextSwitcher
+                android:id="@+id/textSwitcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <FrameLayout
+            android:id="@+id/fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar" />
+
+
+        <View
+            android:layout_width="@dimen/round_toolbar"
+            android:layout_height="@dimen/round_toolbar"
+            android:layout_alignTop="@+id/toolbar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="@dimen/toolbar_height"
+            android:background="@drawable/ic_round"
+            tools:ignore="RtlHardcoded" />
+
+        <View
+            android:layout_width="@dimen/round_toolbar"
+            android:layout_height="@dimen/round_toolbar"
+            android:layout_alignTop="@+id/toolbar"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/toolbar_height"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/ic_round"
+            android:rotation="90"
+            tools:ignore="RtlHardcoded" />
+
+        <androidx.cardview.widget.CardView
+            animateVisible="@{viewModel.netView == false ? false : (viewModel.networkStatus == NetStatus.CONNECTED?false:true)}"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="@dimen/spacing_mlarge"
+            app:cardElevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_marginStart="@dimen/spacing_middle"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:layout_marginBottom="@dimen/spacing_small"
+                    app:lottie_loop="false"
+                    state="@{viewModel.networkStatus}"
+                    android:layout_height="match_parent"
+                    android:layout_width="30dp">
+
+                </com.airbnb.lottie.LottieAnimationView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:text="@{viewModel.networkStatus == NetStatus.CONNECTED? @string/connected: (viewModel.networkStatus == NetStatus.CONNECTING ? @string/connecting: @string/disconnected)}"
+                    tools:text="@string/disconnected" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:id="@+id/back_drop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/overlay_light_95"
+            android:clickable="true"
+            android:fitsSystemWindows="true"
+            android:focusable="true"
+            android:visibility="gone" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="end"
+            android:orientation="vertical"
+            android:visibility="@{(2 == viewModel.tab) ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/lyt_join"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_join"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_margin="@dimen/spacing_middle"
+                    android:onClick="@{viewModel::join}"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="2dp"
+                    app:contentPadding="@dimen/spacing_medium">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        asyncText="@{@string/reminder}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/spacing_xsmall"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        tools:text="@string/join_class" />
+
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_join"
+                    srcFab="@{@drawable/ic_reminder}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_smlarge"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    android:layout_marginRight="@dimen/spacing_smlarge"
+                    android:layout_marginBottom="@dimen/spacing_middle"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{viewModel::join}"
+                    android:tint="@color/colorPrimary"
+                    app:backgroundTint="@android:color/white"
+                    app:fabSize="mini"
+                    app:rippleColor="@color/grey_700" />
+
+                <View
+                    android:layout_width="@dimen/spacing_xmedium"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_margin="@dimen/spacing_middle"
+                    android:onClick="@{viewModel::create}"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="2dp"
+                    app:contentPadding="@dimen/spacing_medium">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        asyncText="@{@string/event}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/spacing_xsmall"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        tools:text="@string/create_class" />
+
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_create"
+                    srcFab="@{@drawable/ic_event}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_smlarge"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    android:layout_marginRight="@dimen/spacing_smlarge"
+                    android:layout_marginBottom="@dimen/spacing_middle"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{viewModel::create}"
+                    android:tint="@color/colorPrimary"
+                    app:backgroundTint="@android:color/white"
+                    app:fabSize="mini"
+                    app:rippleColor="@color/grey_700" />
+
+                <View
+                    android:layout_width="@dimen/spacing_xmedium"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_smlarge"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:layout_marginRight="@dimen/spacing_smlarge"
+                android:layout_marginBottom="@dimen/spacing_smlarge"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="@android:color/white"
+                app:backgroundTint="@color/colorPrimary"
+                app:fabSize="normal"
+                app:rippleColor="@android:color/white"
+                app:srcCompat="@drawable/ic_add_black_24dp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>
+
