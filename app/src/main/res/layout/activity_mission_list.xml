@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/colorPrimaryBackground"
         android:clipChildren="false">
 
         <RelativeLayout
@@ -122,7 +123,7 @@
                 android:id="@+id/gradient_top"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
-                android:background="@android:color/white"/>
+                android:background="@color/colorPrimaryBackground"/>
 
             <View
                 android:layout_width="match_parent"

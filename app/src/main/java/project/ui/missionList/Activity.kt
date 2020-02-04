@@ -3,7 +3,6 @@ package project.ui.missionList
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.graphics.Bitmap
-import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
@@ -29,47 +28,19 @@ import javax.inject.Inject
 
 
 class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionListViewModel>(ActivityMissionListBinding::class.java), MissionListNavigator {
-    //TODO: Add data binding and move arrays to view model
-
-
+    //TODO: Add data binding
     override val bindingVariable: Int
         get() = BR.viewModel
 
     @Inject
     override lateinit var viewModel: MissionListViewModel
-//    private final String[] countries = {"PARIS", "SEOUL", "LONDON", "BEIJING", "THIRA"};
     private lateinit var countries: Array<String>
-//        = arrayOf("پاریس", "سوول", "لندن", "بیژینگ", "ثیرا")
-    //    private final String[] places = {"The Louvre", "Gwanghwamun", "Tower Bridge", "Temple of Heaven", "Aegeana Sea"};
     private lateinit var places: Array<String>
-//            =        arrayOf("لوور", "گوانگوامون", "برج پل", "معبد بهشت", "دریای آجینا")
-//    private val temperatures =
-//        arrayOf("21°C", "19°C", "17°C", "23°C", "20°C")
-    //private final String[] times = {"Aug 1 - Dec 15    7:00-18:00", "Sep 5 - Nov 10    8:00-16:00", "Mar 8 - May 21    7:00-18:00"};
     private lateinit var times: Array<String>
-//        = arrayOf(
-//        "۱ اردیبهشت - ۱۵ خرداد  ۷:۰۰-۱۸:۰۰",
-//        "۵ تیر - ۱۰ مرداد  ۸:۰۰-۱۶:۰۰",
-//        "۸بهمن - ۲۱ اسفند  ۷:۰۰-۱۸:۰۰"
-//    )
 
-    private val sliderAdapter: SliderAdapter = SliderAdapter(
-        viewModel.pics,
-        20,
-        OnCardClickListener()
-    )
+    private lateinit var sliderAdapter: SliderAdapter
 
     private var layoutManger: CardSliderLayoutManager? = null
-    private var recyclerView: RecyclerView? = null
-    private var mapSwitcher: ImageSwitcher? = null
-    private var temperatureSwitcher: TextSwitcher? = null
-    private var placeSwitcher: TextSwitcher? = null
-    private var clockSwitcher: TextSwitcher? = null
-    private var descriptionsSwitcher: TextSwitcher? = null
-    private var greenDot: View? = null
-
-    private var country1TextView: TextView? = null
-    private var country2TextView: TextView? = null
     private var countryOffset1 = 0
     private var countryOffset2 = 0
     private var countryAnimDuration: Long = 0
@@ -82,6 +53,12 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.navigator = this
+
+        sliderAdapter = SliderAdapter(
+            viewModel.pics,
+            20,
+            OnCardClickListener()
+        )
 
         initArrays()
         initRecyclerView()
@@ -97,18 +74,18 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
     }
 
     private fun initRecyclerView() {
-        recyclerView = findViewById<View>(R.id.recycler_view) as RecyclerView
-        recyclerView!!.adapter = sliderAdapter
-        recyclerView!!.setHasFixedSize(true)
-        recyclerView!!.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+        binding.recyclerView.adapter = sliderAdapter
+        binding.recyclerView.setHasFixedSize(true)
+        binding.recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     onActiveCardChange()
                 }
             }
         })
-        layoutManger = recyclerView!!.layoutManager as CardSliderLayoutManager?
-        CardSnapHelper().attachToRecyclerView(recyclerView)
+        layoutManger = binding.recyclerView.layoutManager as CardSliderLayoutManager?
+        CardSnapHelper().attachToRecyclerView(binding.recyclerView)
     }
 
     override fun onPause() {
@@ -120,56 +97,48 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
 
     private fun initSwitchers(){
 
-        temperatureSwitcher = findViewById<View>(R.id.ts_temperature) as TextSwitcher
-        temperatureSwitcher!!.setFactory(
+        binding.tsTemperature.setFactory(
             TextViewFactory(
                 R.style.TemperatureTextView,
                 true
             )
         )
-        temperatureSwitcher!!.setCurrentText(viewModel.temperatures[0])
+        binding.tsTemperature.setCurrentText(viewModel.temperatures[0])
 
-
-        val font = CommonUtils.typefaceFromAsset("fonts/IRANYekanMobileBold.ttf", this)
-
-        placeSwitcher = findViewById<View>(R.id.ts_place) as TextSwitcher
-        placeSwitcher!!.setFactory(
+        binding.tsPlace.setFactory(
             TextViewFactory(
                 R.style.PlaceTextView,
                 false
             )
         )
-        placeSwitcher!!.setCurrentText(places[0])
+        binding.tsPlace.setCurrentText(places[0])
 
-        clockSwitcher = findViewById<View>(R.id.ts_clock) as TextSwitcher
-        clockSwitcher!!.setFactory(
+        binding.tsClock.setFactory(
             TextViewFactory(
                 R.style.ClockTextView,
                 false
             )
         )
-        clockSwitcher!!.setCurrentText(times[0])
+        binding.tsClock.setCurrentText(times[0])
 
-        descriptionsSwitcher = findViewById<View>(R.id.ts_description) as TextSwitcher
-        descriptionsSwitcher!!.setInAnimation(this, android.R.anim.fade_in)
-        descriptionsSwitcher!!.setOutAnimation(this, android.R.anim.fade_out)
-        descriptionsSwitcher!!.setFactory(
+        binding.tsDescription.setInAnimation(this, android.R.anim.fade_in)
+        binding.tsDescription.setOutAnimation(this, android.R.anim.fade_out)
+        binding.tsDescription.setFactory(
             TextViewFactory(
                 R.style.DescriptionTextView,
                 false
             )
         )
-        descriptionsSwitcher!!.setCurrentText(getString(viewModel.descriptions[0]))
-        mapSwitcher = findViewById<View>(R.id.ts_map) as ImageSwitcher
-        mapSwitcher!!.setInAnimation(this, R.anim.fade_in)
-        mapSwitcher!!.setOutAnimation(this, R.anim.fade_out)
-        mapSwitcher!!.setFactory(ImageViewFactory())
-        mapSwitcher!!.setImageResource(viewModel.maps[0])
+        binding.tsDescription.setCurrentText(getString(viewModel.descriptions[0]))
+        binding.tsMap.setInAnimation(this, R.anim.fade_in_card_slider)
+        binding.tsMap.setOutAnimation(this, R.anim.fade_out_card_slider)
+        binding.tsMap.setFactory(ImageViewFactory())
+        binding.tsMap.setImageResource(viewModel.maps[0])
 
         mapLoadListener = object: DecodeBitmapTask.Listener{
             override fun onPostExecuted(bitmap: Bitmap?) {
-                (mapSwitcher!!.nextView as ImageView).setImageBitmap(bitmap)
-                mapSwitcher!!.showNext()
+                (binding.tsMap.nextView as ImageView).setImageBitmap(bitmap)
+                binding.tsMap.showNext()
             }
 
         }
@@ -180,32 +149,30 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
             resources.getInteger(R.integer.labels_animation_duration).toLong()
         countryOffset1 = resources.getDimensionPixelSize(R.dimen.left_offset)
         countryOffset2 = resources.getDimensionPixelSize(R.dimen.card_width)
-        country1TextView = findViewById<View>(R.id.tv_country_1) as TextView
-        country2TextView = findViewById<View>(R.id.tv_country_2) as TextView
 
-        country1TextView!!.x = countryOffset1.toFloat()
-        country2TextView!!.x = countryOffset2.toFloat()
-        country1TextView!!.text = countries[0]
-        country2TextView!!.alpha = 0f
+        binding.tvCountry1.x = countryOffset1.toFloat()
+        binding.tvCountry2.x = countryOffset2.toFloat()
+        binding.tvCountry1.text = countries[0]
+        binding.tvCountry2.alpha = 0f
 
 
         val font = CommonUtils.typefaceFromAsset("fonts/IRANYekanMobileBold.ttf", this)
 
-        country1TextView!!.typeface = font
-        country2TextView!!.typeface = font
+        binding.tvCountry1.typeface = font
+        binding.tvCountry2.typeface = font
     }
 
     private fun initGreenDot() {
-        mapSwitcher!!.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+        binding.tsMap.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
-                mapSwitcher!!.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                binding.tsMap.viewTreeObserver.removeOnGlobalLayoutListener(this)
 
-                val viewLeft = mapSwitcher!!.left
-                val viewTop = mapSwitcher!!.top + mapSwitcher!!.height / 3
+                val viewLeft = binding.tsMap.left
+                val viewTop = binding.tsMap.top + binding.tsMap.height / 3
 
                 val border = 100
-                val xRange = 1.coerceAtLeast(mapSwitcher!!.width - border * 2)
-                val yRange = 1.coerceAtLeast((mapSwitcher!!.height / 3) * 2 - border * 2)
+                val xRange = 1.coerceAtLeast(binding.tsMap.width - border * 2)
+                val yRange = 1.coerceAtLeast((binding.tsMap.height / 3) * 2 - border * 2)
 
                 val rnd = Random()
                 //int i = 0, cnt = dotCoors.size; i < cnt; i++
@@ -214,9 +181,8 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
                     viewModel.dotCoors[i][1] = viewTop + border + rnd.nextInt(yRange)
                 }
 
-                greenDot = findViewById(R.id.green_dot)
-                greenDot!!.x = viewModel.dotCoors[0][0].toFloat()
-                greenDot!!.y = viewModel.dotCoors[0][1].toFloat()
+                binding.greenDot.x = viewModel.dotCoors[0][0].toFloat()
+                binding.greenDot.y = viewModel.dotCoors[0][1].toFloat()
             }
         })
     }
@@ -224,12 +190,12 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
     private fun setCountryText(text: String, left2right: Boolean) {
         val invisibleText: TextView
         val visibleText: TextView
-        if (country1TextView!!.alpha > country2TextView!!.alpha) {
-            visibleText = country1TextView!!
-            invisibleText = country2TextView!!
+        if (binding.tvCountry1.alpha > binding.tvCountry2.alpha) {
+            visibleText = binding.tvCountry1
+            invisibleText = binding.tvCountry2
         } else {
-            visibleText = country2TextView!!
-            invisibleText = country1TextView!!
+            visibleText = binding.tvCountry2
+            invisibleText = binding.tvCountry1
         }
 
         val vOffset = if (left2right) {
@@ -277,23 +243,23 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
 
         setCountryText(countries[pos % countries.size], left2right)
 
-        temperatureSwitcher!!.setInAnimation(this, animH[0])
-        temperatureSwitcher!!.setOutAnimation(this, animH[1])
-        temperatureSwitcher!!.setText(viewModel.temperatures[pos % viewModel.temperatures.size])
+        binding.tsTemperature.setInAnimation(this, animH[0])
+        binding.tsTemperature.setOutAnimation(this, animH[1])
+        binding.tsTemperature.setText(viewModel.temperatures[pos % viewModel.temperatures.size])
 
-        placeSwitcher!!.setInAnimation(this, animV[0])
-        placeSwitcher!!.setOutAnimation(this, animV[1])
-        placeSwitcher!!.setText(places[pos % places.size])
+        binding.tsPlace.setInAnimation(this, animV[0])
+        binding.tsPlace.setOutAnimation(this, animV[1])
+        binding.tsPlace.setText(places[pos % places.size])
 
-        clockSwitcher!!.setInAnimation(this, animV[0])
-        clockSwitcher!!.setOutAnimation(this, animV[1])
-        clockSwitcher!!.setText(times[pos % times.size])
+        binding.tsClock.setInAnimation(this, animV[0])
+        binding.tsClock.setOutAnimation(this, animV[1])
+        binding.tsClock.setText(times[pos % times.size])
 
-        descriptionsSwitcher!!.setText(getString(viewModel.descriptions[pos % viewModel.descriptions.size]))
+        binding.tsDescription.setText(getString(viewModel.descriptions[pos % viewModel.descriptions.size]))
 
         showMap(viewModel.maps[pos % viewModel.maps.size])
 
-        ViewCompat.animate(greenDot!!)
+        ViewCompat.animate(binding.greenDot)
                 .translationX(viewModel.dotCoors[pos % viewModel.dotCoors.size][0].toFloat())
                 .translationY(viewModel.dotCoors[pos % viewModel.dotCoors.size][1].toFloat())
                 .start()
@@ -304,8 +270,8 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
     private fun showMap(@DrawableRes resId: Int) {
         decodeMapBitmapTask?.cancel(true)
 
-        val w = mapSwitcher!!.width
-        val h = mapSwitcher!!.height
+        val w = binding.tsMap.width
+        val h = binding.tsMap.height
 
         decodeMapBitmapTask = DecodeBitmapTask(resources, resId, w, h, mapLoadListener!!)
         decodeMapBitmapTask!!.execute()
@@ -347,7 +313,7 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
     private inner class OnCardClickListener : View.OnClickListener {
         override fun onClick(view: View) {
             val lm =
-                recyclerView!!.layoutManager as CardSliderLayoutManager
+                binding.recyclerView.layoutManager as CardSliderLayoutManager
             if (lm.isSmoothScrolling) {
                 return
             }
@@ -355,7 +321,7 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
             if (activeCardPosition == RecyclerView.NO_POSITION) {
                 return
             }
-            val clickedPosition: Int = recyclerView!!.getChildAdapterPosition(view)
+            val clickedPosition: Int = binding.recyclerView.getChildAdapterPosition(view)
             if (clickedPosition == activeCardPosition) {
                 //Todo: Add Opening of DetailActivity
                 println("Should open next activity")
@@ -376,13 +342,9 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
 //                    startActivity(intent, options.toBundle())
 //                }
             } else if (clickedPosition > activeCardPosition) {
-                recyclerView!!.smoothScrollToPosition(clickedPosition)
+                binding.recyclerView.smoothScrollToPosition(clickedPosition)
                 onActiveCardChange(clickedPosition)
             }
         }
     }
 }
-
-
-
-
