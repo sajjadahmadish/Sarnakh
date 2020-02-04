@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -68,6 +69,12 @@ public class Tools {
             Window window = act.getWindow();
             window.setStatusBarColor(ContextCompat.getColor(act, R.color.colorPrimaryDark));
         }
+    }
+
+
+    public static int getMode(Activity act) {
+        return act.getResources().getConfiguration().uiMode &
+                Configuration.UI_MODE_NIGHT_MASK;
     }
 
     /**

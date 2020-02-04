@@ -205,4 +205,19 @@
         <item name="contentInsetStartWithNavigation">0dp</item>
     </style>
 
+
+    <style name="AppTheme.Drawer" parent="MaterialDrawerTheme">
+
+        <!-- MaterialDrawer specific values -->
+        <item name="material_drawer_background">@color/colorSecondaryBackground</item>
+        <item name="material_drawer_primary_text">@color/colorPrimaryText</item>
+        <item name="material_drawer_divider">@color/colorDrawerDivider</item>
+        <item name="material_drawer_primary_icon">@color/colorDrawerIcon</item>
+        <item name="material_drawer_secondary_text">@color/colorPrimaryText</item>
+
+
+    </style>
+
+
+
 </resources>

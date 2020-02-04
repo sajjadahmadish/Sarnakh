@@ -16,7 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey_round">
+        android:background="@color/colorPrimaryBackground">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="@color/colorSecondaryBackground"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp">
 
@@ -97,7 +97,7 @@
                                     android:gravity="center"
                                     asyncText='@{"ماموریت ها"}'
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    android:textColor="@color/grey_80"
+                                    android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
                             </LinearLayout>
@@ -114,7 +114,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="@color/colorSecondaryBackground"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp">
 
@@ -151,7 +151,7 @@
                                     android:gravity="center"
                                     asyncText='@{"گردونه شانس"}'
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    android:textColor="@color/grey_80"
+                                    android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
                             </LinearLayout>
@@ -184,7 +184,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="@color/colorSecondaryBackground"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp">
 
@@ -220,7 +220,7 @@
                                     android:gravity="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     asyncText='@{"گام شمار"}'
-                                    android:textColor="@color/grey_80"
+                                    android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
                             </LinearLayout>
@@ -238,7 +238,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:cardBackgroundColor="@android:color/white"
+                        app:cardBackgroundColor="@color/colorSecondaryBackground"
                         app:cardCornerRadius="10dp"
                         app:cardElevation="2dp">
 
@@ -275,7 +275,7 @@
                                     android:gravity="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     asyncText='@{"رزرو بلیت"}'
-                                    android:textColor="@color/grey_80"
+                                    android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
                             </LinearLayout>
@@ -307,7 +307,7 @@
                         android:layout_marginEnd="@dimen/spacing_large"
                         android:text="مقصد های پیشنهادی"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                        android:textColor="@color/grey_80"
+                        android:textColor="@color/colorPrimaryText"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -323,7 +323,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-                            android:textColor="@color/grey_40" />
+                            android:textColor="@color/colorSecondaryText" />
 
                         <View
                             android:layout_width="0dp"
@@ -336,7 +336,7 @@
                             android:layout_gravity="start"
                             android:text="دیدن همه"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-                            android:textColor="@color/grey_40" />
+                            android:textColor="@color/colorSecondaryText" />
 
                     </LinearLayout>
 
@@ -356,6 +356,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="@dimen/spacing_medium"
+                                app:cardBackgroundColor="@color/colorSecondaryBackground"
                                 android:elevation="2dp"
                                 app:cardCornerRadius="10dp">
 
@@ -395,7 +396,7 @@
                                             android:layout_marginEnd="@dimen/spacing_medium"
                                             android:layout_marginBottom="@dimen/spacing_xmedium"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                            android:textColor="@color/grey_40"
+                                            android:textColor="@color/colorSecondaryText"
                                             tools:text="sdfsdfsdf" />
 
                                     </LinearLayout>
@@ -408,6 +409,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="@dimen/spacing_medium"
+                                app:cardBackgroundColor="@color/colorSecondaryBackground"
                                 android:elevation="2dp"
                                 app:cardCornerRadius="10dp">
 
@@ -447,7 +449,7 @@
                                             android:layout_marginEnd="@dimen/spacing_medium"
                                             android:layout_marginBottom="@dimen/spacing_xmedium"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                            android:textColor="@color/grey_40"
+                                            android:textColor="@color/colorSecondaryText"
                                             tools:text="sdfsdfsdf" />
 
 
@@ -460,6 +462,7 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/colorSecondaryBackground"
                                 android:layout_margin="@dimen/spacing_medium"
                                 android:elevation="2dp"
                                 app:cardCornerRadius="10dp">
@@ -499,7 +502,7 @@
                                             android:layout_marginEnd="@dimen/spacing_medium"
                                             android:layout_marginBottom="@dimen/spacing_xmedium"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                            android:textColor="@color/grey_40"
+                                            android:textColor="@color/colorSecondaryText"
                                             tools:text="sdfsdfsdf" />
 
 
@@ -512,6 +515,7 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/colorSecondaryBackground"
                                 android:layout_margin="@dimen/spacing_medium"
                                 android:elevation="2dp"
                                 app:cardCornerRadius="10dp">
@@ -553,7 +557,7 @@
                                             android:layout_marginEnd="@dimen/spacing_medium"
                                             android:layout_marginBottom="@dimen/spacing_xmedium"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                            android:textColor="@color/grey_40"
+                                            android:textColor="@color/colorSecondaryText"
                                             tools:text="sdfsdfsdf" />
 
 

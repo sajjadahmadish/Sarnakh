@@ -35,7 +35,7 @@
                 android:name="project.ui.login.LoginActivity"
                 android:windowSoftInputMode="adjustResize" />
 
-        <activity android:name="project.ui.main.MainActivity" />
+        <activity android:name="project.ui.main.MainActivity" android:theme="@style/AppTheme.Drawer" />
 
         <activity android:name="project.ui.splash.SplashActivity">
 

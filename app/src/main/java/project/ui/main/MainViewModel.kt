@@ -1,6 +1,7 @@
 package project.ui.main
 
 import android.view.View
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableInt
 import io.reactivex.Observable
@@ -22,6 +23,17 @@ class MainViewModel(
     schedulerProvider: SchedulerProvider
 ) :
     BaseViewModel<MainNavigator>(dataManager, schedulerProvider) {
+
+    val savedTheme
+        get() = dataManager.theme
+
+
+    fun setTheme(themeMode: Int, prefsMode: DataManager.Theme) {
+        AppCompatDelegate.setDefaultNightMode(themeMode)
+        dataManager.theme = prefsMode
+    }
+
+
 
     val tab = ObservableInt(1)
     val netView = ObservableBoolean(true)

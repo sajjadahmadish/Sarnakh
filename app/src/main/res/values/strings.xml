@@ -75,6 +75,7 @@
     <string name="str_short_label">Scan</string>
     <string name="str_long_label">Scan</string>
     <string name="Answer">answer</string>
+    <string name="night_mode">Night Mode</string>
 
 
 </resources>
