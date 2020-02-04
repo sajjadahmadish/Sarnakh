@@ -15,5 +15,26 @@
         <item>Computer Keyboard</item>
     </string-array>
 
+    <string-array name="mission_list_countries">
+        <item>PARIS</item>
+        <item>SEOUL</item>
+        <item>LONDON</item>
+        <item>BEIJING</item>
+        <item>THIRA</item>
+    </string-array>
+
+    <string-array name="mission_list_places">
+        <item>The Louvre</item>
+        <item>Gwanghwamun</item>
+        <item>Tower Bridge</item>
+        <item>Temple of Heaven</item>
+        <item>Aegeana Sea</item>
+    </string-array>
+
+    <string-array name="mission_list_date">
+        <item>Aug 1 – Dec 15    7:00–18:00</item>
+        <item>Sep 5 – Nov 10    8:00–16:00</item>
+        <item>Mar 8 – May 21    7:00–18:00</item>
+    </string-array>
 
 </resources>
