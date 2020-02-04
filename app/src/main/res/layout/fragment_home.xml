@@ -323,7 +323,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-                            android:textColor="@color/colorSecondaryText" />
+                            android:textColor="@color/colorPrimaryText" />
 
                         <View
                             android:layout_width="0dp"
@@ -336,7 +336,7 @@
                             android:layout_gravity="start"
                             android:text="دیدن همه"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-                            android:textColor="@color/colorSecondaryText" />
+                            android:textColor="@color/colorAccent" />
 
                     </LinearLayout>
 
@@ -396,7 +396,7 @@
                                             android:layout_marginEnd="@dimen/spacing_medium"
                                             android:layout_marginBottom="@dimen/spacing_xmedium"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                            android:textColor="@color/colorSecondaryText"
+                                            android:textColor="@color/colorPrimaryText"
                                             tools:text="sdfsdfsdf" />
 
                                     </LinearLayout>
@@ -449,7 +449,7 @@
                                             android:layout_marginEnd="@dimen/spacing_medium"
                                             android:layout_marginBottom="@dimen/spacing_xmedium"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                            android:textColor="@color/colorSecondaryText"
+                                            android:textColor="@color/colorPrimaryText"
                                             tools:text="sdfsdfsdf" />
 
 
@@ -502,7 +502,7 @@
                                             android:layout_marginEnd="@dimen/spacing_medium"
                                             android:layout_marginBottom="@dimen/spacing_xmedium"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                            android:textColor="@color/colorSecondaryText"
+                                            android:textColor="@color/colorPrimaryText"
                                             tools:text="sdfsdfsdf" />
 
 
@@ -557,7 +557,7 @@
                                             android:layout_marginEnd="@dimen/spacing_medium"
                                             android:layout_marginBottom="@dimen/spacing_xmedium"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                            android:textColor="@color/colorSecondaryText"
+                                            android:textColor="@color/colorPrimaryText"
                                             tools:text="sdfsdfsdf" />
 
 

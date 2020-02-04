@@ -151,7 +151,7 @@ class MainActivity :
             itemProfile.withIcon(if (gender) R.drawable.ic_user_man else R.drawable.ic_user_woman)
             headerResult.updateProfile(itemProfile)
 
-        }.subscribe()
+        }.doOnError {  }.subscribe()
 
 
         val font = CommonUtils.typefaceFromAsset("fonts/IRANYekanMobileBold.ttf", this)

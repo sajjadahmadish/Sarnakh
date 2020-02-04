@@ -7,6 +7,8 @@
 
     <color name="colorPrimaryText">#616161</color>
     <color name="colorSecondaryText">#212121</color>
+
+
     <color name="colorAccent">#00b8d4</color>
     <color name="colorPrimaryBackground">#F2F2F2</color>
     <color name="colorSecondaryBackground">#FFFFFF</color>
