@@ -187,6 +187,13 @@ constructor(
         }
 
 
+    override var theme: DataManager.Theme
+        get() = mPreferencesHelper.theme
+        set(value) {
+            mPreferencesHelper.theme = value
+        }
+
+
     //endregion
 
     override fun setUserAsLoggedOut() {

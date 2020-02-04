@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#00b8d4</color>
     <color name="colorPrimaryDark">#0088a3</color>
-    <color name="colorAccent">#546e7a</color>
 
 
-    <color name="colorPrimaryOverlay">#660088a3</color>
+    <color name="colorPrimaryText">#616161</color>
+    <color name="colorSecondaryText">#212121</color>
+    <color name="colorAccent">#00b8d4</color>
+    <color name="colorPrimaryBackground">#F2F2F2</color>
+    <color name="colorSecondaryBackground">#FFFFFF</color>
+    <color name="colorDrawerDivider">#1A000000</color>
+    <color name="colorDrawerIcon">#8A000000</color>
+    <color name="colorBackDrop">#F5FFFFFF</color>
+
+
+    <color name="colorPrimarySplash">#00838F</color>
+    <color name="colorSecondarySplash">#80DEEA</color>
+
 
     <color name="overlay_dark_10">#1A000000</color>
     <color name="overlay_dark_20">#33000000</color>
@@ -16,6 +28,8 @@
     <color name="overlay_dark_70">#B3000000</color>
     <color name="overlay_dark_80">#CC000000</color>
     <color name="overlay_dark_90">#E6000000</color>
+    <color name="overlay_dark_95">#F5000000</color>
+
 
     <color name="overlay_light_10">#1AFFFFFF</color>
     <color name="overlay_light_20">#33FFFFFF</color>
@@ -26,7 +40,6 @@
     <color name="overlay_light_70">#B3FFFFFF</color>
     <color name="overlay_light_80">#CCFFFFFF</color>
     <color name="overlay_light_90">#E6FFFFFF</color>
-
     <color name="overlay_light_95">#F5FFFFFF</color>
 
     <color name="grey_3">#f7f7f7</color>

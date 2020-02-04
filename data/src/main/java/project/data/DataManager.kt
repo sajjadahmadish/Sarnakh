@@ -29,4 +29,11 @@ interface DataManager : DbHelper, PreferenceHelper, SimpleApi {
         LOGGED_IN
     }
 
+    enum class Theme {
+        THEME_UNDEFINED,
+        THEME_LIGHT,
+        THEME_DARK,
+    }
+
+
 }
