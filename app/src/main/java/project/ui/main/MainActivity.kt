@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.view.get
 import androidx.fragment.app.commitNow
 import com.crashlytics.android.Crashlytics
 import com.google.android.material.tabs.TabLayout
@@ -396,6 +395,11 @@ class MainActivity :
         }
     }
 
+
+    @Subscribe
+    fun event(event: EventLang) {
+        setLanguage(event.l, this)
+    }
 
     @Suppress("SameParameterValue")
     private fun changeTabsFont(tabLayout: TabLayout, fontName: String) {

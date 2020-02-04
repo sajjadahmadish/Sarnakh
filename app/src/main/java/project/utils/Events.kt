@@ -8,6 +8,8 @@ class EventReminder
 class EventJoin
 class EventCreate
 
+class EventLang(val l: String)
+
 
 class EventWheel
 class EventMap

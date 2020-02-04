@@ -21,9 +21,19 @@ class SettingFragment : BaseFragment<FragmentSettingBinding, SettingViewModel>(F
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel += binding.txt.clicks().subscribe {
-            viewModel.logout()
+
+        viewModel.country = LocationUtils.getUserCountry(activity)
+        viewModel.setLang((activity as BaseActivity<*, *>).currentLanguage.language)
+
+
+        viewModel += binding.buttonEn.clicks().subscribe {
+            EventBus.getDefault().post(EventLang("en"))
         }
+
+        viewModel += binding.buttonFa.clicks().subscribe {
+            EventBus.getDefault().post(EventLang("fa"))
+        }
+
 
     }
 
