@@ -6,7 +6,10 @@ import android.view.View
 import com.jakewharton.rxbinding3.view.clicks
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.databinding.FragmentSettingBinding
+import org.greenrobot.eventbus.EventBus
+import project.ui.base.BaseActivity
 import project.ui.base.BaseFragment
+import  project.utils.*
 import javax.inject.Inject
 
 
