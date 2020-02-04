@@ -1,6 +1,5 @@
 package project.ui.missionList.cardhelper
 
-import android.os.Build
 import android.view.View
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
@@ -21,21 +20,24 @@ class CardsUpdater : DefaultViewUpdater() {
             ViewCompat.setAlpha(alphaView, 0f)
             ViewCompat.setAlpha(imageView, 1f)
         }
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            val lm = layoutManager
-            val ratio =
-                lm.getDecoratedLeft(view).toFloat() / lm.activeCardLeft
-            val z: Float
-            z = if (position < 0) {
+        val lm = layoutManager
+        val ratio =
+            lm.getDecoratedLeft(view).toFloat() / lm.activeCardLeft
+        val z: Float
+        z = when {
+            position < 0 -> {
                 Z_CENTER_1 * ratio
-            } else if (position < 0.5f) {
+            }
+            position < 0.5f -> {
                 Z_CENTER_1.toFloat()
-            } else if (position < 1f) {
+            }
+            position < 1f -> {
                 Z_CENTER_2.toFloat()
-            } else {
+            }
+            else -> {
                 Z_RIGHT.toFloat()
             }
-            card.cardElevation = Math.max(0f, z)
         }
+        card.cardElevation = 0f.coerceAtLeast(z)
     }
 }

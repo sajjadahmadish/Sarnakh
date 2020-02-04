@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import ir.sinapp.sarnakh.R
 
 class SliderAdapter(
     private val content: IntArray,
@@ -15,7 +16,7 @@ class SliderAdapter(
             .from(parent.context)
             .inflate(R.layout.layout_slider_card, parent, false)
         if (listener != null) {
-            view.setOnClickListener { view -> listener.onClick(view) }
+            view.setOnClickListener { v -> listener.onClick(v) }
         }
         return SliderCard(view)
     }

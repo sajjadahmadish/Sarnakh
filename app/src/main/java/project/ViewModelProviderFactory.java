@@ -20,6 +20,7 @@ import project.ui.main.notification.NotificationViewModel;
 import project.ui.main.setting.SettingViewModel;
 import project.ui.map.MapViewModel;
 import project.ui.mission.MissionViewModel;
+import project.ui.missionList.MissionListViewModel;
 import project.ui.osm.OsmViewModel;
 import project.ui.profile.ProfileViewModel;
 import project.ui.splash.SplashViewModel;
@@ -70,6 +71,8 @@ public class ViewModelProviderFactory implements ViewModelProvider.Factory {
             return (T) new LuckyViewModel(dataManager, schedulerProvider);
         } else if (modelClass.isAssignableFrom(MissionViewModel.class)) {
             return (T) new MissionViewModel(dataManager, schedulerProvider);
+        } else if (modelClass.isAssignableFrom(MissionListViewModel.class)) {
+            return (T) new MissionListViewModel(dataManager, schedulerProvider);
         }
 
 

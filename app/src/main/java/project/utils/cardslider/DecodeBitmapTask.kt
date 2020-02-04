@@ -3,29 +3,24 @@ package project.utils.cardslider
 import android.content.res.Resources
 import android.graphics.*
 import android.os.AsyncTask
-import android.os.Build
 import androidx.annotation.DrawableRes
 import ir.sinapp.sarnakh.R
 import java.lang.ref.Reference
 import java.lang.ref.WeakReference
 
 class DecodeBitmapTask(
-    resources: Resources, @DrawableRes bitmapResId: Int,
-    reqWidth: Int, reqHeight: Int,
+    private val resources: Resources, @DrawableRes private val bitmapResId: Int,
+    private val reqWidth: Int, private val reqHeight: Int,
     listener: Listener
 ) : AsyncTask<Void?, Void?, Bitmap?>() {
-    private val cache: BackgroundBitmapCache
-    private val resources: Resources
-    private val bitmapResId: Int
-    private val reqWidth: Int
-    private val reqHeight: Int
+    private val cache: BackgroundBitmapCache = BackgroundBitmapCache.getInstance()
     private val refListener: Reference<Listener>
 
     interface Listener {
         fun onPostExecuted(bitmap: Bitmap?)
     }
 
-    protected override fun doInBackground(vararg voids: Void): Bitmap? {
+    override fun doInBackground(vararg voids: Void?): Bitmap? {
         val cachedBitmap = cache.getBitmapFromBgMemCache(bitmapResId)
         if (cachedBitmap != null) {
             return cachedBitmap
@@ -52,15 +47,12 @@ class DecodeBitmapTask(
         options.inPreferredConfig = Bitmap.Config.ARGB_8888
         val decodedBitmap = BitmapFactory.decodeResource(resources, bitmapResId, options)
         val result: Bitmap
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            result = getRoundedCornerBitmap(
-                decodedBitmap,
-                resources.getDimension(R.dimen.card_corner_radius), reqWidth, reqHeight
-            )
-            decodedBitmap.recycle()
-        } else {
-            result = decodedBitmap
-        }
+        result = getRoundedCornerBitmap(
+            decodedBitmap,
+            resources.getDimension(R.dimen.card_corner_radius), reqWidth, reqHeight
+        )
+        decodedBitmap.recycle()
+
         cache.addBitmapToBgMemoryCache(bitmapResId, result)
         return result
     }
@@ -83,7 +75,7 @@ class DecodeBitmapTask(
             val sourceHeight = bitmap.height
             val xScale = width.toFloat() / bitmap.width
             val yScale = height.toFloat() / bitmap.height
-            val scale = Math.max(xScale, yScale)
+            val scale = xScale.coerceAtLeast(yScale)
             val scaledWidth = scale * sourceWidth
             val scaledHeight = scale * sourceHeight
             val left = (width - scaledWidth) / 2
@@ -104,11 +96,6 @@ class DecodeBitmapTask(
     }
 
     init {
-        cache = BackgroundBitmapCache.getInstance()
-        this.resources = resources
-        this.bitmapResId = bitmapResId
-        this.reqWidth = reqWidth
-        this.reqHeight = reqHeight
         refListener =
             WeakReference(listener)
     }

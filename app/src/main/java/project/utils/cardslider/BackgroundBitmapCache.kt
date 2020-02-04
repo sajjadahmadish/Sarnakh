@@ -33,12 +33,12 @@ internal class BackgroundBitmapCache {
 
     companion object {
         private var instance: BackgroundBitmapCache? = null
-        fun getInstance(): BackgroundBitmapCache? {
+        fun getInstance(): BackgroundBitmapCache {
             if (instance == null) {
                 instance = BackgroundBitmapCache()
                 instance!!.init()
             }
-            return instance
+            return instance!!
         }
     }
 }
