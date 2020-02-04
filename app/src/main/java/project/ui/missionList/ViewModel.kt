@@ -8,7 +8,7 @@ import project.utils.rx.SchedulerProvider
 class MissionListViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider)
     : BaseViewModel<MissionListNavigator>(dataManager, schedulerProvider) {
 
-    //
+
     val dotCoors = Array(5) { IntArray(2) }
     val pics =
         intArrayOf(R.drawable.p1, R.drawable.p2, R.drawable.p3, R.drawable.p4, R.drawable.p5)
