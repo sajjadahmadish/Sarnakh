@@ -38,6 +38,7 @@ import project.ui.main.home.HomeFragment
 import project.ui.main.notification.NotificationFragment
 import project.ui.main.setting.SettingFragment
 import project.ui.map.MapActivity
+import project.ui.missionList.MissionListActivity
 import project.utils.*
 import project.utils.navDrawer.MyDrawerItem
 import javax.inject.Inject
@@ -446,7 +447,7 @@ class MainActivity :
     }
 
     override fun openMapActivity() {
-        launchActivity<MapActivity> {}
+        launchActivity<MissionListActivity> {}
         Bungee.fade(this)
     }
 
