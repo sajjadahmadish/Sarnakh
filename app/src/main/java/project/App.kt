@@ -93,7 +93,9 @@ class App : DaggerApplication(), HasActivityInjector {
 
         if (dataManager.theme == DataManager.Theme.THEME_DARK) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }
+        } else
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
 
         val ctx = applicationContext
         org.osmdroid.config.Configuration.getInstance()
