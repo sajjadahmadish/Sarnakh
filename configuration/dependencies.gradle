@@ -58,7 +58,8 @@ ext {
                     "androidx.legacy:legacy-support-v4:1.0.0",
                     "androidx.annotation:annotation:1.0.0-alpha1",
                     "androidx.core:core-ktx:1.0.1",
-                    'androidx.browser:browser:1.0.0'
+                    'androidx.browser:browser:1.0.0',
+                    'androidx.preference:preference:1.0.0'
             ],
 
             Constraintlayout: [
@@ -229,53 +230,54 @@ ext {
             'com.blankj:utilcodex:+',
             'com.github.HITGIF:TextFieldBoxes:1.4.4',
 
-            'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4',
+//            'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4',
             'com.balysv:material-ripple:1.0.2',               // ripple effect
             'com.wdullaer:materialdatetimepicker:3.6.4',      // date & time picker
-            'com.mikhaellopez:circularimageview:3.0.2',       // circle image view
-            'com.github.pchmn:MaterialChipsInput:1.0.5',      // material chip
-            'com.hootsuite.android:nachos:1.1.1',           // material chips
+//            'com.mikhaellopez:circularimageview:3.0.2',       // circle image view
+//            'com.github.pchmn:MaterialChipsInput:1.0.5',      // material chip
+//            'com.hootsuite.android:nachos:1.1.1',           // material chips
             'com.airbnb.android:lottie:3.0.1',      // Motion graphics
             'com.jakewharton.timber:timber:4.7.1',     // Logger
             'io.github.inflationx:calligraphy3:3.1.1',
             'io.github.inflationx:viewpump:1.0.0',
-            'com.infstory:proguard-snippets:1.0.0',
-            'com.github.florent37:tutoshowcase:1.0.1',
+//            'com.infstory:proguard-snippets:1.0.0',
+//            'com.github.florent37:tutoshowcase:1.0.1',
 
 //            "com.github.edsilfer:sticky-index:1.3.0",
 
-            'com.pnikosis:materialish-progress:1.7',
-            'com.timqi.sectorprogressview:library:2.0.1',
+//            'com.pnikosis:materialish-progress:1.7',
+//            'com.timqi.sectorprogressview:library:2.0.1',
 
-            'com.shawnlin:number-picker:2.4.6',
+//            'com.shawnlin:number-picker:2.4.6',
 
             "com.mikepenz:materialdrawer:7.0.0-alpha2",
 //            'com.mikepenz:google-material-typeface:3.0.1.1.original@aar',
 //            'com.mikepenz:fontawesome-typeface:5.0.6.0@aar',
 //            'com.mikepenz:octicons-typeface:3.0.0.1@aar',
-            'com.mikepenz:crossfader:1.6.0',
-            'com.mikepenz:crossfadedrawerlayout:1.1.0',
+//            'com.mikepenz:crossfader:1.6.0',
+//           'com.mikepenz:crossfadedrawerlayout:1.1.0',
 
 
-            'com.stepstone.stepper:material-stepper:4.3.1',
+//            'com.stepstone.stepper:material-stepper:4.3.1',
 
-            'com.stephentuso:welcome:1.4.1',
-
-
-            'com.github.smarteist:autoimageslider:1.1.1',
+//            'com.stephentuso:welcome:1.4.1',
 
 
-            'com.facebook.shimmer:shimmer:0.4.0',
+//            'com.github.smarteist:autoimageslider:1.1.1',
 
-            'xyz.sahildave:searchviewlayout:0.6',
+
+//            'com.facebook.shimmer:shimmer:0.4.0',
+
+//            'xyz.sahildave:searchviewlayout:0.6',
 
             'com.andrognito.flashbar:flashbar:1.0.2',
 
-            "com.mlsdev.animatedrv:library:2.0.0",
+//            "com.mlsdev.animatedrv:library:2.0.0",
 
-            'com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.0',
+//            'com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.0',
             'com.ss.bannerslider:bannerslider:2.0.0',
-            'pub.hanks:smallbang:1.2.2'
+            'pub.hanks:smallbang:1.2.2',
+            'com.ramotion.cardslider:card-slider:0.3.1'
     ]
 
 

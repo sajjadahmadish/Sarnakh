@@ -22,7 +22,6 @@ import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
 import com.bumptech.glide.Glide
 import com.facebook.drawee.view.SimpleDraweeView
-import com.gigamole.navigationtabstrip.NavigationTabStrip
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jakewharton.rxbinding3.view.visibility
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -47,11 +46,6 @@ fun setBottomMargin(view: View, bottomMargin: Float) {
 }
 
 
-@BindingAdapter("typeFace")
-fun setTypeFace(nts: NavigationTabStrip, typeFace: String) {
-    val font = Typeface.createFromAsset(nts.resources.assets, typeFace)
-    nts.typeface = font
-}
 
 @BindingAdapter("typeFace")
 fun setTypeFace(txt: TextView, typeFace: String) {

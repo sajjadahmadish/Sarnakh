@@ -24,6 +24,8 @@ import project.ui.map.MapActivity
 import project.ui.map.MapActivityModule
 import project.ui.mission.MissionActivity
 import project.ui.mission.MissionActivityModule
+import project.ui.missionList.MissionListActivity
+import project.ui.missionList.MissionListActivityModule
 import project.ui.osm.OsmActivity
 import project.ui.osm.OsmActivityModule
 import project.ui.profile.ProfileActivity
@@ -80,6 +82,9 @@ abstract class ActivityBuilderModule {
 
 //    @ContributesAndroidInjector(modules = [(&{activityName}ActivityModule::class)])
 //    abstract fun bind&{activityName}(): &{activityName}Activity
+
+    @ContributesAndroidInjector(modules = [(MissionListActivityModule::class)])
+    abstract fun bindMissionList(): MissionListActivity
 
 
 }
