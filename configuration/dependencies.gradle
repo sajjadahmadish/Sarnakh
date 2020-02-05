@@ -233,7 +233,7 @@ ext {
 //            'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4',
             'com.balysv:material-ripple:1.0.2',               // ripple effect
             'com.wdullaer:materialdatetimepicker:3.6.4',      // date & time picker
-//            'com.mikhaellopez:circularimageview:3.0.2',       // circle image view
+            'com.mikhaellopez:circularimageview:3.0.2',       // circle image view
 //            'com.github.pchmn:MaterialChipsInput:1.0.5',      // material chip
 //            'com.hootsuite.android:nachos:1.1.1',           // material chips
             'com.airbnb.android:lottie:3.0.1',      // Motion graphics
