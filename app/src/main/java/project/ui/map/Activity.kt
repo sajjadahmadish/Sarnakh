@@ -1,5 +1,6 @@
 package project.ui.map
 
+import android.Manifest
 import android.content.Intent
 import android.content.res.Resources
 import android.location.Location
@@ -20,6 +21,8 @@ import com.jakewharton.rxbinding3.view.clicks
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.R
 import ir.sinapp.sarnakh.databinding.ActivityMapBinding
+import permissions.dispatcher.NeedsPermission
+import permissions.dispatcher.RuntimePermissions
 import project.data.model.Marker
 import project.ui.base.BaseActivity
 import project.ui.lucky.LuckyActivity
@@ -31,7 +34,7 @@ import project.utils.launchActivity
 import project.utils.map.OnMapAndViewReadyListener
 import javax.inject.Inject
 
-
+@RuntimePermissions
 class MapActivity : BaseActivity<ActivityMapBinding, MapViewModel>(ActivityMapBinding::class.java),
     MapNavigator, OnMapAndViewReadyListener.OnGlobalLayoutAndMapReadyListener {
 
@@ -101,16 +104,8 @@ class MapActivity : BaseActivity<ActivityMapBinding, MapViewModel>(ActivityMapBi
             isRotateGesturesEnabled = false
         }
 
+        locationReadyWithPermissionCheck()
 
-        getDeviceLocation()
-
-        getMarker()
-
-        initialize()
-
-        map.isMyLocationEnabled = true
-        map.uiSettings.isCompassEnabled = false
-        map.uiSettings.isMyLocationButtonEnabled = true
     }
 
     private fun getMarker() {
@@ -205,6 +200,27 @@ class MapActivity : BaseActivity<ActivityMapBinding, MapViewModel>(ActivityMapBi
     private fun moveCamera(latLng: LatLng, zoom: Float) {
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom))
 
+    }
+
+    @NeedsPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+    fun locationReady() {
+
+        getDeviceLocation()
+
+        getMarker()
+
+        initialize()
+
+        map.isMyLocationEnabled = true
+        map.uiSettings.isCompassEnabled = false
+        map.uiSettings.isMyLocationButtonEnabled = true
+
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        //     NOTE: delegate the permission handling to generated function
+        onRequestPermissionsResult(requestCode, grantResults)
     }
 
 
