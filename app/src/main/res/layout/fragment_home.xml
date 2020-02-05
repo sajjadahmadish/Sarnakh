@@ -96,6 +96,7 @@
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
                                     asyncText='@{"ماموریت ها"}'
+                                    tools:text="ماموریت ها"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
@@ -135,7 +136,7 @@
                                 <ImageView
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:src="@drawable/whill" />
+                                    android:src="@drawable/ic_tickets" />
 
                                 <View
                                     android:layout_width="300dp"
@@ -149,7 +150,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
-                                    asyncText='@{"گردونه شانس"}'
+                                    asyncText='@{"خرید بلیت"}'
+                                    tools:text="خرید بلیت"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
@@ -203,7 +205,7 @@
                                 <ImageView
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:src="@drawable/ic_pedometer" />
+                                    android:src="@drawable/ic_planning" />
 
                                 <!--android:tint="@color/grey_60"-->
                                 <View
@@ -219,7 +221,135 @@
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    asyncText='@{"گام شمار"}'
+                                    asyncText='@{"برنامه ریزی سفر"}'
+                                    android:textColor="@color/colorPrimaryText"
+                                    tools:text="برنامه ریزی سفر"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"/>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/colorSecondaryBackground"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp">
+
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/spacing_large">
+
+                                <!--android:tint="@color/grey_60"-->
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_passport" />
+
+                                <View
+                                    android:layout_width="300dp"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@color/grey_10" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing_middle"
+                                    android:gravity="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                    asyncText='@{"خدمات پاسپورت و بیمه"}'
+                                    tools:text="خدمات پاسپورت و بیمه"
+                                    android:textColor="@color/colorPrimaryText"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                        </com.balysv.materialripple.MaterialRippleLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"/>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"/>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/colorSecondaryBackground"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp">
+
+                        <com.balysv.materialripple.MaterialRippleLayout
+                            style="@style/RippleStyleBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/spacing_large">
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/whill"/>
+
+                                <!--android:tint="@color/grey_60"-->
+                                <View
+                                    android:layout_width="300dp"
+                                    android:layout_height="2dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@color/grey_10" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spacing_middle"
+                                    android:gravity="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                    asyncText='@{"گردونه شانس"}'
+                                    tools:text="گردونه شانس"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
@@ -260,7 +390,7 @@
                                 <ImageView
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:src="@drawable/ic_ticket" />
+                                    android:src="@drawable/ic_guide" />
 
                                 <View
                                     android:layout_width="300dp"
@@ -275,7 +405,8 @@
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    asyncText='@{"رزرو بلیت"}'
+                                    asyncText='@{"راهنمای سفر"}'
+                                    tools:text="راهنمای سفر"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
@@ -291,6 +422,8 @@
 
 
                 </LinearLayout>
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
