@@ -22,6 +22,7 @@ import ir.sinapp.sarnakh.R
 import ir.sinapp.sarnakh.databinding.ActivityMissionListBinding
 import project.ui.base.BaseActivity
 import project.ui.missionList.cardhelper.SliderAdapter
+import project.utils.CommonUtils
 import project.utils.cardslider.DecodeBitmapTask
 import java.util.*
 import javax.inject.Inject
@@ -133,6 +134,9 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
         )
         temperatureSwitcher!!.setCurrentText(temperatures[0])
 
+
+        val font = CommonUtils.typefaceFromAsset("fonts/IRANYekanMobileBold.ttf", this)
+
         placeSwitcher = findViewById<View>(R.id.ts_place) as TextSwitcher
         placeSwitcher!!.setFactory(
             TextViewFactory(
@@ -189,14 +193,11 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
         country1TextView!!.text = countries[0]
         country2TextView!!.alpha = 0f
 
-        country1TextView!!.typeface = Typeface.createFromAsset(
-            assets,
-            "fonts/IRANYekanMobileBold.ttf"
-        )
-        country2TextView!!.typeface = Typeface.createFromAsset(
-            assets,
-            "fonts/IRANYekanMobileBold.ttf"
-        )
+
+        val font = CommonUtils.typefaceFromAsset("fonts/IRANYekanMobileBold.ttf", this)
+
+        country1TextView!!.typeface = font
+        country2TextView!!.typeface = font
     }
 
     private fun initGreenDot() {
@@ -319,6 +320,7 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
     ) :
         ViewSwitcher.ViewFactory {
         override fun makeView(): View {
+            val font = CommonUtils.typefaceFromAsset("fonts/IRANYekanMobileRegular.ttf", this@MissionListActivity)
             val textView = TextView(this@MissionListActivity)
             if (center) {
                 textView.gravity = Gravity.CENTER
@@ -329,6 +331,7 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
             } else {
                 textView.setTextAppearance(styleId)
             }
+            textView.typeface = font
             return textView
         }
 
