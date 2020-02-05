@@ -338,7 +338,7 @@ class MainActivity :
                 CalligraphyUtils.applyFontToTextView(
                     binding.tabs.context,
                     selectedText,
-                    "fonts/IRANYekanMobileBold.ttf"
+                    "fonts/bold.ttf"
                 )
                 selectedText.textSize = 26f
 
