@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.res.Configuration
 import android.os.StrictMode
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.multidex.MultiDex
 import androidx.preference.PreferenceManager
 import com.facebook.drawee.backends.pipeline.Fresco
@@ -89,6 +90,10 @@ class App : DaggerApplication(), HasActivityInjector {
         super.onCreate()
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
+
+        if (dataManager.theme == DataManager.Theme.THEME_DARK) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
 
         val ctx = applicationContext
         org.osmdroid.config.Configuration.getInstance()

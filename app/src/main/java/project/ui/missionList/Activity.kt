@@ -28,7 +28,8 @@ import javax.inject.Inject
 
 
 class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionListViewModel>(ActivityMissionListBinding::class.java), MissionListNavigator {
-    //TODO: Add data binding
+
+
     override val bindingVariable: Int
         get() = BR.viewModel
 
