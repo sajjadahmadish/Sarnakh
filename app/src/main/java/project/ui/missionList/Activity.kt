@@ -213,7 +213,7 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
 
                 val rnd = Random()
                 //int i = 0, cnt = dotCoors.size; i < cnt; i++
-                for (i in  0..viewModel.dotCoors.size) {
+                for (i in viewModel.dotCoors.indices) {
                     viewModel.dotCoors[i][0] = viewLeft + border + rnd.nextInt(xRange)
                     viewModel.dotCoors[i][1] = viewTop + border + rnd.nextInt(yRange)
                 }
