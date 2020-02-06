@@ -791,72 +791,115 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <ImageView
+                <com.balysv.materialripple.MaterialRippleLayout
+                    style="@style/RippleStyleBlack"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_real_estate" />
+                    android:layout_weight="1">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_air_freight" />
+
+                </com.balysv.materialripple.MaterialRippleLayout>
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/colorDrawerDivider" />
 
-                <ImageView
+                <com.balysv.materialripple.MaterialRippleLayout
+                    style="@style/RippleStyleBlack"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_tour" />
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_train"
+                        android:layout_width="match_parent" />
+
+                </com.balysv.materialripple.MaterialRippleLayout>
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/colorDrawerDivider" />
 
-                <ImageView
+                <com.balysv.materialripple.MaterialRippleLayout
+                    style="@style/RippleStyleBlack"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_hotel" />
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_bus"
+                        android:layout_width="match_parent" />
+
+                </com.balysv.materialripple.MaterialRippleLayout>
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/colorDrawerDivider" />
 
-                <ImageView
+                <com.balysv.materialripple.MaterialRippleLayout
+                    style="@style/RippleStyleBlack"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_bus" />
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_tour"
+                        android:layout_width="match_parent" />
+
+                </com.balysv.materialripple.MaterialRippleLayout>
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/colorDrawerDivider" />
 
-                <ImageView
+                <com.balysv.materialripple.MaterialRippleLayout
+                    style="@style/RippleStyleBlack"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_train" />
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_hotel"
+                        android:layout_width="match_parent" />
+
+                </com.balysv.materialripple.MaterialRippleLayout>
 
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="@color/colorDrawerDivider" />
 
-                <ImageView
+                <com.balysv.materialripple.MaterialRippleLayout
+                    style="@style/RippleStyleBlack"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_air_freight" />
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_real_estate"
+                        android:layout_width="match_parent" />
+
+                </com.balysv.materialripple.MaterialRippleLayout>
 
 
             </LinearLayout>
