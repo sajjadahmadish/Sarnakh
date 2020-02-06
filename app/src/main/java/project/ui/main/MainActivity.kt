@@ -458,7 +458,7 @@ class MainActivity :
     }
 
     override fun openMapActivity() {
-        launchActivity<MissionListActivity> {}
+        launchActivity<MapActivity> {}
         Bungee.fade(this)
     }
 
