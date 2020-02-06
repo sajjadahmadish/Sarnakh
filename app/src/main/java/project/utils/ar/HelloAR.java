@@ -136,7 +136,7 @@ public class HelloAR
         camera.setFocusMode(CameraDeviceFocusMode.Continousauto);
         if (!status) { return; }
         ImageTracker tracker = ImageTracker.create();
-        loadFromImage(tracker, "argame00.jpg", "argame");
+        loadFromImage(tracker, "sharif.jpg", "sharif");
         loadFromImage(tracker, "namecard.jpg", "namecard");
         loadFromImage(tracker, "idback.jpg", "idback");
         trackers.add(tracker);
@@ -275,9 +275,9 @@ public class HelloAR
                             if (tracked_target == 0) {
                                 if (video == null && video_renderers.size() > 0) {
                                     String target_name = target.name();
-                                    if (target_name.equals("argame") && video_renderers.get(0).texId() != 0) {
+                                    if (target_name.equals("sharif") && video_renderers.get(0).texId() != 0) {
                                         video = new ARVideo();
-                                        video.openVideoFile("alibaba.mp4", video_renderers.get(0).texId(), scheduler);
+                                        video.openVideoFile("film.mp4", video_renderers.get(0).texId(), scheduler);
 //                                        video.openStreamingVideo("http://s3.picofile.com/d/8372898884/7e5c63ea-dc70-4232-b668-3a083e1b870f/alibaba.mp4", video_renderers.get(2).texId(), scheduler);
 
                                         current_video_renderer = video_renderers.get(0);
