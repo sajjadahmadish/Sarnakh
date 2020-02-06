@@ -18,9 +18,11 @@ import project.utils.AppLogger
 import project.utils.ar.GLView
 import android.view.ViewGroup
 import android.view.Window
+import androidx.fragment.app.FragmentTransaction
 import com.jakewharton.rxbinding3.view.clicks
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
+import project.ui.successDialog.SuccessDialogFragment
 import studio.carbonylgroup.textfieldboxes.ExtendedEditText
 
 @RuntimePermissions
@@ -92,8 +94,12 @@ class ARActivity : BaseActivity<ActivityArBinding, ARViewModel>(ActivityArBindin
             dialog.dismiss()
             if (editText.text.toString() == "علی بابا")
             {
-                Toast.makeText(this, " :) تبریک میگم... شما قاتل بروسلی رو به همین راحتی پیدا کردین " , Toast.LENGTH_LONG).show()
-                finish()
+                val fragmentManager = supportFragmentManager
+                val newFragment = SuccessDialogFragment()
+                val transaction =
+                    fragmentManager.beginTransaction()
+                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                transaction.add(android.R.id.content, newFragment).addToBackStack(null).commit()
             }
             else
             {

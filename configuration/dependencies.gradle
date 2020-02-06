@@ -279,7 +279,8 @@ ext {
             'pub.hanks:smallbang:1.2.2',
             'com.ramotion.cardslider:card-slider:0.3.1',
             "com.github.nekocode:Badge:2.1" ,
-            'com.github.douglasjunior:android-simple-tooltip:0.2.3'
+            'com.github.douglasjunior:android-simple-tooltip:0.2.3',
+            'com.github.sujithkanna:smileyrating:1.6.8'
     ]
 
 

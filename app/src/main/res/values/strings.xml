@@ -95,5 +95,9 @@
     <string name="connect">Nothing</string>
     <string name="suggested_destinations">Suggested destinations</string>
 
-
+    <string name="terrible">Terrible</string>
+    <string name="bad">Bad</string>
+    <string name="okay">Okay</string>
+    <string name="good">Good</string>
+    <string name="great">Great</string>
 </resources>

@@ -94,4 +94,9 @@
     <string name="connect">هیچ</string>
     <string name="suggested_destinations">مقصد های پیشنهادی</string>
 
+    <string name="terrible">افنضاح</string>
+    <string name="bad">بد</string>
+    <string name="okay">معمولی</string>
+    <string name="good">خوب</string>
+    <string name="great">عالی</string>
 </resources>
