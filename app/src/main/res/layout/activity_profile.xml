@@ -73,7 +73,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="@dimen/spacing_xsmall"
-                    android:src="@drawable/photo_female_4"
+                    android:src="@drawable/photo_male_7"
                     app:civ_border="true"
                     app:civ_border_color="@android:color/white"
                     app:civ_border_width="2dp"
@@ -89,7 +89,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mary Jackson"
+                        android:text="سجاد احمدی"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@android:color/white"
                         app:fontFamily="sans-serif-medium" />
@@ -112,7 +112,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="San Francisco, CA"
+                            android:text="ایران ، جزیره کیش ، هکاتوریسم 2020"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="@color/grey_5" />
                     </LinearLayout>
@@ -155,7 +155,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="125"
+                                    android:text="12"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     android:textColor="@color/grey_90"
                                     android:textStyle="bold" />
@@ -164,7 +164,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/spacing_small"
-                                    android:text="Posts"
+                                    android:text="ماموریت های موفق"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                     android:textColor="@color/grey_40" />
 
@@ -184,7 +184,7 @@
                                     android:id="@+id/textView11"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="249"
+                                    android:text="7"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     android:textColor="@color/grey_90"
                                     android:textStyle="bold" />
@@ -193,7 +193,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/spacing_small"
-                                    android:text="Followers"
+                                    android:text="دستاوردها"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                     android:textColor="@color/grey_40" />
 
@@ -213,7 +213,7 @@
                                     android:id="@+id/textView12"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="130"
+                                    android:text="130 Km"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     android:textColor="@color/grey_90"
                                     android:textStyle="bold" />
@@ -223,7 +223,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/spacing_small"
-                                    android:text="Following"
+                                    android:text="راه پیموده شده"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                     android:textColor="@color/grey_40" />
 
@@ -258,7 +258,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
                             android:layout_marginBottom="@dimen/spacing_middle"
-                            android:text="BADGES"
+                            android:text="دستاوردها"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/grey_80" />
 
@@ -272,30 +272,35 @@
                             android:orientation="horizontal">
 
                             <ImageView
+                                android:id="@+id/ic_bgdge1"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_margin="@dimen/spacing_medium"
                                 android:src="@drawable/badge_trophy" />
 
                             <ImageView
+                                android:id="@+id/ic_bgdge2"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_margin="@dimen/spacing_medium"
                                 android:src="@drawable/badge_ontime" />
 
                             <ImageView
+                                android:id="@+id/ic_bgdge3"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_margin="@dimen/spacing_medium"
                                 android:src="@drawable/badge_verified" />
 
                             <ImageView
+                                android:id="@+id/ic_bgdge4"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_margin="@dimen/spacing_medium"
                                 android:src="@drawable/badge_goal" />
 
                             <ImageView
+                                android:id="@+id/ic_bgdge5"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_margin="@dimen/spacing_medium"
@@ -308,14 +313,14 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="@dimen/spacing_middle"
-                            android:text="view all"
+                            android:text="دیدن همه"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small"
                             android:textColor="@color/grey_40" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="PROJECTS"
+                            android:text="پیشرفت ماموریت ها"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/grey_80"  />
 
@@ -359,7 +364,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="On Progress"
+                                    android:text="در حال اجرا"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                     android:textColor="@color/grey_60" />
 
@@ -385,7 +390,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_centerInParent="true"
-                                        android:text="90%"
+                                        android:text="38%"
                                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                                         android:textColor="@color/grey_90"
                                         app:fontFamily="sans-serif-medium" />
@@ -396,7 +401,7 @@
                                         android:layout_height="match_parent"
                                         android:indeterminate="false"
                                         android:max="100"
-                                        android:progress="90"
+                                        android:progress="38"
                                         android:progressDrawable="@drawable/circular_progress_bar_green" />
 
                                 </RelativeLayout>
@@ -404,52 +409,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Finished"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                    android:textColor="@color/grey_60" />
-
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <RelativeLayout
-                                    android:layout_width="70dp"
-                                    android:layout_height="70dp"
-                                    android:padding="@dimen/spacing_small">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_centerInParent="true"
-                                        android:text="80%"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                                        android:textColor="@color/grey_90"
-                                        app:fontFamily="sans-serif-medium" />
-
-                                    <ProgressBar
-                                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:indeterminate="false"
-                                        android:max="100"
-                                        android:progress="80"
-                                        android:progressDrawable="@drawable/circular_progress_bar_green" />
-
-                                </RelativeLayout>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="On Time"
+                                    android:text="به اتمام رسیده"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                     android:textColor="@color/grey_60" />
 
@@ -494,7 +454,52 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="On Budget"
+                                    android:text="ماموریت های شهر"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/grey_60" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:padding="@dimen/spacing_small">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="66%"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                        android:textColor="@color/grey_90"
+                                        app:fontFamily="sans-serif-medium" />
+
+                                    <ProgressBar
+                                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:indeterminate="false"
+                                        android:max="100"
+                                        android:progress="66"
+                                        android:progressDrawable="@drawable/circular_progress_bar_green" />
+
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="کسب دستاوردها"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                     android:textColor="@color/grey_60" />
 
@@ -525,7 +530,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Photos"
+                            android:text="تصاویر ارسالی"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/grey_90" />
 

@@ -11,11 +11,11 @@ ext {
             compileSdk: 29
     ]
 
-    build = [
-            ciBuild      : System.getenv("CI_BUILD") == "true",
-            // allows for -DpreDex=false to be set
-            preDexEnabled: System.getProperty("preDex", "true") == "true"
-    ]
+//    build = [
+//            ciBuild      : System.getenv("CI_BUILD") == "true",
+//    //         allows for -DpreDex=false to be set
+//            preDexEnabled: System.getProperty("preDex", "true") == "true"
+//    ]
 
     application = [
             id                       : 'ir.sinapp.sarnakh',
@@ -278,7 +278,8 @@ ext {
             'com.ss.bannerslider:bannerslider:2.0.0',
             'pub.hanks:smallbang:1.2.2',
             'com.ramotion.cardslider:card-slider:0.3.1',
-            "com.github.nekocode:Badge:2.1"
+            "com.github.nekocode:Badge:2.1" ,
+            'com.github.douglasjunior:android-simple-tooltip:0.2.3'
     ]
 
 
