@@ -509,7 +509,7 @@ class MainActivity :
             else -> null
         } ?: return
         supportFragmentManager.commitNow {
-            replace(R.id.fragment, fragment!!)
+            replace(R.id.fragment, fragment)
         }
     }
 

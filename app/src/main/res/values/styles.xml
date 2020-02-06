@@ -8,6 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="android:actionModeBackground">@color/blue_grey_600</item>
+
+        <!-- MaterialDrawer specific values -->
+        <item name="material_drawer_background">@color/colorSecondaryBackground</item>
+        <item name="material_drawer_primary_text">@color/colorPrimaryText</item>
+        <item name="material_drawer_divider">@color/colorDrawerDivider</item>
+        <item name="material_drawer_primary_icon">@color/colorDrawerIcon</item>
+        <item name="material_drawer_secondary_text">@color/colorPrimaryText</item>
+
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.DayNight.ActionBar" />

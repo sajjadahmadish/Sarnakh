@@ -17,6 +17,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".ScoreBoardActivity"
+        style="@style/AppTheme"
         tools:layoutDirection="rtl">
 
         <androidx.core.widget.NestedScrollView
