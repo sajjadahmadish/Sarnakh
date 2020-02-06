@@ -9,7 +9,6 @@ class TicketViewModel(dataManager: DataManager, schedulerProvider: SchedulerProv
     : BaseViewModel<TicketNavigator>(dataManager, schedulerProvider) {
 
     //
-    val isItemsVisible = ObservableBoolean(false)
 
 
 

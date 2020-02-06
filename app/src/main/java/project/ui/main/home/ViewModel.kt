@@ -9,11 +9,10 @@ class HomeViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvid
 
     //
     val list = listOf(
-        "https://workshop.hostiran.net/file/2018/07/01-2.png",
-        "https://banner-design.ir/wp-content/uploads/POST.jpg",
-        "https://banner-design.ir/wp-content/uploads/nowruz-post-offer.jpg",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8dVYL-1SYWM9-XC-z0bEso6zEhqVVM0_1DZmHHuuTVWiy7Bmk",
-        "https://banner-design.ir/wp-content/uploads/eid-post-blog-fetr96.jpg)"
+        "https://safirancp.faranegar.com/uploads/d8be0164-7b62-4e7c-9f6f-98d3c39acd3f//06.jpg",
+        "https://bisanseir.com/dist/admin/images/main_slide/org/main_slide_0.jpg",
+        "https://www.salehantravel.com/uploadfiles/05480cb180694ee28162ad4374b825d5.jpg",
+        "https://www.salehantravel.com/uploadfiles/9ba8e256f2be4cb193e0a04cec7255e1.jpg"
     )
 
 }

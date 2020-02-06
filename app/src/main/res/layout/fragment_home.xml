@@ -125,8 +125,8 @@
                             android:layout_height="match_parent">
 
                         <LinearLayout
-                                android:id="@+id/lyt_wheel"
-                                android:layout_width="match_parent"
+                            android:id="@+id/lyt_ticket"
+                            android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:orientation="vertical"
@@ -252,6 +252,7 @@
                             android:layout_height="match_parent">
 
                             <LinearLayout
+                                android:id="@+id/lyt_wheel"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
@@ -379,7 +380,6 @@
                             android:layout_height="match_parent">
 
                             <LinearLayout
-                                android:id="@+id/lyt_ticket"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"

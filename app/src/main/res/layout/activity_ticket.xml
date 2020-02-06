@@ -44,6 +44,7 @@
                     android:layout_gravity="center"
                     android:background="?attr/colorPrimary"
                     android:gravity="center"
+                    android:elevation="5dp"
                     android:orientation="vertical"
                     android:padding="@dimen/spacing_mlarge">
 
@@ -332,25 +333,455 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="900dp">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_mxlarge"
+                        android:orientation="vertical">
 
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginBottom="@dimen/spacing_large"
+                            android:layout_marginStart="@dimen/spacing_large"
+                            fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
+                            android:layout_marginEnd="@dimen/spacing_large"
+                            android:text="هتل های پیشنهادی"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorPrimaryText"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_xmedium"
+                                app:cardBackgroundColor="@color/colorSecondaryBackground"
+                                android:elevation="2dp"
+                                app:cardCornerRadius="20dp">
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="180dp"
+                                        android:orientation="vertical">
+
+                                        <com.facebook.drawee.view.SimpleDraweeView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="centerCrop"
+                                            app:actualImageResource="@drawable/tabriz"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/bg_gradient"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="16dp"
+                                            android:text="کرج"
+                                            android:textColor="@color/white"
+                                            android:textSize="23sp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_xmedium"
+                                app:cardBackgroundColor="@color/colorSecondaryBackground"
+                                android:elevation="2dp"
+                                app:cardCornerRadius="20dp">
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="180dp"
+                                        android:orientation="vertical">
+
+                                        <com.facebook.drawee.view.SimpleDraweeView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="centerCrop"
+                                            app:actualImageResource="@drawable/tehran"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/bg_gradient"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="16dp"
+                                            android:text="تهران"
+                                            android:textColor="@color/white"
+                                            android:textSize="23sp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_xmedium"
+                                app:cardBackgroundColor="@color/colorSecondaryBackground"
+                                android:elevation="2dp"
+                                app:cardCornerRadius="20dp">
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="180dp"
+                                        android:orientation="vertical">
+
+                                        <com.facebook.drawee.view.SimpleDraweeView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="centerCrop"
+                                            app:actualImageResource="@drawable/esfhan"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/bg_gradient"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="16dp"
+                                            android:text="اصفهان"
+                                            android:textColor="@color/white"
+                                            android:textSize="23sp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_xmedium"
+                                app:cardBackgroundColor="@color/colorSecondaryBackground"
+                                android:elevation="2dp"
+                                app:cardCornerRadius="20dp">
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="180dp"
+                                        android:orientation="vertical">
+
+                                        <com.facebook.drawee.view.SimpleDraweeView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="centerCrop"
+                                            app:actualImageResource="@drawable/ahvaz"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="@drawable/bg_gradient"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="16dp"
+                                            android:text="اهواز"
+                                            android:textColor="@color/white"
+                                            android:textSize="23sp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_mxlarge"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginBottom="@dimen/spacing_small"
+                            android:layout_marginStart="@dimen/spacing_large"
+                            fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
+                            android:layout_marginEnd="@dimen/spacing_large"
+                            android:text="تور های ویژه"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorPrimaryText"
+                            android:textStyle="bold" />
+
+
+                        <HorizontalScrollView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_middle"
+                            android:padding="@dimen/spacing_medium"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/spacing_middle"
+                                    app:cardBackgroundColor="@color/colorSecondaryBackground"
+                                    android:elevation="2dp"
+                                    app:cardCornerRadius="20dp">
+
+                                    <com.balysv.materialripple.MaterialRippleLayout
+                                        style="@style/RippleStyleBlack"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <com.facebook.drawee.view.SimpleDraweeView
+                                                android:layout_width="240dp"
+                                                android:layout_height="130dp"
+                                                android:scaleType="centerCrop"
+                                                app:actualImageResource="@drawable/shiraz" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:text="بهترین سفر های شیراز"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="@dimen/spacing_middle"
+                                                android:layout_marginTop="@dimen/spacing_medium"
+                                                android:layout_marginEnd="@dimen/spacing_medium"
+                                                android:layout_marginBottom="15dp"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                                android:textColor="@color/colorSecondaryText"
+                                                app:fontFamily="sans-serif-medium" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="@dimen/spacing_middle"                                            android:layout_marginTop="@dimen/spacing_small"
+                                                android:layout_marginEnd="@dimen/spacing_medium"
+                                                android:layout_marginBottom="@dimen/spacing_xmedium"
+                                                android:textColor="@color/colorPrimaryText"
+                                                android:text="سفر به دیار تاریخ و فرهنگ" />
+
+                                        </LinearLayout>
+
+                                    </com.balysv.materialripple.MaterialRippleLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/spacing_middle"
+                                    app:cardBackgroundColor="@color/colorSecondaryBackground"
+                                    android:elevation="2dp"
+                                    app:cardCornerRadius="20dp">
+
+                                    <com.balysv.materialripple.MaterialRippleLayout
+                                        style="@style/RippleStyleBlack"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <com.facebook.drawee.view.SimpleDraweeView
+                                                android:layout_width="240dp"
+                                                android:layout_height="130dp"
+                                                android:scaleType="centerCrop"
+                                                app:actualImageResource="@drawable/mashhad" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:text="بهترین سفر های مشهد"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="@dimen/spacing_middle"
+                                                android:layout_marginTop="@dimen/spacing_medium"
+                                                android:layout_marginEnd="@dimen/spacing_medium"
+                                                android:layout_marginBottom="15dp"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                                android:textColor="@color/colorSecondaryText"
+                                                app:fontFamily="sans-serif-medium" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="@dimen/spacing_middle"                                            android:layout_marginTop="@dimen/spacing_small"
+                                                android:layout_marginEnd="@dimen/spacing_medium"
+                                                android:layout_marginBottom="@dimen/spacing_xmedium"
+                                                android:textColor="@color/colorPrimaryText"
+                                                android:text="زیارت و سیاحت در یک سفر" />
+
+                                        </LinearLayout>
+
+                                    </com.balysv.materialripple.MaterialRippleLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/spacing_middle"
+                                    app:cardBackgroundColor="@color/colorSecondaryBackground"
+                                    android:elevation="2dp"
+                                    app:cardCornerRadius="20dp">
+
+                                    <com.balysv.materialripple.MaterialRippleLayout
+                                        style="@style/RippleStyleBlack"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <com.facebook.drawee.view.SimpleDraweeView
+                                                android:layout_width="240dp"
+                                                android:layout_height="130dp"
+                                                android:scaleType="centerCrop"
+                                                app:actualImageResource="@drawable/kish" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:text="بهترین سفر های کیش"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="@dimen/spacing_middle"
+                                                android:layout_marginTop="@dimen/spacing_medium"
+                                                android:layout_marginEnd="@dimen/spacing_medium"
+                                                android:layout_marginBottom="15dp"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                                android:textColor="@color/colorSecondaryText"
+                                                app:fontFamily="sans-serif-medium" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="@dimen/spacing_middle"                                            android:layout_marginTop="@dimen/spacing_small"
+                                                android:layout_marginEnd="@dimen/spacing_medium"
+                                                android:layout_marginBottom="@dimen/spacing_xmedium"
+                                                android:textColor="@color/colorPrimaryText"
+                                                android:text="سفر به مروارید خلیج فارس" />
+
+                                        </LinearLayout>
+
+                                    </com.balysv.materialripple.MaterialRippleLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+
+                            </LinearLayout>
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"/>
 
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
 
-        <LinearLayout
-            android:background="@color/colorSecondaryBackground"
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/items"
-            visible="@{viewModel.isItemsVisible}"
+            app:cardBackgroundColor="@color/colorSecondaryBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar">
@@ -430,14 +861,9 @@
 
             </LinearLayout>
 
-            <View
-                android:id="@+id/view2"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorDrawerDivider" />
 
+         </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -445,6 +871,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:theme="@style/content_toolbar"
+            android:elevation="5dp"
             app:contentInsetStartWithNavigation="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
