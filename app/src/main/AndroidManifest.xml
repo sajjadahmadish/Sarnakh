@@ -58,6 +58,7 @@
         <activity android:name="project.ui.lucky.LuckyActivity" />
         <activity android:name="project.ui.mission.MissionActivity" />
         <activity android:name="project.ui.missionList.MissionListActivity" />
+        <activity android:name="project.ui.ticket.TicketActivity" />
 
         <service android:name="project.utils.notify.MessagingService">
             <intent-filter>
