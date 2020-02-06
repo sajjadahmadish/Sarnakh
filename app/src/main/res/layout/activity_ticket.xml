@@ -451,13 +451,13 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="خرید بلیت"
-                android:textSize="19sp"
-                android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="خرید بلیت"
+                    android:textSize="19sp"
+                    android:textColor="@color/white"/>
 
 
         </androidx.appcompat.widget.Toolbar>
