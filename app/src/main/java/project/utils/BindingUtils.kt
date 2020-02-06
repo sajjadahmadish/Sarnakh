@@ -122,6 +122,9 @@ var c = 0
 
 @BindingAdapter("animateVisible")
 fun bindAnimateVisible(view: View, flag: Boolean) {
+
+
+
     c++
     val a = c
     if (!flag) {

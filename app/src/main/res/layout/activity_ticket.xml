@@ -12,30 +12,25 @@
     </data>
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
+        android:background="@color/colorPrimaryBackground"
         android:fitsSystemWindows="true"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:contentInsetStartWithNavigation="0dp"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nested_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:scrollbars="none"
             android:scrollingCache="true"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,7 +51,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="201dp"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="20dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -88,18 +83,17 @@
                                             android:src="@drawable/ic_bus" />
 
 
-
                                         <androidx.appcompat.widget.AppCompatTextView
                                             fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="@dimen/spacing_middle"
                                             android:gravity="center"
-                                            tools:text="@string/bus"
-                                            asyncText='@{"@string/bus"}'
+                                            android:text="@string/bus"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                             android:textColor="@color/colorPrimaryText"
-                                            android:textSize="18sp" />
+                                            android:textSize="15sp"
+                                            tools:text="@string/bus" />
 
                                     </LinearLayout>
 
@@ -131,18 +125,17 @@
                                             android:src="@drawable/ic_train" />
 
 
-
                                         <androidx.appcompat.widget.AppCompatTextView
                                             fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="@dimen/spacing_middle"
                                             android:gravity="center"
-                                            tools:text="@string/train"
-                                            asyncText='@{"@string/train"}'
+                                            android:text="@string/train"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                             android:textColor="@color/colorPrimaryText"
-                                            android:textSize="18sp" />
+                                            android:textSize="15sp"
+                                            tools:text="@string/train" />
 
                                     </LinearLayout>
 
@@ -173,18 +166,17 @@
                                             android:src="@drawable/ic_air_freight" />
 
 
-
                                         <androidx.appcompat.widget.AppCompatTextView
                                             fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="@dimen/spacing_middle"
                                             android:gravity="center"
-                                            tools:text="@string/flight"
-                                            asyncText='@{"@string/flight"}'
+                                            android:text="@string/flight"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                             android:textColor="@color/colorPrimaryText"
-                                            android:textSize="18sp" />
+                                            android:textSize="15sp"
+                                            tools:text="@string/flight" />
 
                                     </LinearLayout>
 
@@ -222,18 +214,17 @@
                                             android:src="@drawable/ic_tour" />
 
 
-
                                         <androidx.appcompat.widget.AppCompatTextView
                                             fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="@dimen/spacing_middle"
                                             android:gravity="center"
-                                            tools:text="@string/tour"
-                                            asyncText='@{"@string/tour"}'
+                                            android:text="@string/tour"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                             android:textColor="@color/colorPrimaryText"
-                                            android:textSize="18sp" />
+                                            android:textSize="15sp"
+                                            tools:text="@string/tour" />
 
                                     </LinearLayout>
 
@@ -264,6 +255,47 @@
                                             android:src="@drawable/ic_hotel" />
 
 
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/spacing_middle"
+                                            android:gravity="center"
+                                            android:text="@string/hotel"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                            android:textColor="@color/colorPrimaryText"
+                                            android:textSize="15sp"
+                                            tools:text="@string/hotel" />
+
+                                    </LinearLayout>
+
+                                </com.balysv.materialripple.MaterialRippleLayout>
+
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/colorDrawerDivider" />
+
+                                <com.balysv.materialripple.MaterialRippleLayout
+                                    style="@style/RippleStyleBlack"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:padding="@dimen/spacing_large">
+
+                                        <!--android:tint="@color/grey_60"-->
+                                        <ImageView
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:src="@drawable/ic_real_estate" />
+
 
                                         <androidx.appcompat.widget.AppCompatTextView
                                             fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
@@ -271,11 +303,10 @@
                                             android:layout_height="wrap_content"
                                             android:layout_marginTop="@dimen/spacing_middle"
                                             android:gravity="center"
-                                            tools:text="@string/hotel"
-                                            asyncText='@{"string/hotel"}'
+                                            android:text="@string/house"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                             android:textColor="@color/colorPrimaryText"
-                                            android:textSize="18sp" />
+                                            android:textSize="15sp" />
 
                                     </LinearLayout>
 
@@ -298,77 +329,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+
                     <LinearLayout
-                        android:id="@+id/items"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <com.facebook.drawee.view.SimpleDraweeView
-                            android:layout_width="0dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:padding="10dp"
-                            app:actualImageResource="@drawable/ic_tour" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorDrawerDivider" />
-
-                        <com.facebook.drawee.view.SimpleDraweeView
-                            android:layout_width="0dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:padding="10dp"
-                            app:actualImageResource="@drawable/ic_hotel" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorDrawerDivider" />
-
-                        <com.facebook.drawee.view.SimpleDraweeView
-                            android:layout_width="0dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:padding="10dp"
-                            app:actualImageResource="@drawable/ic_bus" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorDrawerDivider" />
-
-                        <com.facebook.drawee.view.SimpleDraweeView
-                            android:layout_width="0dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:padding="10dp"
-                            app:actualImageResource="@drawable/ic_train" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorDrawerDivider" />
-
-                        <com.facebook.drawee.view.SimpleDraweeView
-                            android:layout_width="0dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:padding="10dp"
-                            app:actualImageResource="@drawable/ic_air_freight" />
+                        android:layout_height="900dp">
 
 
                     </LinearLayout>
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/grey_10" />
-
 
                 </LinearLayout>
 
@@ -377,8 +344,125 @@
 
         </androidx.core.widget.NestedScrollView>
 
+        <LinearLayout
+            android:background="@color/colorSecondaryBackground"
+            android:id="@+id/items"
+            visible="@{viewModel.isItemsVisible}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_real_estate" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorDrawerDivider" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_tour" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorDrawerDivider" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_hotel" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorDrawerDivider" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_bus" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorDrawerDivider" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_train" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorDrawerDivider" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_air_freight" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDrawerDivider" />
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/content_toolbar"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="خرید بلیت"
+                android:textSize="19sp"
+                android:textColor="@color/white"/>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
 
