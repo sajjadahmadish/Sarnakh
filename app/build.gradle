@@ -104,8 +104,8 @@ dependencies {
 
     implementation Dagger
     kapt DaggerKapt
-    compileOnly AssistedInjectCompile
-    kapt AssistedInjectKapt
+//    compileOnly AssistedInjectCompile
+//    kapt AssistedInjectKapt
 
     implementation Glide
     kapt GlideKapt
