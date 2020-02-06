@@ -34,12 +34,10 @@ class TicketActivity : BaseActivity<ActivityTicketBinding, TicketViewModel>(Acti
             viewModel.isItemsVisible.set(true)
 
             AppLogger.i(it.toString())
-            val x = binding.items.height / 60
             var y:Float = (it.scrollY - 585).toFloat()
-            if (y > 60) y = 60f
+            if (y > 60) y = binding.items.height.toFloat()
             else if (y < 0) y = 0f
 
-            y *= x
 
             binding.items.y = (toolbar.height.toFloat() - binding.items.height + y)
 
