@@ -35,7 +35,16 @@
                 android:name="project.ui.login.LoginActivity"
                 android:windowSoftInputMode="adjustResize" />
 
-        <activity android:name="project.ui.main.MainActivity" android:theme="@style/AppTheme.Drawer" />
+        <activity android:name="project.ui.main.MainActivity" android:theme="@style/AppTheme.Drawer" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
 
         <activity android:name="project.ui.splash.SplashActivity">
 
@@ -43,11 +52,6 @@
             <meta-data android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
 
