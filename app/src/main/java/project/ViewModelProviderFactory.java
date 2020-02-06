@@ -24,6 +24,7 @@ import project.ui.missionList.MissionListViewModel;
 import project.ui.osm.OsmViewModel;
 import project.ui.profile.ProfileViewModel;
 import project.ui.splash.SplashViewModel;
+import project.ui.ticket.TicketViewModel;
 import project.utils.rx.SchedulerProvider;
 
 
@@ -73,6 +74,8 @@ public class ViewModelProviderFactory implements ViewModelProvider.Factory {
             return (T) new MissionViewModel(dataManager, schedulerProvider);
         } else if (modelClass.isAssignableFrom(MissionListViewModel.class)) {
             return (T) new MissionListViewModel(dataManager, schedulerProvider);
+        } else if (modelClass.isAssignableFrom(TicketViewModel.class)) {
+            return (T) new TicketViewModel(dataManager, schedulerProvider);
         }
 
 

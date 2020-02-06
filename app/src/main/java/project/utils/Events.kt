@@ -11,6 +11,7 @@ class EventCreate
 class EventLang(val l: String)
 
 
+class EventTicket
 class EventWheel
 class EventMap
 class EventAr

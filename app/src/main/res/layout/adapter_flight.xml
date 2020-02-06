@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="@{flight.name1}"
+                    asyncText="@{flight.name1}"
                     tools:text="هواپیمایی زاگرس"
                     android:textColor="@color/colorSecondaryText"
                     android:textSize="17sp"
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
-                    android:text="@{flight.name2}"
+                    asyncText="@{flight.name2}"
                     tools:text="MD-83"
                     android:textColor="@color/colorSecondaryText"
                     android:textSize="13sp"
@@ -83,7 +83,7 @@
                     android:gravity="center"
                     android:paddingStart="7dp"
                     android:paddingEnd="7dp"
-                    android:text="@{flight.type}"
+                    asyncText="@{flight.type}"
                     tools:text="سیستمی"
                     android:textColor="@color/accent"
                     android:textSize="13sp"
@@ -99,7 +99,7 @@
                     android:layout_marginEnd="60dp"
                     fontPath='@{"fonts/IRANYekanMobileLight.ttf"}'
                     tools:text="تهران"
-                    android:text="@{flight.start}"
+                    asyncText="@{flight.start}"
                     android:textColor="@color/colorSecondaryText"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@id/parent"
@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="60dp"
-                    android:text="@{flight.end}"
+                    asyncText="@{flight.end}"
                     fontPath='@{"fonts/IRANYekanMobileLight.ttf"}'
                     tools:text="جزیره کیش"
                     android:textColor="@color/colorSecondaryText"
@@ -161,7 +161,7 @@
                     android:paddingTop="5dp"
                     android:paddingEnd="9dp"
                     tools:text="+9"
-                    android:text="@{flight.count}"
+                    asyncText="@{flight.count}"
                     android:textColor="@color/colorSecondaryText"
                     android:textSize="17sp"
                     app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView4"
@@ -203,59 +203,58 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent">
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
                         android:gravity="center"
                         tools:text="2%"
-                        android:text="@{flight.discount}"
+                        asyncText="@{flight.discount}"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
                 </androidx.cardview.widget.CardView>
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/cost1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-
                     android:text="@string/price_for_one_person"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toStartOf="@id/t_card"
                     app:layout_constraintTop_toBottomOf="@+id/simpleDraweeView" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/cost4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
                     tools:text="216.976"
-                    android:text="@{flight.cost1}"
+                    asyncText="@{flight.cost1}"
                     android:textColor="@color/colorPrimaryText"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toStartOf="@id/cost1"
                     app:layout_constraintTop_toBottomOf="@+id/simpleDraweeView" />
 
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/cost2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:layout_marginEnd="10dp"
                     tools:text="216.976"
-                    android:text="@{flight.cost2}"
+                    asyncText="@{flight.cost2}"
                     android:textColor="@color/colorSecondaryText"
                     android:textSize="19sp"
                     app:layout_constraintEnd_toStartOf="@id/t_card"
                     app:layout_constraintTop_toBottomOf="@+id/cost1" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/cost3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

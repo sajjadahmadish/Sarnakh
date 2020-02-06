@@ -88,6 +88,11 @@
     <string name="select_ticket">انتخاب بلیط</string>
     <string name="toman">تومان</string>
     <string name="quntity">ظرفیت :</string>
+    <string name="bus">اتوبوس</string>
+    <string name="train">قطار</string>
+    <string name="flight">پرواز</string>
+    <string name="tour">تور</string>
+    <string name="hotel">هتل</string>
 
 
 </resources>

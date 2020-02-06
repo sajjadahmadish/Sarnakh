@@ -10,10 +10,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import org.greenrobot.eventbus.EventBus
 import project.adapter.DetailSliderAdapter
 import project.ui.base.BaseFragment
-import project.utils.EventAr
-import project.utils.EventMap
-import project.utils.EventWheel
-import project.utils.GlideImageLoadingService
+import project.utils.*
 import ss.com.bannerslider.Slider
 import javax.inject.Inject
 
@@ -52,6 +49,10 @@ class HomeFragment :
 
         viewModel += binding.lytWheel.clicks().subscribe {
             EventBus.getDefault().post(EventWheel())
+        }
+
+        viewModel += binding.lytTicket.clicks().subscribe {
+            EventBus.getDefault().post(EventTicket())
         }
 
 

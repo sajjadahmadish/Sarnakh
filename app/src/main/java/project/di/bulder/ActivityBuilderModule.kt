@@ -32,6 +32,8 @@ import project.ui.profile.ProfileActivity
 import project.ui.profile.ProfileActivityModule
 import project.ui.splash.SplashActivity
 import project.ui.splash.SplashActivityModule
+import project.ui.ticket.TicketActivity
+import project.ui.ticket.TicketActivityModule
 import project.utils.notify.MessagingService
 import project.utils.notify.ServiceModule
 
@@ -64,7 +66,6 @@ abstract class ActivityBuilderModule {
     @ContributesAndroidInjector(modules = [(OsmActivityModule::class)])
     abstract fun bindOsm(): OsmActivity
 
-
     @ContributesAndroidInjector(modules = [(IntroActivityModule::class)])
     abstract fun bindIntro(): IntroActivity
 
@@ -80,11 +81,14 @@ abstract class ActivityBuilderModule {
     @ContributesAndroidInjector(modules = [(MissionActivityModule::class)])
     abstract fun bindMission(): MissionActivity
 
-//    @ContributesAndroidInjector(modules = [(&{activityName}ActivityModule::class)])
-//    abstract fun bind&{activityName}(): &{activityName}Activity
+    @ContributesAndroidInjector(modules = [(TicketActivityModule::class)])
+    abstract fun bindTicket(): TicketActivity
 
     @ContributesAndroidInjector(modules = [(MissionListActivityModule::class)])
     abstract fun bindMissionList(): MissionListActivity
+
+    //    @ContributesAndroidInjector(modules = [(&{activityName}ActivityModule::class)])
+//    abstract fun bind&{activityName}(): &{activityName}Activity
 
 
 }

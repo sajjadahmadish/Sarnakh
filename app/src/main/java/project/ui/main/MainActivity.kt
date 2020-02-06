@@ -39,6 +39,7 @@ import project.ui.main.notification.NotificationFragment
 import project.ui.main.setting.SettingFragment
 import project.ui.map.MapActivity
 import project.ui.missionList.MissionListActivity
+import project.ui.ticket.TicketActivity
 import project.utils.*
 import project.utils.navDrawer.MyDrawerItem
 import javax.inject.Inject
@@ -435,8 +436,18 @@ class MainActivity :
         openLuckyActivity()
     }
 
+    @Subscribe
+    fun event(event: EventTicket) {
+        openTicketActivity()
+    }
+
     override fun openLuckyActivity() {
         launchActivity<LuckyActivity> {}
+        Bungee.fade(this)
+    }
+
+    override fun openTicketActivity() {
+        launchActivity<TicketActivity> {}
         Bungee.fade(this)
     }
 
