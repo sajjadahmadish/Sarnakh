@@ -277,8 +277,8 @@
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    asyncText='@{"خدمات پاسپورت و بیمه"}'
-                                    tools:text="خدمات پاسپورت و بیمه"
+                                    asyncText='@{"خدمات پاسپورت"}'
+                                    tools:text="خدمات پاسپورت"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
