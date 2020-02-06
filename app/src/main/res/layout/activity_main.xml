@@ -128,7 +128,7 @@
             android:layout_alignParentBottom="true"
             android:gravity="end"
             android:orientation="vertical"
-            android:visibility="@{(2 == viewModel.tab) ? View.VISIBLE : View.GONE}"
+            android:visibility="@{(3 == viewModel.tab) ? View.VISIBLE : View.GONE}"
             tools:visibility="gone">
 
             <LinearLayout

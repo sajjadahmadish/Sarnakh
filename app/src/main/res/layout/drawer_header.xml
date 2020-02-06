@@ -125,4 +125,5 @@
             android:layout_marginBottom="@dimen/material_drawer_account_header_dropdown_margin_bottom"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

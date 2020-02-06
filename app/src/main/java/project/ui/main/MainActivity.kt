@@ -6,6 +6,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.commitNow
@@ -39,6 +40,7 @@ import project.ui.main.notification.NotificationFragment
 import project.ui.main.setting.SettingFragment
 import project.ui.map.MapActivity
 import project.ui.missionList.MissionListActivity
+import project.ui.profile.ProfileActivity
 import project.ui.ticket.TicketActivity
 import project.utils.*
 import project.utils.navDrawer.MyDrawerItem
@@ -134,10 +136,14 @@ class MainActivity :
         headerResult = AccountHeaderBuilder()
             .withActivity(this)
             .withTextColorRes(R.color.white)
-            .withAccountHeader(R.layout.drawer_header)
-            .withHeaderBackground(R.drawable.back)
+            .withHeightDp(270)
+            .withAccountHeader(R.layout.include_drawer_header_profile_image)
             .withSelectionListEnabledForSingleProfile(false)
-            .withCloseDrawerOnProfileListClick(false)
+            .withCloseDrawerOnProfileListClick(true)
+            .withOnAccountHeaderSelectionViewClickListener { view, profile ->
+                openProfileActivity()
+                true
+            }
             .addProfiles(itemProfile)
             .build()
 
@@ -171,6 +177,13 @@ class MainActivity :
             .withIconTintingEnabled(true)
             .withName(R.string.best)
             .withIcon(R.drawable.ic_calendar)
+            .withTypeface(font)
+
+        val itemProfile = MyDrawerItem()
+            .withSelected(false)
+            .withIconTintingEnabled(true)
+            .withName(R.string.profile)
+            .withIcon(R.drawable.ic_user)
             .withTypeface(font)
 
 //
@@ -448,6 +461,11 @@ class MainActivity :
 
     override fun openTicketActivity() {
         launchActivity<TicketActivity> {}
+        Bungee.fade(this)
+    }
+
+    override fun openProfileActivity() {
+        launchActivity<ProfileActivity> {}
         Bungee.fade(this)
     }
 
