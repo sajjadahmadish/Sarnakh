@@ -98,5 +98,9 @@
     <string name="see_all">See All</string>
     <string name="ht">ماراتن برنامه نویسی هکاتوریسم ۲۰۲۰</string>
 
-
+    <string name="terrible">Terrible</string>
+    <string name="bad">Bad</string>
+    <string name="okay">Okay</string>
+    <string name="good">Good</string>
+    <string name="great">Great</string>
 </resources>
