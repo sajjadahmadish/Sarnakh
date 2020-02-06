@@ -10,7 +10,6 @@ import project.ui.intro.IntroActivity
 import project.ui.intro.IntroActivityModule
 import project.ui.login.LoginActivity
 import project.ui.login.LoginActivityModule
-import project.ui.login.LoginSavedStateModule
 import project.ui.lucky.LuckyActivity
 import project.ui.lucky.LuckyActivityModule
 import project.ui.main.MainActivity
@@ -50,7 +49,7 @@ abstract class ActivityBuilderModule {
     )
     abstract fun bindMain(): MainActivity
 
-    @ContributesAndroidInjector(modules = [(LoginActivityModule::class), (LoginSavedStateModule::class)])
+    @ContributesAndroidInjector(modules = [(LoginActivityModule::class)])
     abstract fun bindLogin(): LoginActivity
 
     @ContributesAndroidInjector(modules = [(SplashActivityModule::class)])

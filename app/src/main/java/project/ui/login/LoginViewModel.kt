@@ -8,31 +8,24 @@ import androidx.lifecycle.SavedStateHandle
 import com.blankj.utilcode.util.DeviceUtils
 import com.blankj.utilcode.util.KeyboardUtils
 import com.blankj.utilcode.util.NetworkUtils
-import com.squareup.inject.assisted.Assisted
-import com.squareup.inject.assisted.AssistedInject
 import io.reactivex.rxkotlin.plusAssign
 import project.data.DataManager
-import project.di.module.ViewModelAssistedFactory
 import project.ui.base.BaseViewModel
 import project.utils.AppLogger
 import project.utils.extension.forIo
 import project.utils.extension.onUi
-import project.utils.onChange
 import project.utils.rx.SchedulerProvider
 
 private const val STATE_USER = "state_user"
 private const val STATE_PASS = "state_pass"
 
 
-class LoginViewModel @AssistedInject constructor(
-    @Assisted val handle: SavedStateHandle,
+class LoginViewModel  constructor(
     dataManager: DataManager,
     schedulerProvider: SchedulerProvider
 ) :
     BaseViewModel<LoginNavigator>(dataManager, schedulerProvider) {
 
-    @AssistedInject.Factory
-    interface Factory : ViewModelAssistedFactory<LoginViewModel>
 
     private var ip: String? = null
     var country: String? = null
@@ -40,26 +33,6 @@ class LoginViewModel @AssistedInject constructor(
     val margin = ObservableInt(40)
     val userName = ObservableField("")
     val password = ObservableField("")
-
-
-    init {
-        userName.set(handle[STATE_USER] ?: "");
-        password.set(handle[STATE_PASS] ?: "");
-
-
-
-        userName.onChange { _, _ ->
-            handle[STATE_USER] = userName.get()
-        }
-
-        password.onChange { _, _ ->
-            handle[STATE_PASS] = password.get()
-        }
-
-    }
-
-
-
 
 
     fun login(function: () -> Unit) {

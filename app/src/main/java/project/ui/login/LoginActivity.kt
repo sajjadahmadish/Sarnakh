@@ -10,9 +10,9 @@ import com.jakewharton.rxbinding3.view.clicks
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.R
 import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
-import project.di.module.ViewModelFactory
 import project.ui.base.BaseActivity
 import project.ui.main.MainActivity
+import project.ui.profile.ProfileViewModel
 import project.utils.AppLogger
 import project.utils.Bungee
 import project.utils.LocationUtils
@@ -27,11 +27,7 @@ class LoginActivity :
     override val bindingVariable: Int get() = BR.viewModel
 
     @Inject
-    lateinit var factory: ViewModelFactory
-
-    override val viewModel: LoginViewModel by lazy(LazyThreadSafetyMode.NONE) {
-        ViewModelProviders.of(this, factory)[LoginViewModel::class.java]
-    }
+    override lateinit var viewModel: LoginViewModel
 
 
     override fun openMain() {

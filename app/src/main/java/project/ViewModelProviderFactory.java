@@ -11,6 +11,7 @@ import javax.inject.Singleton;
 import project.data.DataManager;
 import project.ui.ar.ARViewModel;
 import project.ui.intro.IntroViewModel;
+import project.ui.login.LoginViewModel;
 import project.ui.lucky.LuckyViewModel;
 import project.ui.main.MainViewModel;
 import project.ui.main.best.BestViewModel;
@@ -76,6 +77,8 @@ public class ViewModelProviderFactory implements ViewModelProvider.Factory {
             return (T) new MissionListViewModel(dataManager, schedulerProvider);
         } else if (modelClass.isAssignableFrom(TicketViewModel.class)) {
             return (T) new TicketViewModel(dataManager, schedulerProvider);
+        } else if (modelClass.isAssignableFrom(LoginViewModel.class)) {
+            return (T) new LoginViewModel(dataManager, schedulerProvider);
         }
 
 
