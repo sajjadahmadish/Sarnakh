@@ -21,7 +21,7 @@
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@color/green_A700"
+            android:background="@color/colorPrimary"
             android:fitsSystemWindows="true"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
-                app:contentScrim="@color/green_A700"
+                app:contentScrim="?attr/primaryColor"
                 app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
                 app:titleEnabled="false">
@@ -73,7 +73,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="@dimen/spacing_xsmall"
-                    android:src="@drawable/photo_male_7"
+                    android:src="@drawable/sajjad"
                     app:civ_border="true"
                     app:civ_border_color="@android:color/white"
                     app:civ_border_width="2dp"
@@ -105,7 +105,6 @@
                             android:layout_width="@dimen/spacing_large"
                             android:layout_height="@dimen/spacing_large"
                             android:layout_marginEnd="@dimen/spacing_medium"
-                            android:layout_marginRight="@dimen/spacing_medium"
                             android:src="@drawable/ic_location"
                             android:tint="@color/grey_5" />
 
@@ -180,23 +179,45 @@
                                 android:orientation="vertical"
                                 android:focusable="true">
 
-                                <TextView
+                                <androidx.constraintlayout.widget.ConstraintLayout
                                     android:id="@+id/textView11"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="7"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    android:textColor="@color/grey_90"
-                                    android:textStyle="bold" />
+                                    android:layout_height="wrap_content">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/spacing_small"
-                                    android:text="دستاوردها"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                    android:textColor="@color/grey_40" />
+                                    <ImageView
+                                        android:layout_width="45dp"
+                                        android:layout_height="45dp"
+                                        android:id="@+id/xp_badge"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        android:src="@drawable/ic_badge"/>
 
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="9dp"
+                                        android:text="7"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                        android:textColor="@android:color/white"
+                                        android:textStyle="bold"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"/>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginTop="@dimen/spacing_small"-->
+<!--                                    android:text="دستاوردها"-->
+<!--                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--                                    android:textColor="@color/grey_40" />-->
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="3dp"
+                                        android:id="@+id/xp_badge_text"/>
                             </LinearLayout>
 
                             <LinearLayout
@@ -213,7 +234,7 @@
                                     android:id="@+id/textView12"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="130 Km"
+                                    android:text="1.5 Km"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     android:textColor="@color/grey_90"
                                     android:textStyle="bold" />
@@ -324,13 +345,18 @@
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/grey_80"  />
 
-                        <LinearLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_middle"
                             android:orientation="horizontal">
 
                             <LinearLayout
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/completed"
+                                android:layout_margin="4dp"
+                                android:id="@+id/in_progress"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -370,12 +396,12 @@
 
                             </LinearLayout>
 
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
                             <LinearLayout
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/in_progress"
+                                android:id="@+id/completed"
+                                android:layout_margin="4dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -415,12 +441,13 @@
 
                             </LinearLayout>
 
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
                             <LinearLayout
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/in_progress"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/achievements"
+                                android:layout_margin="4dp"
+                                android:id="@+id/city_missions"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -460,12 +487,13 @@
 
                             </LinearLayout>
 
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1" />
-
                             <LinearLayout
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/city_missions"
+                                app:layout_constraintTop_toBottomOf="@id/completed"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_margin="4dp"
+                                android:id="@+id/achievements"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -505,7 +533,7 @@
 
                             </LinearLayout>
 
-                        </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -635,161 +663,161 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/spacing_large"
-                    android:layout_marginTop="@dimen/spacing_middle"
-                    android:layout_marginRight="@dimen/spacing_large"
-                    android:background="@android:color/white"
-                    app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp"
-                    app:cardUseCompatPadding="true">
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="@dimen/spacing_large"-->
+<!--                    android:layout_marginTop="@dimen/spacing_middle"-->
+<!--                    android:layout_marginRight="@dimen/spacing_large"-->
+<!--                    android:background="@android:color/white"-->
+<!--                    app:cardCornerRadius="2dp"-->
+<!--                    app:cardElevation="2dp"-->
+<!--                    app:cardUseCompatPadding="true">-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="@dimen/spacing_large">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:padding="@dimen/spacing_large">-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Review"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="@color/grey_90" />
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Review"-->
+<!--                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--                            android:textColor="@color/grey_90" />-->
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical">-->
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/spacing_large"
-                                android:layout_marginBottom="@dimen/spacing_medium"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="@dimen/spacing_large"-->
+<!--                                android:layout_marginBottom="@dimen/spacing_medium"-->
+<!--                                android:gravity="center_vertical"-->
+<!--                                android:orientation="horizontal">-->
 
-                                <com.mikhaellopez.circularimageview.CircularImageView
-                                    android:layout_width="@dimen/spacing_xlarge"
-                                    android:layout_height="@dimen/spacing_xlarge"
-                                    android:foreground="@color/overlay_light_20"
-                                    android:src="@drawable/photo_male_7"
-                                    app:civ_border="false"
-                                    app:civ_shadow="true"
-                                    app:civ_shadow_radius="0" />
+<!--                                <com.mikhaellopez.circularimageview.CircularImageView-->
+<!--                                    android:layout_width="@dimen/spacing_xlarge"-->
+<!--                                    android:layout_height="@dimen/spacing_xlarge"-->
+<!--                                    android:foreground="@color/overlay_light_20"-->
+<!--                                    android:src="@drawable/photo_male_7"-->
+<!--                                    app:civ_border="false"-->
+<!--                                    app:civ_shadow="true"-->
+<!--                                    app:civ_shadow_radius="0" />-->
 
-                                <View
-                                    android:layout_width="@dimen/spacing_large"
-                                    android:layout_height="0dp" />
+<!--                                <View-->
+<!--                                    android:layout_width="@dimen/spacing_large"-->
+<!--                                    android:layout_height="0dp" />-->
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+<!--                                <LinearLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:orientation="vertical">-->
 
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center_vertical"
-                                        android:text="Homer J. Allen "
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                        android:textColor="@color/green_A700"
-                                        android:textStyle="bold" />
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:gravity="center_vertical"-->
+<!--                                        android:text="Homer J. Allen "-->
+<!--                                        android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--                                        android:textColor="@color/green_A700"-->
+<!--                                        android:textStyle="bold" />-->
 
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="@dimen/spacing_small"
-                                        android:gravity="center_vertical"
-                                        android:text="10.15 am yesterday"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                                        android:textColor="@color/grey_20" />
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginTop="@dimen/spacing_small"-->
+<!--                                        android:gravity="center_vertical"-->
+<!--                                        android:text="10.15 am yesterday"-->
+<!--                                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"-->
+<!--                                        android:textColor="@color/grey_20" />-->
 
-                                </LinearLayout>
+<!--                                </LinearLayout>-->
 
-                            </LinearLayout>
+<!--                            </LinearLayout>-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/spacing_medium"
-                                android:layout_marginBottom="@dimen/spacing_large"
-                                android:lineSpacingExtra="4dp"
-                                android:text="@string/medium_lorem_ipsum"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textColor="@color/grey_60" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="@dimen/spacing_medium"-->
+<!--                                android:layout_marginBottom="@dimen/spacing_large"-->
+<!--                                android:lineSpacingExtra="4dp"-->
+<!--                                android:text="@string/medium_lorem_ipsum"-->
+<!--                                android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--                                android:textColor="@color/grey_60" />-->
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical">-->
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/spacing_middle"
-                                android:layout_marginBottom="@dimen/spacing_medium"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="@dimen/spacing_middle"-->
+<!--                                android:layout_marginBottom="@dimen/spacing_medium"-->
+<!--                                android:gravity="center_vertical"-->
+<!--                                android:orientation="horizontal">-->
 
-                                <com.mikhaellopez.circularimageview.CircularImageView
-                                    android:layout_width="@dimen/spacing_xlarge"
-                                    android:layout_height="@dimen/spacing_xlarge"
-                                    android:foreground="@color/overlay_light_20"
-                                    android:src="@drawable/photo_female_1"
-                                    app:civ_border="false"
-                                    app:civ_shadow="true"
-                                    app:civ_shadow_radius="0" />
+<!--                                <com.mikhaellopez.circularimageview.CircularImageView-->
+<!--                                    android:layout_width="@dimen/spacing_xlarge"-->
+<!--                                    android:layout_height="@dimen/spacing_xlarge"-->
+<!--                                    android:foreground="@color/overlay_light_20"-->
+<!--                                    android:src="@drawable/photo_female_1"-->
+<!--                                    app:civ_border="false"-->
+<!--                                    app:civ_shadow="true"-->
+<!--                                    app:civ_shadow_radius="0" />-->
 
-                                <View
-                                    android:layout_width="@dimen/spacing_large"
-                                    android:layout_height="0dp" />
+<!--                                <View-->
+<!--                                    android:layout_width="@dimen/spacing_large"-->
+<!--                                    android:layout_height="0dp" />-->
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
+<!--                                <LinearLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:orientation="vertical">-->
 
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center_vertical"
-                                        android:text="Taylor W "
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                        android:textColor="@color/green_A700"
-                                        android:textStyle="bold" />
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:gravity="center_vertical"-->
+<!--                                        android:text="Taylor W "-->
+<!--                                        android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--                                        android:textColor="@color/green_A700"-->
+<!--                                        android:textStyle="bold" />-->
 
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="@dimen/spacing_small"
-                                        android:gravity="center_vertical"
-                                        android:text="just now"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                                        android:textColor="@color/grey_20" />
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginTop="@dimen/spacing_small"-->
+<!--                                        android:gravity="center_vertical"-->
+<!--                                        android:text="just now"-->
+<!--                                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"-->
+<!--                                        android:textColor="@color/grey_20" />-->
 
-                                </LinearLayout>
+<!--                                </LinearLayout>-->
 
-                            </LinearLayout>
+<!--                            </LinearLayout>-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/spacing_medium"
-                                android:layout_marginBottom="@dimen/spacing_large"
-                                android:lineSpacingExtra="4dp"
-                                android:text="@string/middle_lorem_ipsum"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textColor="@color/grey_60" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="@dimen/spacing_medium"-->
+<!--                                android:layout_marginBottom="@dimen/spacing_large"-->
+<!--                                android:lineSpacingExtra="4dp"-->
+<!--                                android:text="@string/middle_lorem_ipsum"-->
+<!--                                android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--                                android:textColor="@color/grey_60" />-->
 
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+<!--                        </LinearLayout>-->
+<!--                    </LinearLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
 
                 <View
                     android:layout_width="match_parent"
