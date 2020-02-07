@@ -44,7 +44,7 @@ class ProfileActivity :
             .type(BadgeDrawable.TYPE_ONLY_ONE_TEXT)
             .text1(" XP ")
             .badgeColor(Color.parseColor("#ff8533"))
-            .textColor(Color.parseColor("#fff"))
+            .textColor(Color.parseColor("#ffffff"))
             .build()
         binding.xpBadgeText.setImageDrawable(bDrawable)
 

@@ -21,9 +21,9 @@
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@drawable/shiraz"
             android:fitsSystemWindows="true"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
@@ -33,6 +33,18 @@
                 app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
                 app:titleEnabled="false">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/shiraz"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/overlay_dark_50"/>
+
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -198,7 +210,7 @@
                                         android:layout_marginTop="9dp"
                                         android:text="7"
                                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                        android:textColor="@color/grey_90"
+                                        android:textColor="@color/colorPrimaryText"
                                         android:textStyle="bold"
                                         app:layout_constraintStart_toStartOf="parent"
                                         app:layout_constraintTop_toTopOf="parent"
