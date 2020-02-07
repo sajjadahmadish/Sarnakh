@@ -454,6 +454,11 @@ class MainActivity :
         openTicketActivity()
     }
 
+    @Subscribe
+    fun event(event: EventMissionList) {
+        openMissionListActivity()
+    }
+
     override fun openLuckyActivity() {
         launchActivity<LuckyActivity> {}
         Bungee.fade(this)
@@ -466,6 +471,11 @@ class MainActivity :
 
     override fun openProfileActivity() {
         launchActivity<ProfileActivity> {}
+        Bungee.fade(this)
+    }
+
+    override fun openMissionListActivity() {
+        launchActivity<MissionListActivity> {}
         Bungee.fade(this)
     }
 

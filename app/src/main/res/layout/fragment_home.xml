@@ -95,8 +95,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
-                                    asyncText='@{"ماموریت ها"}'
-                                    tools:text="ماموریت ها"
+                                    asyncText='@{@string/missions}'
+                                    tools:text="@string/missions"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
@@ -150,8 +150,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
-                                    asyncText='@{"خرید بلیت"}'
-                                    tools:text="خرید بلیت"
+                                    asyncText='@{@string/ticket}'
+                                    tools:text="@string/ticket"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
@@ -221,9 +221,9 @@
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    asyncText='@{"برنامه ریزی سفر"}'
+                                    asyncText='@{@string/planning}'
                                     android:textColor="@color/colorPrimaryText"
-                                    tools:text="برنامه ریزی سفر"
+                                    tools:text="@string/planning"
                                     android:textSize="18sp" />
 
                             </LinearLayout>
@@ -277,8 +277,8 @@
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    asyncText='@{"خدمات پاسپورت"}'
-                                    tools:text="خدمات پاسپورت"
+                                    asyncText='@{@string/passport}'
+                                    tools:text="@string/passport"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
@@ -349,8 +349,8 @@
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    asyncText='@{"گردونه شانس"}'
-                                    tools:text="گردونه شانس"
+                                    asyncText='@{@string/lucky}'
+                                    tools:text="@string/lucky"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
@@ -405,8 +405,8 @@
                                     android:layout_marginTop="@dimen/spacing_middle"
                                     android:gravity="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    asyncText='@{"راهنمای سفر"}'
-                                    tools:text="راهنمای سفر"
+                                    asyncText='@{@string/guide}'
+                                    tools:text="@string/guide"
                                     android:textColor="@color/colorPrimaryText"
                                     android:textSize="18sp" />
 
@@ -465,6 +465,7 @@
                             android:layout_weight="1" />
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/see_all"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"

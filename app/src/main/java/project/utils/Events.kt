@@ -5,12 +5,10 @@ import android.view.View
 
 class EventEvent
 class EventReminder
-class EventJoin
-class EventCreate
 
 class EventLang(val l: String)
 
-
+class EventMissionList
 class EventTicket
 class EventWheel
 class EventMap

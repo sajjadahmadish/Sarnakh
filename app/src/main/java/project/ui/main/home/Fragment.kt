@@ -59,6 +59,10 @@ class HomeFragment :
             EventBus.getDefault().post(EventTicket())
         }
 
+        viewModel += binding.seeAll.clicks().subscribe {
+            EventBus.getDefault().post(EventMissionList())
+        }
+
 
     }
 
