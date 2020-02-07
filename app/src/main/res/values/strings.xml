@@ -30,7 +30,7 @@
     <string name="baseUrl" translatable="false">http://c1ed4630.ngrok.io/api/v1/client</string>
     <string name="notifications">Notifications</string>
     <string name="settings">Settings</string>
-    <string name="help">Help</string>
+    <string name="help">About Us</string>
     <string name="join">Join</string>
     <string name="connected">Connected</string>
     <string name="disconnected">Waiting for network …</string>
@@ -80,6 +80,20 @@
     <string name="planning">Trip planning</string>
     <string name="lucky">Lucky Wheel</string>
     <string name="guide">Guide</string>
+    <string name="our_team">Our Team</string>
+    <string name="hossain_allahresani">Hossain Allahresani</string>
+    <string name="sajjad_ahmadi">Sajjad Ahmadi</string>
+    <string name="iman_ahrari">Iman Ahrari</string>
+    <string name="javad_ahmadi">Javad Ahmadi</string>
+    <string name="web_designer">Web Designer</string>
+    <string name="ui_ux_designer">UI/UX Designer</string>
+    <string name="ceo">CEO</string>
+    <string name="cto">CTO</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="mission">Mission</string>
+    <string name="our_mission">Give best rewards from different contests</string>
+    <string name="connect">Nothing</string>
+    <string name="suggested_destinations">Suggested destinations</string>
 
 
 </resources>

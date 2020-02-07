@@ -28,7 +28,7 @@
     <string name="reminder">یادآوری</string>
     <string name="notifications">پیام ها</string>
     <string name="settings">تنظیمات</string>
-    <string name="help">راهنما</string>
+    <string name="help">درباره ما</string>
     <string name="join">عضویت</string>
     <string name="app_name">سرنخ</string>
     <string name="connected">متصل</string>
@@ -73,10 +73,25 @@
     <string name="lucky">گردونه شانس</string>
     <string name="guide">راهنمای سفر</string>
 
+    <string name="our_team">تیم ما</string>
+    <string name="hossain_allahresani">حسین الله‌رسانی</string>
+    <string name="sajjad_ahmadi">سجاد احمدی</string>
+    <string name="iman_ahrari">ایمان احراری</string>
+    <string name="javad_ahmadi">جواد احمدی</string>
+    <string name="web_designer">طراح وب</string>
+    <string name="ui_ux_designer">طراح و برنامه نویس</string>
+    <string name="ceo">مدیر اجرایی</string>
+    <string name="cto">مدیر فنی</string>
 
     <!--    Profile activity test string-->
     <string name="middle_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
     <string name="medium_lorem_ipsum">Quisque imperdiet nunc at massa dictum volutpat. Etiam id orci ipsum. Integer id ex dignissim</string>
     <string name="profile">پروفایل</string>
+
+    <string name="contact_us">ارتباط با ما</string>
+    <string name="mission">هدف</string>
+    <string name="our_mission">کسب جوایز ارزنده از مسابقه های مختلف</string>
+    <string name="connect">هیچ</string>
+    <string name="suggested_destinations">مقصد های پیشنهادی</string>
 
 </resources>

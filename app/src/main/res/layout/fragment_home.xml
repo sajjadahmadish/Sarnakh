@@ -439,7 +439,7 @@
                         android:layout_marginStart="@dimen/spacing_large"
                         fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
                         android:layout_marginEnd="@dimen/spacing_large"
-                        android:text="مقصد های پیشنهادی"
+                        android:text="@string/suggested_destinations"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorPrimaryText"
                         android:textStyle="bold" />
@@ -452,7 +452,7 @@
                         android:orientation="horizontal">
 
                         <androidx.appcompat.widget.AppCompatTextView
-                            asyncText='@{"براساس موقعیت مکانی"}'
+                            asyncText='@{"Based on your loacation"}'
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
