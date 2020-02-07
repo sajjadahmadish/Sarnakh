@@ -66,6 +66,10 @@ class MissionActivity :
         Bungee.fade(this)
     }
 
+    override fun goBack() {
+        onBackPressed()
+    }
+
 }
 
 

@@ -25,7 +25,6 @@ import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
 import project.data.model.Marker
 import project.ui.base.BaseActivity
-import project.ui.lucky.LuckyActivity
 import project.ui.mission.MissionActivity
 import project.utils.AppLogger
 import project.utils.Bungee

@@ -55,6 +55,10 @@ class TicketActivity :
 
     }
 
+    override fun goBack() {
+        onBackPressed()
+    }
+
 }
 
 

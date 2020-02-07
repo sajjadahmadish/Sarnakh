@@ -1,36 +1,49 @@
-package project.ui.lucky
+package project.ui.main.wheel
 
+
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
+import android.view.Window
 import com.jakewharton.rxbinding3.view.clicks
-import project.ui.base.BaseActivity
-import javax.inject.Inject
-
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.R
-import ir.sinapp.sarnakh.databinding.ActivityLuckyBinding
-import ir.sinapp.sarnakh.databinding.DialogGiftBinding
-import kotlinx.android.synthetic.main.activity_lucky.*
-import project.utils.AppLogger
+import ir.sinapp.sarnakh.databinding.FragmentWheelBinding
+import kotlinx.android.synthetic.main.fragment_wheel.*
+import org.greenrobot.eventbus.EventBus
+import project.ui.base.BaseFragment
+import project.utils.EventWheel
 import project.utils.lucky.model.LuckyItem
 import java.util.*
-import android.graphics.drawable.ColorDrawable
-import android.app.Dialog
-import android.view.Window
+import javax.inject.Inject
 
 
-class LuckyActivity : BaseActivity<ActivityLuckyBinding, LuckyViewModel>(ActivityLuckyBinding::class.java), LuckyNavigator {
 
-    override val bindingVariable: Int
-        get() = BR.viewModel
+class WheelFragment : BaseFragment<FragmentWheelBinding, WheelViewModel>(FragmentWheelBinding::class.java) {
+
+    override val bindingVariable: Int get() = BR.viewModel
 
     @Inject
-    override lateinit var viewModel: LuckyViewModel
+    override lateinit var viewModel: WheelViewModel
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.navigator = this
+    companion object {
+
+        fun newInstance(): WheelFragment {
+            val args = Bundle()
+            val fragment = WheelFragment()
+            fragment.arguments = args
+            return fragment
+        }
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
 
         val data = mutableListOf<LuckyItem>()
 
@@ -123,25 +136,21 @@ class LuckyActivity : BaseActivity<ActivityLuckyBinding, LuckyViewModel>(Activit
 
         lucky_wheel.isTouchEnabled = false
         lucky_wheel.setLuckyRoundItemSelectedListener {
-            showDialogProductBlue()
+            EventBus.getDefault().post(EventWheel())
         }
 
     }
 
-    private fun showDialogProductBlue() {
-        val dialog = Dialog(this)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE) // before
-        dialog.setContentView(R.layout.dialog_gift)
-        dialog.window?.setBackgroundDrawable(ColorDrawable(android.graphics.Color.TRANSPARENT))
-        dialog.setCancelable(true)
-        dialog.show()
-    }
+
 
     private fun getRandomIndex(data: List<LuckyItem>): Int {
         val rand = Random()
         return rand.nextInt(data.size - 1) + 0
     }
-
 }
+
+
+
+
 
 

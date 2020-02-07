@@ -93,5 +93,8 @@
     <string name="our_mission">کسب جوایز ارزنده از مسابقه های مختلف</string>
     <string name="connect">هیچ</string>
     <string name="suggested_destinations">مقصد های پیشنهادی</string>
+    <string name="based_on_your_loacation">بر اساس موقعیت مکانی</string>
+    <string name="see_all">دیدن همه</string>
+
 
 </resources>

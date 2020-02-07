@@ -34,7 +34,7 @@
             android:layout_width="@dimen/material_drawer_account_header_selected"
             android:layout_height="@dimen/material_drawer_account_header_selected"
             android:layout_marginTop="15dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:clickable="true"
             android:elevation="2dp"
             android:focusable="true"
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/grey_10"
-                    tools:text="San Francisco, CA" />
+                    android:text="@string/ht" />
             </LinearLayout>
 
         </LinearLayout>
@@ -104,14 +104,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1.5 K"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@android:color/white" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_medium"
-                    android:text="راه پیموده"
+                    android:text="مسافت پیموده"
+                    fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
+                    android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/grey_10" />
 
@@ -131,14 +135,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="17"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@android:color/white" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_medium"
                     android:text="دستاورد ها"
+                    android:textStyle="bold"
+                    fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/grey_10" />
 
@@ -158,15 +166,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="14"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@android:color/white" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_medium"
                     android:text="ماموریت های موفق"
+                    android:textStyle="bold"
+                    fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/grey_10" />
 

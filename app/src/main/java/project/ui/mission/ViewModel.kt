@@ -1,11 +1,14 @@
 package project.ui.mission
 
+import android.view.View
 import project.data.DataManager
 import project.ui.base.BaseViewModel
 import project.utils.rx.SchedulerProvider
 
 class MissionViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider)
     : BaseViewModel<MissionNavigator>(dataManager, schedulerProvider) {
+
+    fun onClickBack(view: View) = navigator.goBack()
 
     val list = listOf(
         "https://delta.ir/mag/wp-content/uploads/2019/05/%DA%AF%D9%84%D8%B3%D8%AA%D8%A7%D9%86.jpg",

@@ -51,10 +51,6 @@ class HomeFragment :
         }
 
 
-        viewModel += binding.lytWheel.clicks().subscribe {
-            EventBus.getDefault().post(EventWheel())
-        }
-
         viewModel += binding.lytTicket.clicks().subscribe {
             EventBus.getDefault().post(EventTicket())
         }

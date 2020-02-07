@@ -6,9 +6,7 @@ interface MainNavigator {
     fun openMissionListActivity()
     fun openMapActivity()
     fun openARActivity()
-    fun openLuckyActivity()
     fun openTicketActivity()
 
-    fun toggleFabMode()
 
 }

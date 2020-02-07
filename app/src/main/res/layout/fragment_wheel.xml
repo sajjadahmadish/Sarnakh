@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="project.ui.lucky.LuckyViewModel" />
+            type="project.ui.main.wheel.WheelViewModel" />
 
     </data>
 
@@ -16,23 +16,6 @@
         android:layout_height="match_parent"
         android:background="@color/white">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:background="@color/grey_round"
-            style="@style/content_toolbar"
-            android:layout_height="@dimen/toolbar_height">
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="17sp"
-                android:textColor="@color/primary"
-                android:gravity="center"
-                asyncText='@{"گردونه شانس"}'/>
-
-        </androidx.appcompat.widget.Toolbar>
 
         <View
             android:layout_width="@dimen/round_toolbar"

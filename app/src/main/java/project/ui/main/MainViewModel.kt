@@ -49,16 +49,6 @@ class MainViewModel(
     }
 
 
-    fun join(v: View) {
-        navigator.toggleFabMode()
-        EventBus.getDefault().post(EventReminder())
-    }
-
-    fun create(v: View) {
-        navigator.toggleFabMode()
-        EventBus.getDefault().post(EventEvent())
-    }
-
     fun updateHeader(function: (firstName: String, lastName: String, username: String, gender: Boolean) -> Unit): Observable<Unit> {
         return Observable.fromCallable {
             dataManager.apply {

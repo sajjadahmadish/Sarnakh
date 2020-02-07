@@ -299,131 +299,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="8dp"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <View
-                        android:layout_width="8dp"
-                        android:layout_height="match_parent"/>
-
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:cardBackgroundColor="@color/colorSecondaryBackground"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="2dp">
-
-                        <com.balysv.materialripple.MaterialRippleLayout
-                            style="@style/RippleStyleBlack"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:id="@+id/lyt_wheel"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="@dimen/spacing_large">
-
-                                <ImageView
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:src="@drawable/whill"/>
-
-                                <!--android:tint="@color/grey_60"-->
-                                <View
-                                    android:layout_width="300dp"
-                                    android:layout_height="2dp"
-                                    android:layout_marginTop="10dp"
-                                    android:background="@color/grey_10" />
-
-                                <androidx.appcompat.widget.AppCompatTextView
-                                    fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/spacing_middle"
-                                    android:gravity="center"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    asyncText='@{@string/lucky}'
-                                    tools:text="@string/lucky"
-                                    android:textColor="@color/colorPrimaryText"
-                                    android:textSize="18sp" />
-
-                            </LinearLayout>
-
-                        </com.balysv.materialripple.MaterialRippleLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <View
-                        android:layout_width="8dp"
-                        android:layout_height="match_parent"/>
-
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:cardBackgroundColor="@color/colorSecondaryBackground"
-                        app:cardCornerRadius="10dp"
-                        app:cardElevation="2dp">
-
-
-                        <com.balysv.materialripple.MaterialRippleLayout
-                            style="@style/RippleStyleBlack"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="@dimen/spacing_large">
-
-                                <!--android:tint="@color/grey_60"-->
-                                <ImageView
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:src="@drawable/ic_guide" />
-
-                                <View
-                                    android:layout_width="300dp"
-                                    android:layout_height="2dp"
-                                    android:layout_marginTop="10dp"
-                                    android:background="@color/grey_10" />
-
-                                <androidx.appcompat.widget.AppCompatTextView
-                                    fontPath='@{"fonts/IRANYekanMobileBold.ttf"}'
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/spacing_middle"
-                                    android:gravity="center"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    asyncText='@{@string/guide}'
-                                    tools:text="@string/guide"
-                                    android:textColor="@color/colorPrimaryText"
-                                    android:textSize="18sp" />
-
-                            </LinearLayout>
-
-                        </com.balysv.materialripple.MaterialRippleLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <View
-                        android:layout_width="8dp"
-                        android:layout_height="match_parent"/>
-
-
-                </LinearLayout>
-
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -452,8 +327,9 @@
                         android:orientation="horizontal">
 
                         <androidx.appcompat.widget.AppCompatTextView
-                            asyncText='@{"Based on your loacation"}'
+                            asyncText='@{@string/based_on_your_loacation}'
                             android:layout_width="wrap_content"
+                            android:text="@string/based_on_your_loacation"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
@@ -469,7 +345,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
-                            android:text="دیدن همه"
+                            android:text="@string/see_all"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                             android:textColor="@color/colorAccent" />
 

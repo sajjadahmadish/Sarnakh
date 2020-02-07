@@ -1,12 +1,15 @@
 package project.ui.main
 
+import android.app.Dialog
 import android.content.res.Configuration
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.view.animation.AnimationUtils
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.commitNow
@@ -32,12 +35,12 @@ import org.greenrobot.eventbus.Subscribe
 import project.data.DataManager
 import project.ui.ar.ARActivity
 import project.ui.base.BaseActivity
-import project.ui.lucky.LuckyActivity
 import project.ui.main.best.BestFragment
 import project.ui.main.help.HelpFragment
 import project.ui.main.home.HomeFragment
 import project.ui.main.notification.NotificationFragment
 import project.ui.main.setting.SettingFragment
+import project.ui.main.wheel.WheelFragment
 import project.ui.map.MapActivity
 import project.ui.missionList.MissionListActivity
 import project.ui.profile.ProfileActivity
@@ -84,7 +87,6 @@ class MainActivity :
             setUpDrawer()
         }
 
-        setUp()
 
 
         initNotify()
@@ -130,7 +132,7 @@ class MainActivity :
         itemProfile = ProfileDrawerItem()
             .withIdentifier(1)
             .withName("profile")
-            .withIcon(R.drawable.ic_user_man)
+            .withIcon(R.drawable.sajjad)
 
 
         headerResult = AccountHeaderBuilder()
@@ -154,8 +156,8 @@ class MainActivity :
 
             Crashlytics.setUserIdentifier(username)
             itemProfile.withName("$firstName $lastName")
-            itemProfile.withEmail(username)
-            itemProfile.withIcon(if (gender) R.drawable.ic_user_man else R.drawable.ic_user_woman)
+            itemProfile.withEmail(getString(R.string.ht))
+            itemProfile.withIcon(if (gender) R.drawable.sajjad else R.drawable.ic_user_woman)
             headerResult.updateProfile(itemProfile)
 
         }.doOnError {  }.subscribe()
@@ -179,10 +181,10 @@ class MainActivity :
             .withIcon(R.drawable.ic_calendar)
             .withTypeface(font)
 
-        val itemProfile = MyDrawerItem()
+        val itemWheel = MyDrawerItem()
             .withSelected(false)
             .withIconTintingEnabled(true)
-            .withName(R.string.profile)
+            .withName(R.string.lucky)
             .withIcon(R.drawable.ic_user)
             .withTypeface(font)
 
@@ -257,10 +259,10 @@ class MainActivity :
             .addDrawerItems(
                 itemHome,
                 itemBest,
-                notificationItem,
+                itemWheel,
                 DividerDrawerItem().withSelectable(false),
+                notificationItem,
                 itemSetting,
-                itemInvite,
                 itemHelp
             )
             .addStickyDrawerItems(
@@ -310,106 +312,6 @@ class MainActivity :
     }
 
 
-    private fun setUp() {
-
-        ViewAnimation.initShowOut(binding.lytCreate)
-        ViewAnimation.initShowOut(binding.lytJoin)
-        binding.backDrop.visibility().accept(false)
-
-
-        viewModel += binding.backDrop.clicks().subscribe {
-            toggleFabMode()
-        }
-
-
-        viewModel += binding.fabAdd.clicks().subscribe {
-            toggleFabMode()
-        }
-
-
-
-        mPagerAdapter.count = 2
-
-/*
-        binding.viewPager.adapter = mPagerAdapter
-
-
-        binding.viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(binding.tabs))
-
-
-        binding.tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                EventBus.getDefault().post(ClassesAdapter.ToggleEvent(-1))
-
-                viewModel.tab.set(tab.position != 0)
-
-                if (binding.backDrop.visibility == View.VISIBLE)
-                    toggleFabMode()
-
-                val selectedLayout =
-                    (binding.tabs.getChildAt(0) as ViewGroup).getChildAt(tab.position) as LinearLayout
-                val selectedText = selectedLayout.getChildAt(1) as TextView
-                CalligraphyUtils.applyFontToTextView(
-                    binding.tabs.context,
-                    selectedText,
-                    "fonts/bold.ttf"
-                )
-                selectedText.textSize = 26f
-
-                binding.viewPager.setCurrentItem(tab.position, true)
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-                val selectedLayout =
-                    (binding.tabs.getChildAt(0) as ViewGroup).getChildAt(tab.position) as LinearLayout
-                val selectedText = selectedLayout.getChildAt(1) as TextView
-                CalligraphyUtils.applyFontToTextView(
-                    binding.tabs.context,
-                    selectedText,
-                    "fonts/IRANYekanMobileRegular.ttf"
-                )
-                selectedText.textSize = 26f
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab) {
-
-            }
-        })
-*/
-
-
-    }
-
-
-    private var rotate = false
-    private var flag = false
-
-
-    override fun toggleFabMode() {
-
-        if (flag)
-            return
-
-        rotate = binding.fabAdd.rotateFab(!rotate)
-        flag = true
-        if (rotate) {
-            binding.backDrop.isEnabled = true
-            ViewAnimation.fadeIn(binding.backDrop) {
-                flag = false
-            }
-            ViewAnimation.showIn(binding.lytCreate)
-            ViewAnimation.showIn(binding.lytJoin)
-        } else {
-            binding.backDrop.isEnabled = false
-            ViewAnimation.fadeOut(binding.backDrop) {
-                back_drop.visibility = View.GONE
-                flag = false
-            }
-            ViewAnimation.showOut(binding.lytCreate)
-            ViewAnimation.showOut(binding.lytJoin)
-        }
-    }
-
 
     @Subscribe
     fun event(event: EventLang) {
@@ -446,7 +348,7 @@ class MainActivity :
 
     @Subscribe
     fun event(event: EventWheel) {
-        openLuckyActivity()
+        showDialogProductBlue()
     }
 
     @Subscribe
@@ -457,11 +359,6 @@ class MainActivity :
     @Subscribe
     fun event(event: EventMissionList) {
         openMissionListActivity()
-    }
-
-    override fun openLuckyActivity() {
-        launchActivity<LuckyActivity> {}
-        Bungee.fade(this)
     }
 
     override fun openTicketActivity() {
@@ -493,12 +390,20 @@ class MainActivity :
     override fun onBackPressed() {
         when {
             drawer.isDrawerOpen -> drawer.closeDrawer()
-            rotate -> toggleFabMode()
             viewModel.tab.get() != 1 -> drawer.setSelectionAtPosition(1)
             else -> super.onBackPressed()
         }
     }
 
+
+    private fun showDialogProductBlue() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE) // before
+        dialog.setContentView(R.layout.dialog_gift)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setCancelable(true)
+        dialog.show()
+    }
 
     private fun showFragment(name: String, position: Int) {
         viewModel.tab.set(position)
@@ -511,9 +416,8 @@ class MainActivity :
         val fragment = when (name) {
             getString(R.string.home) -> HomeFragment.newInstance()
             getString(R.string.best) -> BestFragment.newInstance()
+            getString(R.string.lucky) -> WheelFragment.newInstance()
             getString(R.string.notifications) -> NotificationFragment.newInstance()
-            //            getString(R.string.archived_class) -> ArchiveFragment.newInstance()
-            //            getString(R.string.invite) -> HideFragment.newInstance()
             getString(R.string.settings) -> SettingFragment.newInstance()
             getString(R.string.help) -> HelpFragment.newInstance()
             else -> null

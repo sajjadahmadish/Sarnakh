@@ -1,4 +1,4 @@
-package project.ui.lucky
+package project.ui.main.wheel
 
 import android.os.Bundle
 import android.view.LayoutInflater

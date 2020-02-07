@@ -12,13 +12,13 @@ import project.data.DataManager;
 import project.ui.ar.ARViewModel;
 import project.ui.intro.IntroViewModel;
 import project.ui.login.LoginViewModel;
-import project.ui.lucky.LuckyViewModel;
 import project.ui.main.MainViewModel;
 import project.ui.main.best.BestViewModel;
 import project.ui.main.help.HelpViewModel;
 import project.ui.main.home.HomeViewModel;
 import project.ui.main.notification.NotificationViewModel;
 import project.ui.main.setting.SettingViewModel;
+import project.ui.main.wheel.WheelViewModel;
 import project.ui.map.MapViewModel;
 import project.ui.mission.MissionViewModel;
 import project.ui.missionList.MissionListViewModel;
@@ -69,8 +69,6 @@ public class ViewModelProviderFactory implements ViewModelProvider.Factory {
             return (T) new BestViewModel(dataManager, schedulerProvider);
         } else if (modelClass.isAssignableFrom(ARViewModel.class)) {
             return (T) new ARViewModel(dataManager, schedulerProvider);
-        } else if (modelClass.isAssignableFrom(LuckyViewModel.class)) {
-            return (T) new LuckyViewModel(dataManager, schedulerProvider);
         } else if (modelClass.isAssignableFrom(MissionViewModel.class)) {
             return (T) new MissionViewModel(dataManager, schedulerProvider);
         } else if (modelClass.isAssignableFrom(MissionListViewModel.class)) {
@@ -79,6 +77,8 @@ public class ViewModelProviderFactory implements ViewModelProvider.Factory {
             return (T) new TicketViewModel(dataManager, schedulerProvider);
         } else if (modelClass.isAssignableFrom(LoginViewModel.class)) {
             return (T) new LoginViewModel(dataManager, schedulerProvider);
+        } else if (modelClass.isAssignableFrom(WheelViewModel.class)) {
+            return (T) new WheelViewModel(dataManager, schedulerProvider);
         }
 
 

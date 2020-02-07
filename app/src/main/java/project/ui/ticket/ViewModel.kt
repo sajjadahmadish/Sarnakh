@@ -1,5 +1,6 @@
 package project.ui.ticket
 
+import android.view.View
 import androidx.databinding.ObservableBoolean
 import project.data.DataManager
 import project.ui.base.BaseViewModel
@@ -10,6 +11,7 @@ class TicketViewModel(dataManager: DataManager, schedulerProvider: SchedulerProv
 
     //
 
+    fun onClickBack(view: View) = navigator.goBack()
 
 
 

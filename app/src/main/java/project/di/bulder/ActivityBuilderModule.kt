@@ -10,8 +10,6 @@ import project.ui.intro.IntroActivity
 import project.ui.intro.IntroActivityModule
 import project.ui.login.LoginActivity
 import project.ui.login.LoginActivityModule
-import project.ui.lucky.LuckyActivity
-import project.ui.lucky.LuckyActivityModule
 import project.ui.main.MainActivity
 import project.ui.main.MainActivityModule
 import project.ui.main.best.BestFragmentProvider
@@ -19,6 +17,7 @@ import project.ui.main.help.HelpFragmentProvider
 import project.ui.main.home.HomeFragmentProvider
 import project.ui.main.notification.NotificationFragmentProvider
 import project.ui.main.setting.SettingFragmentProvider
+import project.ui.main.wheel.WheelFragmentProvider
 import project.ui.map.MapActivity
 import project.ui.map.MapActivityModule
 import project.ui.mission.MissionActivity
@@ -45,6 +44,7 @@ abstract class ActivityBuilderModule {
             (BestFragmentProvider::class),
             (HelpFragmentProvider::class),
             (SettingFragmentProvider::class),
+            (WheelFragmentProvider::class),
             (NotificationFragmentProvider::class)]
     )
     abstract fun bindMain(): MainActivity
@@ -74,8 +74,6 @@ abstract class ActivityBuilderModule {
     @ContributesAndroidInjector(modules = [(ARActivityModule::class)])
     abstract fun bindAR(): ARActivity
 
-    @ContributesAndroidInjector(modules = [(LuckyActivityModule::class)])
-    abstract fun bindLucky(): LuckyActivity
 
     @ContributesAndroidInjector(modules = [(MissionActivityModule::class)])
     abstract fun bindMission(): MissionActivity
