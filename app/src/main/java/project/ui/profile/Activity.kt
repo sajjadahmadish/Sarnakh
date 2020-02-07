@@ -43,7 +43,8 @@ class ProfileActivity :
         val bDrawable = BadgeDrawable.Builder()
             .type(BadgeDrawable.TYPE_ONLY_ONE_TEXT)
             .text1(" XP ")
-            .textColor(Color.parseColor("#ff8533"))
+            .badgeColor(Color.parseColor("#ff8533"))
+            .textColor(Color.parseColor("#fff"))
             .build()
         binding.xpBadgeText.setImageDrawable(bDrawable)
 
