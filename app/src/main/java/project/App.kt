@@ -23,6 +23,7 @@ import project.utils.localization.LocalizationApplicationDelegate
 import javax.inject.Inject
 
 
+
 class App : DaggerApplication(), HasActivityInjector {
 
 
