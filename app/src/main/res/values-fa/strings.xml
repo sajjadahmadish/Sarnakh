@@ -26,41 +26,15 @@
     <string name="join_class">عضویت در کلاس</string>
     <string name="event">رویداد</string>
     <string name="reminder">یادآوری</string>
-    <string name="unenroll">لغو ثبت نام</string>
-    <string name="report">گذارش</string>
-    <string name="hide">پنهان</string>
-    <string name="class_info">درباره</string>
-    <string name="class_setting">تنظیمات</string>
-    <string name="archive">آرشیو</string>
     <string name="notifications">پیام ها</string>
     <string name="settings">تنظیمات</string>
     <string name="help">راهنما</string>
-    <string name="archived_class">کلاس‌های آرشیو شده</string>
-    <string name="hided_class">کلاس‌های مخفی شده</string>
-    <string name="count_student">%s دانشجو</string>
-    <string name="class_code">کد کلاس</string>
     <string name="join">عضویت</string>
-    <string name="ask_code">کد کلاس را از استاد خود بپرسید و اینجا وارد کنید</string>
-    <string name="class_name">نام کلاس</string>
-    <string name="description">توضیحات</string>
-    <string name="create">ساخت</string>
-    <string name="app_name" translatable="false">سرنخ</string>
-    <string name="classes">کلاس ها</string>
+    <string name="app_name">سرنخ</string>
     <string name="connected">متصل</string>
     <string name="disconnected">در انتظار شبکه …</string>
     <string name="connecting">در حال اتصال …</string>
     <string name="base_text" />
-    <string name="people">افراد</string>
-    <string name="classwork">کار کلاسی</string>
-    <string name="stream">جریان</string>
-    <string name="students">دانشجویان</string>
-    <string name="classmates">همکلاسی ها</string>
-    <string name="teachers">اساتید</string>
-    <string name="teacherAssistants">دستیار استاد</string>
-    <string name="message">پیام جدید</string>
-    <string name="remove">حذف</string>
-    <string name="mute">غیرفعال</string>
-    <string name="unmute">فعال</string>
     <string name="GOT_IT">شروع</string>
     <string name="SKIP">رد کردن</string>
     <string name="account">ورود / عضویت</string>
@@ -77,5 +51,32 @@
     <string name="text3">برج پل مجموعه ای از لنگر پل متحرک و پل معلق در لندن است که در سال ۱۸۸۶ ساخته شده است.</string>
     <string name="text4">معبد بهشت یک مجموعه امپراطوری پیچیده از ساختمان های مذهبی که در قسمت جنوب شرقی قرار دارد…</string>
     <string name="text5">جزیره های آجین در داخل دریا هستند و برخی آنرا به حاشیه های جنوبی اش محدود کرده اند…</string>
+
+
+    <string name="str_short_label">اسکن</string>
+    <string name="str_long_label">اسکن</string>
+    <string name="price_for_one_person">قیمت برای یک نفر</string>
+    <string name="select_ticket">انتخاب بلیط</string>
+    <string name="toman">تومان</string>
+    <string name="quntity">ظرفیت :</string>
+    <string name="bus">اتوبوس</string>
+    <string name="train">قطار</string>
+    <string name="flight">پرواز</string>
+    <string name="tour">تور</string>
+    <string name="hotel">هتل</string>
+    <string name="house">اقامتگاه اقتصادی</string>
+
+    <string name="missions">ماموریت ها</string>
+    <string name="ticket">خرید بلیت</string>
+    <string name="passport">خدمات پاسپورت</string>
+    <string name="planning">برنامه ریزی سفر</string>
+    <string name="lucky">گردونه شانس</string>
+    <string name="guide">راهنمای سفر</string>
+
+
+    <!--    Profile activity test string-->
+    <string name="middle_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin</string>
+    <string name="medium_lorem_ipsum">Quisque imperdiet nunc at massa dictum volutpat. Etiam id orci ipsum. Integer id ex dignissim</string>
+    <string name="profile">پروفایل</string>
 
 </resources>
