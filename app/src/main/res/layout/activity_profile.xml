@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
-                app:contentScrim="@color/green_A700"
+                app:contentScrim="?attr/primaryColor"
                 app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
                 app:titleEnabled="false">
@@ -73,7 +73,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="@dimen/spacing_xsmall"
-                    android:src="@drawable/photo_male_7"
+                    android:src="@drawable/sajjad"
                     app:civ_border="true"
                     app:civ_border_color="@android:color/white"
                     app:civ_border_width="2dp"
@@ -105,7 +105,6 @@
                             android:layout_width="@dimen/spacing_large"
                             android:layout_height="@dimen/spacing_large"
                             android:layout_marginEnd="@dimen/spacing_medium"
-                            android:layout_marginRight="@dimen/spacing_medium"
                             android:src="@drawable/ic_location"
                             android:tint="@color/grey_5" />
 
@@ -375,11 +374,6 @@
 
                             </LinearLayout>
 
-<!--                            <View-->
-<!--                                android:layout_width="0dp"-->
-<!--                                android:layout_height="0dp"-->
-<!--                                android:layout_weight="1" />-->
-
                             <LinearLayout
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -424,11 +418,6 @@
                                     android:textColor="@color/grey_60" />
 
                             </LinearLayout>
-
-<!--                            <View-->
-<!--                                android:layout_width="0dp"-->
-<!--                                android:layout_height="0dp"-->
-<!--                                android:layout_weight="1" />-->
 
                             <LinearLayout
                                 app:layout_constraintStart_toStartOf="parent"
@@ -475,11 +464,6 @@
                                     android:textColor="@color/grey_60" />
 
                             </LinearLayout>
-
-<!--                            <View-->
-<!--                                android:layout_width="0dp"-->
-<!--                                android:layout_height="0dp"-->
-<!--                                android:layout_weight="1" />-->
 
                             <LinearLayout
                                 app:layout_constraintEnd_toEndOf="parent"
