@@ -1,5 +1,6 @@
 package project.ui.profile
 
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
@@ -10,6 +11,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import cn.nekocode.badge.BadgeDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
@@ -38,29 +40,36 @@ class ProfileActivity :
 
         initToolbar()
 
+        val bDrawable = BadgeDrawable.Builder()
+            .type(BadgeDrawable.TYPE_ONLY_ONE_TEXT)
+            .text1(" XP ")
+            .textColor(Color.parseColor("#ff8533"))
+            .build()
+        binding.xpBadgeText.setImageDrawable(bDrawable)
+
         // display image
         displayImageOriginal(
-            findViewById<View>(R.id.image_1) as ImageView,
+            binding.image1,
             R.drawable.image_18
         )
         displayImageOriginal(
-            findViewById<View>(R.id.image_2) as ImageView,
+            binding.image2,
             R.drawable.image_30
         )
         displayImageOriginal(
-            findViewById<View>(R.id.image_3) as ImageView,
+            binding.image3,
             R.drawable.image_21
         )
         displayImageOriginal(
-            findViewById<View>(R.id.image_4) as ImageView,
+            binding.image4,
             R.drawable.image_23
         )
         displayImageOriginal(
-            findViewById<View>(R.id.image_5) as ImageView,
+            binding.image5,
             R.drawable.image_19
         )
         displayImageOriginal(
-            findViewById<View>(R.id.image_6) as ImageView,
+            binding.image6,
             R.drawable.image_11
         )
     }
