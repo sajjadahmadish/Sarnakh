@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:foreground="@color/overlay_dark_40"
         android:scaleType="centerCrop"
-        android:src="@drawable/back" />
+        android:src="@drawable/shiraz" />
 
     <LinearLayout
         android:id="@+id/lyt_profile"
@@ -38,7 +38,7 @@
             android:clickable="true"
             android:elevation="2dp"
             android:focusable="true"
-            tools:src="@drawable/photo_male_7" />
+            tools:src="@drawable/sajjad" />
 
         <LinearLayout
             android:layout_width="match_parent"
