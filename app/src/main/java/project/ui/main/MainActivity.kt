@@ -160,7 +160,7 @@ class MainActivity :
             itemProfile.withIcon(if (gender) R.drawable.sajjad else R.drawable.ic_user_woman)
             headerResult.updateProfile(itemProfile)
 
-        }.doOnError {  }.subscribe()
+        }.doOnError { }.subscribe()
 
 
         val font = CommonUtils.typefaceFromAsset("fonts/IRANYekanMobileBold.ttf", this)
@@ -224,7 +224,6 @@ class MainActivity :
                     DataManager.Theme.THEME_DARK
                 )
             }
-
 
 
         val itemHelp = MyDrawerItem()
@@ -310,7 +309,6 @@ class MainActivity :
             else -> false
         }
     }
-
 
 
     @Subscribe

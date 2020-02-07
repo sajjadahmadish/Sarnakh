@@ -8,8 +8,6 @@ import android.widget.ImageView;
 import androidx.annotation.DrawableRes;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
 import ir.sinapp.sarnakh.R;
 import project.utils.cardslider.DecodeBitmapTask;
 
@@ -37,14 +35,11 @@ public class SliderCard extends RecyclerView.ViewHolder implements DecodeBitmapT
 
                     viewWidth = itemView.getWidth();
                     viewHeight = itemView.getHeight();
-//                    loadBitmap(resId);Glide.with(itemView.getContext()).load(resId).into(imageView);
-
-                    Glide.with(itemView.getContext()).load(resId).override(viewWidth, viewHeight).into(imageView);
+                    loadBitmap(resId);
                 }
             });
         } else {
-//            loadBitmap(resId);
-            Glide.with(itemView.getContext()).load(resId).override(viewWidth, viewHeight).into(imageView);
+            loadBitmap(resId);
         }
     }
 
