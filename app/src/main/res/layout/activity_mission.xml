@@ -137,12 +137,19 @@
                                     android:layout_weight="1"/>
 
                                 <ImageButton
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="@drawable/ic_chat"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/spacing_middle" />
+
+                                <ImageButton
                                     android:id="@+id/imgbtn_aparat_vahid"
-                                    android:layout_width="32dp"
-                                    android:layout_height="32dp"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
                                     android:background="@drawable/aparat_logo"
                                     android:layout_gravity="center"
-                                    android:layout_margin="@dimen/spacing_large" />
+                                    android:layout_margin="@dimen/spacing_middle" />
 
 
                                 <xyz.hanks.library.bang.SmallBangView
