@@ -91,6 +91,7 @@
 
                                 <ImageView
                                     android:id="@+id/second_mission_logo"
+                                    android:src="@drawable/ic_mission"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="4dp" />
