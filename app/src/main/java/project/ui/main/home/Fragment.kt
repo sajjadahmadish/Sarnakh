@@ -23,6 +23,9 @@ class HomeFragment :
     @Inject
     override lateinit var viewModel: HomeViewModel
 
+    @Inject
+    lateinit var glideImageLoading: GlideImageLoadingService
+
 
     companion object {
 
@@ -39,13 +42,14 @@ class HomeFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Slider.init(GlideImageLoadingService(baseActivity))
+        Slider.init(glideImageLoading)
 
         binding.slider.setAdapter(DetailSliderAdapter(viewModel.list))
 
         viewModel += binding.lytMap.clicks().subscribe {
             EventBus.getDefault().post(EventMap())
         }
+
 
         viewModel += binding.lytWheel.clicks().subscribe {
             EventBus.getDefault().post(EventWheel())
