@@ -85,7 +85,7 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>>(private v
         super.onCreate(savedInstanceState)
 
         merlinsBeard = MerlinsBeard.Builder()
-            .withEndpoint(Endpoint.from("http://classmate.ahmadidev.ir/generate_204"))
+            .withEndpoint(Endpoint.from("http://classmate.ahmadish.ir/generate_204"))
             .build(this)
         networkStatusDisplayer = NetworkStatusDisplayer(resources, merlinsBeard)
 
