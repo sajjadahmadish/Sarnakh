@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.activity.viewModels
 import com.jakewharton.rxbinding3.view.clicks
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.R
@@ -18,17 +19,17 @@ import project.utils.Bungee
 import project.utils.extension.addOnPageChangeListener
 import project.utils.launchActivity
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 
 
-class IntroActivity :
+@AndroidEntryPoint
+class IntroActivity:
     BaseActivity<ActivityIntroBinding, IntroViewModel>(ActivityIntroBinding::class.java),
     IntroNavigator {
 
-    override val bindingVariable: Int
-        get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: IntroViewModel
+    override val viewModel: IntroViewModel by viewModels { this.defaultViewModelProviderFactory }
 
     @Inject
     lateinit var myViewPagerAdapter: MyViewPagerAdapter
@@ -36,6 +37,7 @@ class IntroActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityIntroBinding.inflate(layoutInflater))
         viewModel.navigator = this
 
         binding.viewPager.adapter = myViewPagerAdapter

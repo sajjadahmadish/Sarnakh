@@ -2,19 +2,19 @@ package project.ui.main.notification
 
 
 import android.os.Bundle
+import androidx.fragment.app.viewModels
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.databinding.FragmentNotificationBinding
 import project.ui.base.BaseFragment
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
+class NotificationFragment: BaseFragment<FragmentNotificationBinding, NotificationViewModel>(FragmentNotificationBinding::class.java) {
 
-class NotificationFragment : BaseFragment<FragmentNotificationBinding, NotificationViewModel>(FragmentNotificationBinding::class.java) {
 
-    override val bindingVariable: Int get() = BR.viewModel
-
-    @Inject
-    override lateinit var viewModel: NotificationViewModel
+    override val viewModel: NotificationViewModel by viewModels { this.defaultViewModelProviderFactory }
 
 
     companion object {

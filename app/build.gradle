@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'io.fabric'
 apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'dagger.hilt.android.plugin'
 
 
 android {
@@ -48,6 +49,12 @@ android {
     compileOptions {
         targetCompatibility = ext.compiler.java
         sourceCompatibility = ext.compiler.java
+    }
+
+
+    packagingOptions {
+        exclude 'META-INF/metadata.jvm.kotlin_module'
+        exclude 'META-INF/metadata.kotlin_module'
     }
 
 }
@@ -95,10 +102,9 @@ dependencies {
 
     implementation OSM
 
-    implementation Dagger
-    kapt DaggerKapt
-//    compileOnly AssistedInjectCompile
-//    kapt AssistedInjectKapt
+    implementation Hilt
+    kapt HiltKapt
+
 
     implementation Glide
     kapt GlideKapt

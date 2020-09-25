@@ -1,24 +1,21 @@
 package project.ui.main.home
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import androidx.lifecycle.ViewModelProviders
-import project.ViewModelProviderFactory
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.FragmentComponent
+import dagger.hilt.android.qualifiers.ActivityContext
 import project.utils.GlideImageLoadingService
 
 
 @Module
+@InstallIn(FragmentComponent::class)
 class HomeFragmentModule {
 
     @Provides
-    fun provideHomeViewModel(
-        factory: ViewModelProviderFactory,
-        fragment: HomeFragment
-    ): HomeViewModel =
-        ViewModelProviders.of(fragment, factory)[HomeViewModel::class.java]
-
-    @Provides
-    fun provideGlideImageLoader(fragment: HomeFragment) = GlideImageLoadingService(fragment.context)
+    fun provideGlideImageLoader(@ActivityContext context: Context) = GlideImageLoadingService(context)
 }
 
 

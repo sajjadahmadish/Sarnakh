@@ -1,6 +1,7 @@
 package project.ui.login
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProviders
 import com.andrognito.flashbar.Flashbar
 import com.andrognito.flashbar.anim.FlashAnim
@@ -18,16 +19,16 @@ import project.utils.Bungee
 import project.utils.LocationUtils
 import project.utils.launchActivity
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
 
-class LoginActivity :
+@AndroidEntryPoint
+class LoginActivity:
     BaseActivity<ActivityLoginBinding, LoginViewModel>(ActivityLoginBinding::class.java),
     LoginNavigator {
 
-    override val bindingVariable: Int get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: LoginViewModel
+    override val viewModel: LoginViewModel by viewModels { this.defaultViewModelProviderFactory }
 
 
     override fun openMain() {
@@ -39,6 +40,7 @@ class LoginActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityLoginBinding.inflate(layoutInflater))
         binding.lifecycleOwner = this
 
         viewModel.navigator = this

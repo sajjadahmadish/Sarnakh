@@ -12,7 +12,6 @@ import javax.inject.Inject
 
 class ${fragmentName}Fragment : BaseFragment<Fragment${fragmentName}Binding, ${fragmentName}ViewModel>(Fragment${fragmentName}Binding::class.java) {
 
-    override val bindingVariable: Int get() = BR.viewModel
 
     @Inject
     override lateinit var viewModel: ${fragmentName}ViewModel

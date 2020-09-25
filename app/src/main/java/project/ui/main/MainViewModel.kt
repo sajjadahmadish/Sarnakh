@@ -16,9 +16,14 @@ import project.utils.extension.forIo
 import project.utils.extension.onUi
 import project.utils.rx.SchedulerProvider
 import java.util.concurrent.TimeUnit
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.SavedStateHandle
 
 
-class MainViewModel(
+class MainViewModel @ViewModelInject constructor(
+    @Assisted savedStateHandle: SavedStateHandle,
+
     dataManager: DataManager,
     schedulerProvider: SchedulerProvider
 ) :

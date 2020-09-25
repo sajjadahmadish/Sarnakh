@@ -1,6 +1,7 @@
 package project.ui.ticket
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.jakewharton.rxbinding3.core.scrollChangeEvents
 import com.jakewharton.rxbinding3.view.visibility
 import project.ui.base.BaseActivity
@@ -10,21 +11,22 @@ import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.databinding.ActivityTicketBinding
 import kotlinx.android.synthetic.main.activity_ticket.*
 import project.utils.AppLogger
+import dagger.hilt.android.AndroidEntryPoint
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 
 
-class TicketActivity :
+@AndroidEntryPoint
+class TicketActivity:
     BaseActivity<ActivityTicketBinding, TicketViewModel>(ActivityTicketBinding::class.java),
     TicketNavigator {
 
-    override val bindingVariable: Int
-        get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: TicketViewModel
+    override val viewModel: TicketViewModel by viewModels { this.defaultViewModelProviderFactory }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityTicketBinding.inflate(layoutInflater))
         viewModel.navigator = this
 
 

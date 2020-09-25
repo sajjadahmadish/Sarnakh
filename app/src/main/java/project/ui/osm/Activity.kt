@@ -1,6 +1,7 @@
 package project.ui.osm
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import project.ui.base.BaseActivity
 import javax.inject.Inject
 
@@ -11,20 +12,21 @@ import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import androidx.preference.PreferenceManager
 import org.osmdroid.views.CustomZoomButtonsController
+import dagger.hilt.android.AndroidEntryPoint
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 
 
-class OsmActivity : BaseActivity<ActivityOsmBinding, OsmViewModel>(ActivityOsmBinding::class.java), OsmNavigator {
+@AndroidEntryPoint
+class OsmActivity: BaseActivity<ActivityOsmBinding, OsmViewModel>(ActivityOsmBinding::class.java), OsmNavigator {
 
-    override val bindingVariable: Int
-        get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: OsmViewModel
+    override val viewModel: OsmViewModel by viewModels { this.defaultViewModelProviderFactory }
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityOsmBinding.inflate(layoutInflater))
         viewModel.navigator = this
 
         //load/initialize the osmdroid configuration, this can be done

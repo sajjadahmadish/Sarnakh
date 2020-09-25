@@ -9,8 +9,14 @@ import project.utils.extension.forDatabase
 import project.utils.extension.forIo
 import project.utils.extension.onUi
 import project.utils.rx.SchedulerProvider
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.SavedStateHandle
 
-class MapViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) :
+
+class MapViewModel @ViewModelInject constructor(
+    @Assisted savedStateHandle: SavedStateHandle,
+    dataManager: DataManager, schedulerProvider: SchedulerProvider) :
     BaseViewModel<MapNavigator>(dataManager, schedulerProvider) {
 
 

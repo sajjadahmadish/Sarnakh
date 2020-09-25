@@ -1,12 +1,12 @@
 package project.ui.intro
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.ArrayRes
 import androidx.viewpager.widget.PagerAdapter
+import dagger.hilt.android.qualifiers.ActivityContext
 import ir.sinapp.sarnakh.R
 import ir.sinapp.sarnakh.databinding.ItemStepperWizardColorBinding
 import java.util.*
@@ -16,7 +16,7 @@ import javax.inject.Inject
  * View pager adapter
  */
 
-class MyViewPagerAdapter @Inject constructor(val context: Context) : PagerAdapter() {
+class MyViewPagerAdapter @Inject constructor(@ActivityContext val context: Context) : PagerAdapter() {
 
     private val layoutInflater: LayoutInflater =
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater

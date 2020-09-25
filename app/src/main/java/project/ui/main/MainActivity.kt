@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.view.animation.AnimationUtils
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.commitNow
 import com.crashlytics.android.Crashlytics
@@ -48,24 +49,19 @@ import project.ui.ticket.TicketActivity
 import project.utils.*
 import project.utils.navDrawer.MyDrawerItem
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 
 
-class MainActivity :
+@AndroidEntryPoint
+class MainActivity:
     BaseActivity<ActivityMainBinding, MainViewModel>(ActivityMainBinding::class.java),
     MainNavigator {
 
 
-    override val bindingVariable: Int get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: MainViewModel
+    override val viewModel: MainViewModel by viewModels { this.defaultViewModelProviderFactory }
 
-
-    @Inject
-    lateinit var drawerBuilder: DrawerBuilder
-
-
-    @Inject
     lateinit var mPagerAdapter: MainPagerAdapter
 
 
@@ -77,6 +73,7 @@ class MainActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityMainBinding.inflate(layoutInflater))
 
         viewModel.navigator = this
 
@@ -240,7 +237,7 @@ class MainActivity :
             .withIcon(R.drawable.ic_share)
             .withTypeface(font)
 
-        drawer = drawerBuilder
+        drawer = DrawerBuilder().withActivity(this)
             .withOnDrawerListener(object : Drawer.OnDrawerListener {
                 override fun onDrawerSlide(drawerView: View?, slideOffset: Float) {
                     binding.content.translationX =

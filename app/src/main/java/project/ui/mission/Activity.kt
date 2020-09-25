@@ -2,6 +2,7 @@ package project.ui.mission
 
 import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import com.jakewharton.rxbinding3.view.clicks
 import ir.sinapp.sarnakh.BR
@@ -15,21 +16,22 @@ import project.utils.launchActivity
 import ss.com.bannerslider.Slider
 import xyz.hanks.library.bang.SmallBangView
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 
 
-class MissionActivity :
+@AndroidEntryPoint
+class MissionActivity:
     BaseActivity<ActivityMissionBinding, MissionViewModel>(ActivityMissionBinding::class.java),
     MissionNavigator {
 
-    override val bindingVariable: Int
-        get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: MissionViewModel
+    override val viewModel: MissionViewModel by viewModels { this.defaultViewModelProviderFactory }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityMissionBinding.inflate(layoutInflater))
         viewModel.navigator = this
 
         viewModel += binding.scan.clicks().subscribe {

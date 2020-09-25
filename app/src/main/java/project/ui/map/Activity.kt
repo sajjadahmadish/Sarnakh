@@ -8,6 +8,7 @@ import android.location.LocationListener
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -20,6 +21,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.jakewharton.rxbinding3.view.clicks
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.R
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 import ir.sinapp.sarnakh.databinding.ActivityMapBinding
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
@@ -32,17 +34,16 @@ import project.utils.LocationUtils
 import project.utils.launchActivity
 import project.utils.map.OnMapAndViewReadyListener
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
 @RuntimePermissions
-class MapActivity : BaseActivity<ActivityMapBinding, MapViewModel>(ActivityMapBinding::class.java),
+@AndroidEntryPoint
+class MapActivity: BaseActivity<ActivityMapBinding, MapViewModel>(ActivityMapBinding::class.java),
     MapNavigator, OnMapAndViewReadyListener.OnGlobalLayoutAndMapReadyListener {
 
     private lateinit var list: List<Marker>
-    override val bindingVariable: Int
-        get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: MapViewModel
+    override val viewModel: MapViewModel by viewModels { this.defaultViewModelProviderFactory }
 
     lateinit var userLocation: Location
 
@@ -50,6 +51,7 @@ class MapActivity : BaseActivity<ActivityMapBinding, MapViewModel>(ActivityMapBi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityMapBinding.inflate(layoutInflater))
         viewModel.navigator = this
 
 

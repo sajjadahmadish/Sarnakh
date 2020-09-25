@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.view.Window
+import androidx.fragment.app.viewModels
 import com.jakewharton.rxbinding3.view.clicks
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.R
@@ -18,15 +19,14 @@ import project.utils.EventWheel
 import project.utils.lucky.model.LuckyItem
 import java.util.*
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
+class WheelFragment: BaseFragment<FragmentWheelBinding, WheelViewModel>(FragmentWheelBinding::class.java) {
 
-class WheelFragment : BaseFragment<FragmentWheelBinding, WheelViewModel>(FragmentWheelBinding::class.java) {
 
-    override val bindingVariable: Int get() = BR.viewModel
-
-    @Inject
-    override lateinit var viewModel: WheelViewModel
+    override val viewModel: WheelViewModel by viewModels { this.defaultViewModelProviderFactory }
 
 
     companion object {

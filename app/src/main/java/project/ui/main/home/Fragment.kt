@@ -3,6 +3,7 @@ package project.ui.main.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import com.jakewharton.rxbinding3.view.clicks
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.databinding.FragmentHomeBinding
@@ -13,15 +14,15 @@ import project.ui.base.BaseFragment
 import project.utils.*
 import ss.com.bannerslider.Slider
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
 
-class HomeFragment :
+@AndroidEntryPoint
+class HomeFragment:
     BaseFragment<FragmentHomeBinding, HomeViewModel>(FragmentHomeBinding::class.java) {
 
-    override val bindingVariable: Int get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: HomeViewModel
+    override val viewModel: HomeViewModel by viewModels { this.defaultViewModelProviderFactory }
 
     @Inject
     lateinit var glideImageLoading: GlideImageLoadingService

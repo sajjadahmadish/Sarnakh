@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
+import androidx.activity.viewModels
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.Toolbar
@@ -21,21 +22,22 @@ import javax.inject.Inject
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.R
 import ir.sinapp.sarnakh.databinding.ActivityProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 
 
-class ProfileActivity :
+@AndroidEntryPoint
+class ProfileActivity:
     BaseActivity<ActivityProfileBinding, ProfileViewModel>(ActivityProfileBinding::class.java),
     ProfileNavigator {
 
-    override val bindingVariable: Int
-        get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: ProfileViewModel
+    override val viewModel: ProfileViewModel by viewModels { this.defaultViewModelProviderFactory }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityProfileBinding.inflate(layoutInflater))
         viewModel.navigator = this
 
         initToolbar()

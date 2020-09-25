@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import cn.nekocode.badge.BadgeDrawable
 import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.databinding.FragmentBestBinding
@@ -12,15 +13,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import project.ui.base.BaseFragment
 import project.utils.CommonUtils
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
+class BestFragment: BaseFragment<FragmentBestBinding, BestViewModel>(FragmentBestBinding::class.java) {
 
-class BestFragment : BaseFragment<FragmentBestBinding, BestViewModel>(FragmentBestBinding::class.java) {
 
-    override val bindingVariable: Int get() = BR.viewModel
-
-    @Inject
-    override lateinit var viewModel: BestViewModel
+    override val viewModel: BestViewModel by viewModels { this.defaultViewModelProviderFactory }
 
 
     companion object {

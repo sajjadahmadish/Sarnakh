@@ -10,8 +10,6 @@ import ${PackageProjectName}.databinding.Activity${activityName}Binding
 
 class ${activityName}Activity : BaseActivity<Activity${activityName}Binding, ${activityName}ViewModel>(Activity${activityName}Binding::class.java), ${activityName}Navigator {
 
-    override val bindingVariable: Int
-        get() = BR.viewModel
 
     @Inject
     override lateinit var viewModel: ${activityName}ViewModel

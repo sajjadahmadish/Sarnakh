@@ -10,35 +10,36 @@ import android.widget.Toast
 import cn.easyar.Engine
 import project.ui.base.BaseActivity
 import javax.inject.Inject
-
-import ir.sinapp.sarnakh.BR
 import ir.sinapp.sarnakh.R
 import ir.sinapp.sarnakh.databinding.ActivityArBinding
 import project.utils.AppLogger
 import project.utils.ar.GLView
 import android.view.ViewGroup
 import android.view.Window
+import androidx.activity.viewModels
 import androidx.fragment.app.FragmentTransaction
 import com.jakewharton.rxbinding3.view.clicks
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
 import project.ui.successDialog.SuccessDialogFragment
 import studio.carbonylgroup.textfieldboxes.ExtendedEditText
+import dagger.hilt.android.AndroidEntryPoint
+
 
 @RuntimePermissions
+@AndroidEntryPoint
 class ARActivity : BaseActivity<ActivityArBinding, ARViewModel>(ActivityArBinding::class.java),
     ARNavigator {
 
-    override val bindingVariable: Int
-        get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: ARViewModel
+    override val viewModel: ARViewModel by viewModels { this.defaultViewModelProviderFactory }
 
     lateinit var glView: GLView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityArBinding.inflate(layoutInflater))
         viewModel.navigator = this
 
         showCameraWithPermissionCheck()
@@ -83,7 +84,6 @@ class ARActivity : BaseActivity<ActivityArBinding, ARViewModel>(ActivityArBindin
     }
 
 
-
     override fun openAnswerActivity() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE) // before
@@ -92,18 +92,15 @@ class ARActivity : BaseActivity<ActivityArBinding, ARViewModel>(ActivityArBindin
         val btn = dialog.findViewById<View>(R.id.bt_try)
         viewModel += btn.clicks().subscribe {
             dialog.dismiss()
-            if (editText.text.toString() == "علی بابا")
-            {
+            if (editText.text.toString() == "علی بابا") {
                 val fragmentManager = supportFragmentManager
                 val newFragment = SuccessDialogFragment()
                 val transaction =
                     fragmentManager.beginTransaction()
                 transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 transaction.add(android.R.id.content, newFragment).addToBackStack(null).commit()
-            }
-            else
-            {
-                Toast.makeText(this, "wrong" , Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this, "wrong", Toast.LENGTH_LONG).show()
             }
         }
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))

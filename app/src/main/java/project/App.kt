@@ -1,6 +1,7 @@
 package project
 
 import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
 import android.os.StrictMode
@@ -10,21 +11,17 @@ import androidx.multidex.MultiDex
 import androidx.preference.PreferenceManager
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.stetho.Stetho
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+import dagger.hilt.android.HiltAndroidApp
 import io.github.inflationx.viewpump.ViewPump
 import org.greenrobot.eventbus.EventBus
 import project.data.DataManager
-import project.di.component.DaggerAppComponent
 import project.utils.AppLogger
 import project.utils.localization.LocalizationApplicationDelegate
 import javax.inject.Inject
 
 
-
-class App : DaggerApplication(), HasActivityInjector {
+@HiltAndroidApp
+class App : Application() {
 
 
     @Inject
@@ -111,21 +108,6 @@ class App : DaggerApplication(), HasActivityInjector {
         Stetho.initializeWithDefaults(this)
 
     }
-
-
-    private val component: AndroidInjector<App> by lazy {
-        DaggerAppComponent.factory().create(this)
-    }
-
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return component
-    }
-
-
-    @Inject
-    internal lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
-
-    override fun activityInjector() = activityDispatchingAndroidInjector
 
 
     override fun attachBaseContext(base: Context) {

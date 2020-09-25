@@ -16,8 +16,8 @@ class AuthorizationInterceptor(private val apiKey: String, private val session: 
         builder.addHeader("apiKey", apiKey)
 
         if (session!!.isLoggedIn) {
-            builder.addHeader("username", session.username!!)
-            builder.addHeader("token", session.token!!)
+            builder.addHeader("username", session.username)
+            builder.addHeader("token", session.token)
         }
 
         val request1 = builder.build()

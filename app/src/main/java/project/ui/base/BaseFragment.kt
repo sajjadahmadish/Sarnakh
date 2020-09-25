@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ir.sinapp.sarnakh.BR
 
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
@@ -15,8 +16,6 @@ import androidx.fragment.app.Fragment
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 
-import dagger.android.support.AndroidSupportInjection
-import dagger.android.support.DaggerFragment
 import project.App
 import project.Session
 
@@ -25,7 +24,7 @@ import project.Session
  */
 
 abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>>(private val bindingClass: Class<T>) :
-    DaggerFragment() {
+    Fragment() {
 
     var baseActivity: BaseActivity<*, *>? = null
         private set
@@ -43,7 +42,7 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel<*>>(private v
      *
      * @return variable id
      */
-    abstract val bindingVariable: Int
+    val bindingVariable: Int = BR.viewModel
 
 //    /**
 //     * @return layout resource id

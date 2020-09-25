@@ -2,7 +2,7 @@ ext {
 
     compiler = [
             java  : JavaVersion.VERSION_1_8,
-            kotlin: '1.3.50'
+            kotlin: "1.4.10"
     ]
 
     android = [
@@ -18,7 +18,7 @@ ext {
 //    ]
 
     application = [
-            id                       : 'ir.sinapp.sarnakh',
+            id                       : "ir.sinapp.sarnakh",
             versionCode              : 1,
             versionName              : "1.0",
             testInstrumentationRunner: "android.support.test.runner.AndroidJUnitRunner"
@@ -32,11 +32,14 @@ ext {
     GlideKapt = "com.github.bumptech.glide:compiler:$glide"
 
 
+    coroutines_android_version = "1.3.9"
+
     Kotlin = [
             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$compiler.kotlin",
-            'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-M1',
-            'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0-M1',
-            "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:1.3.0-M1"
+            "org.jetbrains.kotlin:kotlin-reflect:$compiler.kotlin",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_android_version",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_android_version",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:$coroutines_android_version"
     ]
 
 
@@ -44,10 +47,10 @@ ext {
     fragment = "1.1.0-rc04"
     paging = "2.1.0"
     room = "2.2.0-beta01"
-    lifecycle = '2.0.0-beta01'
+    lifecycle = "2.0.0-beta01"
     navigation = "2.1.0-rc01"
-    constraintLayout = '1.1.3'
-    multidex = '2.0.0'
+    constraintLayout = "1.1.3"
+    multidex = "2.0.0"
 
     AndroidX = [
 
@@ -58,8 +61,8 @@ ext {
                     "androidx.legacy:legacy-support-v4:1.0.0",
                     "androidx.annotation:annotation:1.0.0-alpha1",
                     "androidx.core:core-ktx:1.0.1",
-                    'androidx.browser:browser:1.0.0',
-                    'androidx.preference:preference:1.0.0'
+                    "androidx.browser:browser:1.0.0",
+                    "androidx.preference:preference:1.0.0"
             ],
 
             Constraintlayout: [
@@ -114,37 +117,34 @@ ext {
 
     Google = [
             "com.google.android.material:material:1.0.0-rc01",
-            'com.google.firebase:firebase-messaging:20.0.0',
+            "com.google.firebase:firebase-messaging:20.0.0",
 
-            'com.google.firebase:firebase-core:17.2.0',
+            "com.google.firebase:firebase-core:17.2.0",
 
-            'com.google.firebase:firebase-analytics:17.2.0',
+            "com.google.firebase:firebase-analytics:17.2.0",
 
-            'com.crashlytics.sdk.android:crashlytics:2.10.1',
-            'com.google.firebase:firebase-perf:19.0.0',
-            'com.google.firebase:firebase-dynamic-links:19.0.0',
+            "com.crashlytics.sdk.android:crashlytics:2.10.1",
+            "com.google.firebase:firebase-perf:19.0.0",
+            "com.google.firebase:firebase-dynamic-links:19.0.0",
 
-            'com.google.android.gms:play-services-maps:16.1.0',
-            'com.google.maps.android:android-maps-utils:+',
-            'com.google.android.gms:play-services-location:17.0.0'
+            "com.google.android.gms:play-services-maps:16.1.0",
+            "com.google.maps.android:android-maps-utils:+",
+            "com.google.android.gms:play-services-location:17.0.0"
     ]
 
 
-    dagger = "2.23.2"
-    Dagger = [
-            "com.google.dagger:dagger:${dagger}",
-            "com.google.dagger:dagger-android:${dagger}",
-            "com.google.dagger:dagger-android-support:${dagger}",
-    ]
-    DaggerKapt = [
-            "com.google.dagger:dagger-compiler:${dagger}",
-            "com.google.dagger:dagger-android-processor:${dagger}",
-    ]
 
+    hilt_version = "2.28-alpha"
+    hilt_viewModel_version = "1.0.0-alpha02"
 
-//    assisted = "0.5.0"
-//    AssistedInjectKapt = "com.squareup.inject:assisted-inject-processor-dagger2:$assisted"
-//    AssistedInjectCompile = "com.squareup.inject:assisted-inject-annotations-dagger2:$assisted"
+    Hilt = [
+            "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewModel_version",
+            "com.google.dagger:hilt-android:$hilt_version"
+    ]
+    HiltKapt = [
+            "androidx.hilt:hilt-compiler:$hilt_viewModel_version",
+            "com.google.dagger:hilt-android-compiler:$hilt_version"
+    ]
 
 
     fresco = "2.0.0"
@@ -155,9 +155,9 @@ ext {
     ]
 
 
-    rxJava = '2.2.10'
-    rxKotlin = '2.4.0'
-    rxAndroid = '2.1.1'
+    rxJava = "2.2.10"
+    rxKotlin = "2.4.0"
+    rxAndroid = "2.1.1"
     ReactiveX = [
             "io.reactivex.rxjava2:rxjava:${rxJava}",
             "io.reactivex.rxjava2:rxkotlin:${rxKotlin}",
@@ -219,7 +219,7 @@ ext {
     ]
 
 
-    merlin = '1.2.0'
+    merlin = "1.2.0"
     Merlin = [
             "com.novoda:merlin:$merlin",
             "com.novoda:merlin-rxjava2:$merlin"
@@ -227,68 +227,68 @@ ext {
 
 
     thirdPartyDependencies = [
-            'com.blankj:utilcodex:+',
-            'com.github.HITGIF:TextFieldBoxes:1.4.4',
+            "com.blankj:utilcodex:+",
+            "com.github.HITGIF:TextFieldBoxes:1.4.4",
 
-//            'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4',
-            'com.balysv:material-ripple:1.0.2',               // ripple effect
-            'com.wdullaer:materialdatetimepicker:3.6.4',      // date & time picker
-            'com.mikhaellopez:circularimageview:3.0.2',       // circle image view
-//            'com.github.pchmn:MaterialChipsInput:1.0.5',      // material chip
-//            'com.hootsuite.android:nachos:1.1.1',           // material chips
-            'com.airbnb.android:lottie:3.0.1',      // Motion graphics
-            'com.jakewharton.timber:timber:4.7.1',     // Logger
-            'io.github.inflationx:calligraphy3:3.1.1',
-            'io.github.inflationx:viewpump:1.0.0',
-//            'com.infstory:proguard-snippets:1.0.0',
-//            'com.github.florent37:tutoshowcase:1.0.1',
+//            "com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4",
+            "com.balysv:material-ripple:1.0.2",               // ripple effect
+            "com.wdullaer:materialdatetimepicker:3.6.4",      // date & time picker
+            "com.mikhaellopez:circularimageview:3.0.2",       // circle image view
+//            "com.github.pchmn:MaterialChipsInput:1.0.5",      // material chip
+//            "com.hootsuite.android:nachos:1.1.1",           // material chips
+            "com.airbnb.android:lottie:3.0.1",      // Motion graphics
+            "com.jakewharton.timber:timber:4.7.1",     // Logger
+            "io.github.inflationx:calligraphy3:3.1.1",
+            "io.github.inflationx:viewpump:1.0.0",
+//            "com.infstory:proguard-snippets:1.0.0",
+//            "com.github.florent37:tutoshowcase:1.0.1",
 
 //            "com.github.edsilfer:sticky-index:1.3.0",
 
-//            'com.pnikosis:materialish-progress:1.7',
-//            'com.timqi.sectorprogressview:library:2.0.1',
+//            "com.pnikosis:materialish-progress:1.7",
+//            "com.timqi.sectorprogressview:library:2.0.1",
 
-//            'com.shawnlin:number-picker:2.4.6',
+//            "com.shawnlin:number-picker:2.4.6",
 
             "com.mikepenz:materialdrawer:7.0.0-alpha2",
-//            'com.mikepenz:google-material-typeface:3.0.1.1.original@aar',
-//            'com.mikepenz:fontawesome-typeface:5.0.6.0@aar',
-//            'com.mikepenz:octicons-typeface:3.0.0.1@aar',
-//            'com.mikepenz:crossfader:1.6.0',
-//           'com.mikepenz:crossfadedrawerlayout:1.1.0',
+//            "com.mikepenz:google-material-typeface:3.0.1.1.original@aar",
+//            "com.mikepenz:fontawesome-typeface:5.0.6.0@aar",
+//            "com.mikepenz:octicons-typeface:3.0.0.1@aar",
+//            "com.mikepenz:crossfader:1.6.0",
+//           "com.mikepenz:crossfadedrawerlayout:1.1.0",
 
 
-//            'com.stepstone.stepper:material-stepper:4.3.1',
+//            "com.stepstone.stepper:material-stepper:4.3.1",
 
-//            'com.stephentuso:welcome:1.4.1',
-
-
-//            'com.github.smarteist:autoimageslider:1.1.1',
+//            "com.stephentuso:welcome:1.4.1",
 
 
-//            'com.facebook.shimmer:shimmer:0.4.0',
+//            "com.github.smarteist:autoimageslider:1.1.1",
 
-//            'xyz.sahildave:searchviewlayout:0.6',
 
-            'com.andrognito.flashbar:flashbar:1.0.2',
+//            "com.facebook.shimmer:shimmer:0.4.0",
+
+//            "xyz.sahildave:searchviewlayout:0.6",
+
+            "com.andrognito.flashbar:flashbar:1.0.2",
 
 //            "com.mlsdev.animatedrv:library:2.0.0",
 
-//            'com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.0',
-            'com.ss.bannerslider:bannerslider:2.0.0',
-            'pub.hanks:smallbang:1.2.2',
-            'com.ramotion.cardslider:card-slider:0.3.1',
+//            "com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.0",
+            "com.ss.bannerslider:bannerslider:2.0.0",
+            "pub.hanks:smallbang:1.2.2",
+            "com.ramotion.cardslider:card-slider:0.3.1",
             "com.github.nekocode:Badge:2.1" ,
-            'com.github.douglasjunior:android-simple-tooltip:0.2.3',
-            'com.github.sujithkanna:smileyrating:1.6.8'
+            "com.github.douglasjunior:android-simple-tooltip:0.2.3",
+            "com.github.sujithkanna:smileyrating:1.6.8"
     ]
 
 
 
     // Data
 
-    Gson = '2.8.5'
-    javaxAnnotation = '1'
+    Gson = "2.8.5"
+    javaxAnnotation = "1"
     dataDependencies = [
             "javax.inject:javax.inject:$javaxAnnotation",
             "com.google.code.gson:gson:$Gson",

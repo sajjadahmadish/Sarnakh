@@ -4,7 +4,6 @@ import android.view.Window
 import androidx.databinding.Observable
 import androidx.databinding.ObservableField
 import androidx.databinding.ObservableInt
-import androidx.lifecycle.SavedStateHandle
 import com.blankj.utilcode.util.DeviceUtils
 import com.blankj.utilcode.util.KeyboardUtils
 import com.blankj.utilcode.util.NetworkUtils
@@ -15,12 +14,14 @@ import project.utils.AppLogger
 import project.utils.extension.forIo
 import project.utils.extension.onUi
 import project.utils.rx.SchedulerProvider
+import androidx.lifecycle.SavedStateHandle
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
 
-private const val STATE_USER = "state_user"
-private const val STATE_PASS = "state_pass"
 
 
-class LoginViewModel  constructor(
+class LoginViewModel @ViewModelInject constructor(
+    @Assisted savedStateHandle: SavedStateHandle,
     dataManager: DataManager,
     schedulerProvider: SchedulerProvider
 ) :

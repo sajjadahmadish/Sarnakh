@@ -1,5 +1,6 @@
 package project.ui.base
 
+import ir.sinapp.sarnakh.BR
 import android.annotation.TargetApi
 import android.app.ProgressDialog
 import android.content.Context
@@ -15,9 +16,7 @@ import com.blankj.utilcode.util.LanguageUtils
 import com.novoda.merlin.Endpoint
 import com.novoda.merlin.MerlinFlowable
 import com.novoda.merlin.MerlinsBeard
-import dagger.android.support.DaggerAppCompatActivity
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
-import io.reactivex.functions.Consumer
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.suspendCancellableCoroutine
 import org.greenrobot.eventbus.EventBus
@@ -34,7 +33,7 @@ import kotlin.coroutines.resume
 
 
 abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>>(private val bindingClass: Class<T>) :
-    DaggerAppCompatActivity(),
+    AppCompatActivity(),
     BaseFragment.Callback {
 
     lateinit var networkStatusDisplayer: NetworkStatusDisplayer
@@ -47,14 +46,6 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>>(private v
     // this can probably depend on isLoading variable of BaseViewModel,
     // since its going to be common for all the activities
     private var mProgressDialog: ProgressDialog? = null
-
-
-    /**
-     * Override for set binding variable
-     *
-     * @return variable id
-     */
-    abstract val bindingVariable: Int
 
 
     /**
@@ -92,8 +83,6 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>>(private v
         }
 
         super.onCreate(savedInstanceState)
-        performDataBinding()
-        binding.lifecycleOwner = this
 
         merlinsBeard = MerlinsBeard.Builder()
             .withEndpoint(Endpoint.from("http://classmate.ahmadidev.ir/generate_204"))
@@ -156,21 +145,12 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel<*>>(private v
     }
 
 
-    @Suppress("UNCHECKED_CAST")
-    private fun performDataBinding() {
-        try {
-            val m = bindingClass.getDeclaredMethod("inflate", LayoutInflater::class.java)
-            viewDataBinding = m.invoke(viewDataBinding, layoutInflater) as T
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-        binding = viewDataBinding!!
-
+    fun initBinding(viewBinding: T, br: Int = BR.viewModel) {
+        binding = viewBinding
         setContentView(binding.root)
-        binding.setVariable(bindingVariable, viewModel)
-        binding.executePendingBindings()
+        binding.setVariable(br, viewModel)
+        binding.lifecycleOwner = this
     }
-
 
     override fun onResume() {
         super.onResume()

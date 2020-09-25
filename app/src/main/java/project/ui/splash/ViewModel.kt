@@ -8,9 +8,14 @@ import project.ui.base.BaseViewModel
 import project.utils.dp
 import project.utils.rx.SchedulerProvider
 import java.util.concurrent.TimeUnit
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.SavedStateHandle
 
 
-class SplashViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider) :
+class SplashViewModel @ViewModelInject constructor(
+    @Assisted savedStateHandle: SavedStateHandle,
+    dataManager: DataManager, schedulerProvider: SchedulerProvider) :
     BaseViewModel<SplashNavigator>(dataManager, schedulerProvider) {
 
 //    fun startSeeding() {

@@ -4,11 +4,12 @@ import android.content.Context
 import com.google.gson.Gson
 import com.marcinmoskala.kotlinpreferences.PreferenceHolder
 import com.marcinmoskala.kotlinpreferences.gson.GsonSerializer
+import dagger.hilt.android.qualifiers.ApplicationContext
 import project.data.DataManager
 import javax.inject.Inject
 
 
-class AppPreferenceHelper @Inject constructor(context: Context) : PreferenceHolder(), PreferenceHelper {
+class AppPreferenceHelper @Inject constructor(@ApplicationContext context: Context) : PreferenceHolder(), PreferenceHelper {
 
     init {
         setContext(context)

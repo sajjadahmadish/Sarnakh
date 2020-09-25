@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import dagger.android.AndroidInjection
 import org.greenrobot.eventbus.EventBus
 import project.data.DataManager
 import project.utils.EventNotify
@@ -28,7 +27,6 @@ class MessagingService : FirebaseMessagingService() {
 
 
     override fun onCreate() {
-        AndroidInjection.inject(this)
         super.onCreate()
     }
 

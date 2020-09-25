@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.*
+import androidx.activity.viewModels
 import androidx.annotation.DrawableRes
 import androidx.annotation.StyleRes
 import androidx.core.view.ViewCompat
@@ -25,16 +26,16 @@ import project.utils.CommonUtils
 import project.utils.cardslider.DecodeBitmapTask
 import java.util.*
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 
 
-class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionListViewModel>(ActivityMissionListBinding::class.java), MissionListNavigator {
+@AndroidEntryPoint
+class MissionListActivity: BaseActivity<ActivityMissionListBinding, MissionListViewModel>(ActivityMissionListBinding::class.java), MissionListNavigator {
 
 
-    override val bindingVariable: Int
-        get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: MissionListViewModel
+    override val viewModel: MissionListViewModel by viewModels { this.defaultViewModelProviderFactory }
     private lateinit var countries: Array<String>
     private lateinit var places: Array<String>
     private lateinit var times: Array<String>
@@ -53,6 +54,7 @@ class MissionListActivity : BaseActivity<ActivityMissionListBinding, MissionList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initBinding(ActivityMissionListBinding.inflate(layoutInflater))
         viewModel.navigator = this
 
         sliderAdapter = SliderAdapter(

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import androidx.activity.viewModels
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -17,17 +18,18 @@ import project.utils.Bungee
 import project.utils.launchActivity
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
+import ir.sinapp.sarnakh.databinding.ActivityLoginBinding
 
 
-class SplashActivity :
+@AndroidEntryPoint
+class SplashActivity:
     BaseActivity<ActivitySplashBinding, SplashViewModel>(ActivitySplashBinding::class.java),
     SplashNavigator {
 
 
-    override val bindingVariable: Int get() = BR.viewModel
 
-    @Inject
-    override lateinit var viewModel: SplashViewModel
+    override val viewModel: SplashViewModel by viewModels { this.defaultViewModelProviderFactory }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +44,7 @@ class SplashActivity :
         )
 
         super.onCreate(savedInstanceState)
+        initBinding(ActivitySplashBinding.inflate(layoutInflater))
         viewModel.navigator = this
 
         viewModel.decideNextActivity()

@@ -14,7 +14,7 @@
  *  limitations under the License
  */
 
-package project.di.module;
+package project.di;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
